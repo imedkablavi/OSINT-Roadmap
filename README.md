@@ -2,7 +2,7 @@
 
 > Practical, ethical, and professional Open-Source Intelligence roadmap.
 
-![OSINT Roadmap]([assets/roadmap.svg](https://datascientest.com/en/all-about-osint))
+![OSINT Roadmap]([https://datascientest.com/en/all-about-osint])
 
 ## 🌐 Languages
 - [English](README.en.md)
