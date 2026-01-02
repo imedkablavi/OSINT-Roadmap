@@ -1,32 +1,34 @@
 # 🕵️ OSINT Roadmap  
-### Practical & Ethical Open Source Intelligence Guide
+## Practical & Ethical Open Source Intelligence
 
-![OSINT Banner](https://images.unsplash.com/photo-1555949963-aa79dcee981c)
+![OSINT Banner](https://images.unsplash.com/photo-1600267165477-6d4cc741b379)
 
-> A **professional, methodology-first roadmap** for learning Open Source Intelligence (OSINT)  
+> A **professional, methodology-driven roadmap** for learning  
+> **Open Source Intelligence (OSINT)**  
+>  
 > From **Beginner → Intermediate → Professional**  
 >  
-> This repository focuses on **analysis, verification, legality, and ethics** — not tool dumping.
+> Focused on **analysis, verification, legality, and ethics** — not tool dumping.
 
 ---
 
 ## 📌 Table of Contents
 
 - [What is OSINT?](#-what-is-osint)
-- [OSINT vs Hacking (Legal Boundaries)](#-osint-vs-hacking-legal-boundaries)
+- [OSINT vs Hacking](#-osint-vs-hacking)
 - [Who This Roadmap Is For](#-who-this-roadmap-is-for)
 - [Learning Roadmap Overview](#-learning-roadmap-overview)
-- [Phase 1 – Foundations (Beginner)](#-phase-1--foundations-beginner)
-- [Phase 2 – Core OSINT Skills (Intermediate)](#-phase-2--core-osint-skills-intermediate)
-- [Phase 3 – Advanced OSINT (Professional)](#-phase-3--advanced-osint-professional)
+- [Phase 1 – Foundations](#-phase-1--foundations-beginner)
+- [Phase 2 – Core OSINT Skills](#-phase-2--core-osint-skills-intermediate)
+- [Phase 3 – Advanced OSINT](#-phase-3--advanced-osint-professional)
 - [OSINT Workflow](#-osint-workflow)
-- [Tools (Purpose Before Technology)](#-tools-purpose-before-technology)
+- [OSINT Tools & Frameworks](#-osint-tools--frameworks)
 - [Case Study Example](#-case-study-example)
 - [Reporting & Documentation](#-reporting--documentation)
 - [Common Mistakes](#-common-mistakes)
 - [Learning Resources](#-learning-resources)
-- [Certifications (Free & Paid)](#-certifications-free--paid)
-- [Ethics, Law & Responsibility](#-ethics-law--responsibility)
+- [Certifications](#-certifications-free--paid)
+- [Ethics & Legal Responsibility](#-ethics--legal-responsibility)
 
 ---
 
@@ -35,9 +37,10 @@
 **Open Source Intelligence (OSINT)** is the structured process of:
 
 > Collecting, verifying, analyzing, and reporting  
-> **publicly available information** to answer a defined intelligence question.
+> **publicly available information**  
+> to answer a specific intelligence question.
 
-OSINT is **not about finding information**.  
+OSINT is **not** about finding information.  
 OSINT is about **proving what is true**.
 
 Public sources include:
@@ -45,28 +48,28 @@ Public sources include:
 - Social media (public content only)
 - Images & videos
 - Public records
-- Domains, IPs, certificates, metadata
+- Domains, IPs, metadata
 
 ---
 
-## ⚖️ OSINT vs Hacking (Legal Boundaries)
+## ⚖️ OSINT vs Hacking
 
-![Legal vs Illegal](https://images.unsplash.com/photo-1589829545856-d10d557cf95f)
+![Legal Boundaries](https://images.unsplash.com/photo-1589829545856-d10d557cf95f)
 
 > **OSINT = Observation, not intrusion**
 
-| Aspect | OSINT (Legal) | Hacking (Illegal) |
-|------|---------------|------------------|
-| Data Access | Public data | Private systems |
-| Technique | Passive | Active exploitation |
-| Authentication | No bypass | Bypass / cracking |
-| Risk | Low | Criminal liability |
+| OSINT (Legal) | Hacking (Illegal) |
+|--------------|------------------|
+| Public data | Private systems |
+| Passive collection | Active exploitation |
+| No authentication bypass | Bypass / cracking |
+| Low legal risk | Criminal liability |
 
 ❌ If it requires:
-- Bypassing login
+- Login bypass
 - Fake accounts
-- Violating Terms of Service
-- Exploiting vulnerabilities  
+- Exploiting vulnerabilities
+- Violating Terms of Service  
 
 ➡️ **It is NOT OSINT**
 
@@ -74,11 +77,11 @@ Public sources include:
 
 ## 🎯 Who This Roadmap Is For
 
-✔ Beginners starting from zero  
+✔ Beginners (zero knowledge)  
 ✔ Cybersecurity & Threat Intelligence learners  
 ✔ Journalists & fact-checkers  
 ✔ Researchers & investigators  
-✔ Anyone who wants **defensible OSINT skills**
+✔ Anyone seeking **defensible OSINT skills**
 
 ---
 
@@ -89,7 +92,7 @@ Public sources include:
 Beginner → Intermediate → Professional
 Mindset Techniques Analysis
 Ethics Verification Reporting
-Legal awareness SOCMINT / GEOINT Intelligence products
+Law & OPSEC SOCMINT / GEOINT Intelligence products
 
 yaml
 Kodu kopyala
@@ -98,23 +101,19 @@ Kodu kopyala
 
 ## 🟢 Phase 1 – Foundations (Beginner)
 
-### Goals
-- Understand OSINT principles
-- Build analytical mindset
-- Learn ethics & law
+![Foundations](https://images.unsplash.com/photo-1526378722484-bd91ca387e72)
+
+### Focus
+- OSINT principles
+- Ethics & law
+- Analytical thinking
 
 ### Topics
-- OSINT fundamentals
 - Intelligence vs information
-- Critical thinking
 - CRAAP test (source evaluation)
+- Confirmation bias
 - Privacy laws (GDPR / CCPA – overview)
 - OPSEC basics
-
-### Skills
-- Asking the right questions
-- Avoiding assumptions
-- Proper documentation
 
 ---
 
@@ -129,12 +128,12 @@ Kodu kopyala
 
 ### 🧠 SOCMINT
 - Username correlation
-- Behavioral analysis
+- Behavioral patterns
 - Timeline reconstruction
 
 ### 🖼️ Image & Video Verification
 - Reverse image search
-- Landmark recognition
+- Landmark identification
 - Shadow & sun analysis
 - Metadata basics
 
@@ -148,14 +147,14 @@ Kodu kopyala
 ## 🔴 Phase 3 – Advanced OSINT (Professional)
 
 ### Focus
-- Methodology > tools
+- Methodology over tools
 - Verification & triangulation
-- Intelligence-grade reporting
+- Intelligence-grade analysis
 
 ### Topics
 - Priority Intelligence Requirements (PIR)
-- Confidence assessment
 - Hypothesis testing
+- Confidence assessment
 - Bias mitigation
 - Evidence handling
 
@@ -163,29 +162,67 @@ Kodu kopyala
 
 ## 🔁 OSINT Workflow
 
-![Workflow](https://images.unsplash.com/photo-1526378722484-bd91ca387e72)
+![Workflow](https://images.unsplash.com/photo-1517430816045-df4b7de01aab)
 
-1. Define intelligence question (PIR)
+1. Define the intelligence question (PIR)
 2. Select public sources
 3. Collect data (clean OPSEC)
 4. Verify & triangulate
 5. Archive evidence
 6. Analyze findings
-7. Write intelligence report
+7. Produce an intelligence report
 
 ---
 
-## 🧰 Tools (Purpose Before Technology)
+## 🧰 OSINT Tools & Frameworks
 
-| Category | Purpose | Rule |
-|--------|--------|------|
-| Search engines | Surface discovery | No bypass |
-| Social media | Public profile analysis | Respect ToS |
-| Images & video | Verification | No biometric abuse |
-| Domains & infra | Passive intelligence | No active scanning |
-| Archiving | Evidence preservation | Public content only |
+> Tools support OSINT — they never replace thinking.
 
-> Tools support methodology — they never replace it.
+### 🗂️ OSINT Framework (Essential)
+🔗 https://osintframework.com/
+
+---
+
+### 🔎 Search & Discovery
+- https://www.google.com/advanced_search
+- https://duckduckgo.com/
+- https://yandex.com/
+
+---
+
+### 🧠 Social Media & Username Intelligence
+- https://whatsmyname.app/
+- https://namechk.com/
+- https://github.com/sherlock-project/sherlock
+
+---
+
+### 🖼️ Image & Video Verification
+- https://images.google.com/
+- https://yandex.com/images/
+- https://tineye.com/
+- https://www.invid-project.eu/tools-and-services/invid-verification-plugin/
+
+---
+
+### 🌍 Geolocation & Maps
+- https://earth.google.com/
+- https://www.openstreetmap.org/
+- https://www.suncalc.org/
+
+---
+
+### 🌐 Domains & Infrastructure
+- https://who.is/
+- https://securitytrails.com/
+- https://www.shodan.io/
+- https://archive.org/web/
+
+---
+
+### 🗄️ Evidence Archiving
+- https://archive.today/
+- https://webrecorder.net/
 
 ---
 
@@ -193,12 +230,12 @@ Kodu kopyala
 
 **Scenario:** Verifying a viral video location.
 
-**Steps:**
+**Method:**
 1. Identify landmarks
-2. Compare with satellite imagery
+2. Compare satellite imagery
 3. Analyze shadows
 4. Check weather & timeline
-5. Cross-reference local sources
+5. Cross-reference sources
 
 **Conclusion Example:**
 > Location verified with high confidence.  
@@ -232,33 +269,41 @@ A professional OSINT report includes:
 
 ## 📚 Learning Resources
 
-### Free
-- https://www.bellingcat.com/resources/
-- https://www.freeosint.org
-- https://osintcurio.us
-- YouTube OSINT case studies
+### 🆓 Free
+- Basel Institute OSINT Course + Certificate  
+  https://learn.baselgovernance.org/enrol/index.php?id=79
 
-### Paid
-- SANS SEC497
-- Bellingcat workshops
-- Private OSINT academies
+- Bellingcat Resources  
+  https://www.bellingcat.com/resources/
+
+- OSINTCurio.us  
+  https://osintcurio.us/
+
+- FreeOSINT  
+  https://www.freeosint.org/
 
 ---
 
 ## 🎓 Certifications (Free & Paid)
 
-### Free
-- Intro OSINT courses (Security Blue Team)
-- Open university materials
-
-### Paid
-- GIAC GOSI
-- SANS OSINT certifications
-- Professional investigator training
+### 🆓 Free / Entry Level
+- Basel Institute Certificate  
+  https://learn.baselgovernance.org/
+- Security Blue Team – Intro OSINT  
+  https://securityblue.team/
 
 ---
 
-## ⚖️ Ethics, Law & Responsibility
+### 💰 Paid / Professional
+- GIAC GOSI  
+  https://www.giac.org/certifications/open-source-intelligence-gosi/
+
+- SANS SEC497 – Practical OSINT  
+  https://www.sans.org/cyber-security-courses/practical-open-source-intelligence/
+
+---
+
+## ⚖️ Ethics & Legal Responsibility
 
 ### Allowed
 - Public data collection
