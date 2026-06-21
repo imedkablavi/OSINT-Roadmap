@@ -1,31 +1,60 @@
-# OSINT Roadmap
+# Osint Roadmap
 
-> Practical, ethical, and professional Open-Source Intelligence roadmap.
+Practical and ethical OSINT roadmap. Learn open-source intelligence from foundations to advanced workflows, tools, case studies, and reporting — focused on real investigations, legality, and professional practice.
 
-![OSINT Roadmap]([https://94fa3c88.delivery.rocketcdn.me/en/files/2025/05/open-source-intelligence.webp])
+## Features
 
-## 🌐 Languages
-- [English](README.en.md)
-- [العربية](README.ar.md)
-- [Türkçe](README.tr.md)
+- Repository structure has been documented from the currently tracked files.
 
-## 📌 About
-This repository provides a **structured OSINT learning path** focused on:
-- Real-world workflows
-- Legal and ethical usage
-- Documentation and reporting
-- Career-oriented skills
+## Tech Stack
 
-## 🧭 Contents
-- Visual Roadmap
-- Learning Phases
-- Tools & Resources
-- Practical Case Studies
-- Certifications & Career Paths
+- Project files detected from repository contents
 
-## ⚖️ Ethics & Law
-OSINT relies only on **publicly available information**.
-No intrusion, no impersonation, no privacy violations.
+## Project Structure
 
-## 📄 License
-MIT License
+```text
+.gitignore
+README.ar.md
+README.en.md
+README.md
+```
+
+## Installation
+
+```bash
+No dependency installation command was detected.
+```
+
+## Development
+
+- No development command was detected from tracked files.
+
+## Build
+
+No build command was detected from tracked files.
+
+## Tests
+
+No test command was detected from tracked files.
+
+## Environment Variables
+
+Use `.env.example` as the starting point when environment variables are required. Keep real secrets out of git.
+
+- No required environment variables were detected from tracked files.
+
+## Status
+
+- README generated from the current repository files.
+- Runtime behavior should be verified in the target environment before production use.
+
+## Roadmap / TODO
+
+- Keep this README aligned with future code changes.
+- Add setup notes for deployment environments when they are finalized.
+- Add or expand automated tests when project behavior is stable.
+
+## Author
+
+Author: iEmmAd / cybrex  
+GitHub: [imedkablavi](https://github.com/imedkablavi)
