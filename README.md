@@ -286,6 +286,7 @@ Tools are useful, but they do not replace analysis.
 
 * Reverse image search
 * Metadata viewers
+* [Metadata Remover](https://metadataremover.ai/metadata-viewer) — Browser-local viewer for EXIF, GPS, XMP, IPTC, and supported AI metadata; no uploads or account required.
 * Map comparison
 * Shadow and weather checking
 * Frame-by-frame inspection
