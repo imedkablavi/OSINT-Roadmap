@@ -23,6 +23,7 @@ Core material:
 - [Research methods](docs/research-methods.md)
 - [Tool matrix](docs/tool-matrix.md)
 - [Practice labs](docs/practice-labs.md)
+- [Browser extensions & web tools](tools/browser-extensions.md)
 - [Report template](docs/report-template.md)
 - [English glossary](glossary/README.en.md)
 
@@ -31,6 +32,8 @@ Core material:
 **[افتح خارطة الطريق العربية →](README.ar.md)**
 
 - [مركز التعلم العربي](docs/ar/README.md)
+- [إضافات المتصفح وأدوات الويب](tools/browser-extensions.ar.md)
+- [المسارات الاحترافية بالعربية](docs/ar/advanced-paths.md)
 - [قاموس OSINT بالعربية](glossary/README.ar.md)
 
 ### 🇹🇷 Türkçe
@@ -38,9 +41,23 @@ Core material:
 **[Türkçe OSINT Yol Haritasını Aç →](README.tr.md)**
 
 - [Türkçe öğrenme merkezi](docs/tr/README.md)
+- [Tarayıcı eklentileri & web araçları](tools/browser-extensions.tr.md)
+- [Profesyonel uzmanlaşma yolları](docs/tr/advanced-paths.md)
 - [Türkçe OSINT sözlüğü](glossary/README.tr.md)
 
 ---
+
+## 🧰 Browser extensions & web tools
+
+![OSINT Browser Extensions & Web Tools](assets/osint-browser-tools.jpg)
+
+The repository now includes a curated browser-tool guide rather than an unreviewed extension dump.
+
+- [English guide](tools/browser-extensions.md)
+- [الدليل العربي](tools/browser-extensions.ar.md)
+- [Türkçe rehber](tools/browser-extensions.tr.md)
+
+The guide covers web capture and archiving, image/video verification, threat-intelligence lookups, data extraction, screenshots, download helpers and blockchain research. It also explains extension permissions, privacy risks, research-browser separation, and what each category **does not prove**.
 
 ## 🗺️ Visual roadmap
 
@@ -75,6 +92,11 @@ Once the core workflow is comfortable, move into a track instead of collecting r
 | [Company Investigation](tracks/company-investigation.md) | legal entity resolution, filings, ownership, corporate timelines, sanctions checks, relationship mapping |
 | [Advanced GEOINT Challenges](challenges/advanced-geoint.md) | a 10-level geolocation/chronolocation challenge ladder with a scoring rubric |
 
+Arabic and Turkish learners also have localized specialization hubs:
+
+- [المسارات الاحترافية بالعربية](docs/ar/advanced-paths.md)
+- [Türkçe profesyonel uzmanlaşma yolları](docs/tr/advanced-paths.md)
+
 ## 🧭 Investigation playbooks
 
 Sometimes you do not need another chapter. You need to know what to do with the clue already in front of you.
@@ -97,7 +119,7 @@ Every playbook includes verification questions and stop conditions.
 
 ## 🧪 Practice that produces evidence of skill
 
-The repository now uses an artifact-based learning model:
+The repository uses an artifact-based learning model:
 
 ```text
 Do not mark a skill complete because you read about it.
