@@ -1,6 +1,6 @@
 # OSINT Browser Extensions & Web Tools
 
-![OSINT Browser Extensions & Web Tools](../assets/osint-browser-tools.jpg)
+![OSINT Browser Extensions & Web Tools](../assets/osint-browser-tools.svg)
 
 A browser extension can save time, but it can also see sensitive browsing data. Treat extensions as software, not bookmarks: install only what you need, check permissions, prefer maintained projects, and separate research browsing from personal accounts when practical.
 
