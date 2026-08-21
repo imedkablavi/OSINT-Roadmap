@@ -1,0 +1,38 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="1600" viewBox="0 0 1600 1600" role="img" aria-labelledby="title desc">
+<title id="title">OSINT Browser Extensions &amp; Web Tools</title>
+<desc id="desc">Categorized OSINT browser extensions and web tools for archiving, image analysis, threat intelligence, scraping, screenshots, downloads, and blockchain investigations.</desc>
+<defs>
+  <style>
+    .bg{fill:#fbfcfe}.title{font:700 58px Inter,Segoe UI,Arial,sans-serif;fill:#0f1e3a}.sub{font:28px Inter,Segoe UI,Arial,sans-serif;fill:#5b6d8a}.card{fill:#fff;stroke-width:3}.h{font:700 30px Inter,Segoe UI,Arial,sans-serif}.t{font:23px Inter,Segoe UI,Arial,sans-serif;fill:#192333}.small{font:20px Inter,Segoe UI,Arial,sans-serif;fill:#64748b}.n{font:700 21px Inter,Segoe UI,Arial,sans-serif;fill:#fff}.line{stroke:#d7dfeb;stroke-width:1.5;stroke-dasharray:3 7}.foot{font:700 30px Inter,Segoe UI,Arial,sans-serif;fill:#16233d}.foot2{font:22px Inter,Segoe UI,Arial,sans-serif;fill:#60708d}
+  </style>
+</defs>
+<rect class="bg" x="2" y="2" width="1596" height="1596" rx="32" stroke="#e6ebf2" stroke-width="4"/>
+<g transform="translate(56 62)">
+  <circle cx="54" cy="52" r="40" fill="none" stroke="#132b5d" stroke-width="9"/><path d="M24 52h60M54 22c-15 16-15 44 0 60M54 22c15 16 15 44 0 60M54 12v80" fill="none" stroke="#132b5d" stroke-width="5"/><path d="M26 82L2 112" stroke="#132b5d" stroke-width="12" stroke-linecap="round"/>
+  <text x="132" y="58" class="title">OSINT Browser Extensions &amp; Web Tools</text>
+  <text x="136" y="108" class="sub">Useful browser add-ons and web helpers for ethical open-source research</text>
+</g>
+
+<!-- Card 1 -->
+<g transform="translate(44 190)"><rect class="card" width="475" height="600" rx="24" stroke="#2f6fed"/><circle cx="55" cy="56" r="25" fill="#2f6fed"/><text x="48" y="64" class="n">1</text><text x="96" y="50" class="h" fill="#245bd7">Web Capture &amp;</text><text x="96" y="87" class="h" fill="#245bd7">Archiving</text>
+<g class="t"><text x="46" y="142">Hunchly</text><text x="46" y="196">Ubikiri</text><text x="46" y="250">Vortimo OSINT</text><text x="46" y="304">Wayback Machine</text><text x="46" y="358">SingleFile</text><text x="46" y="412">Distill Web Monitor</text><text x="46" y="466">Save Page WE</text><text x="46" y="520">ArchiveBox</text></g>
+<g class="line"><path d="M44 160H430"/><path d="M44 214H430"/><path d="M44 268H430"/><path d="M44 322H430"/><path d="M44 376H430"/><path d="M44 430H430"/><path d="M44 484H430"/></g></g>
+
+<!-- Card 2 -->
+<g transform="translate(562 190)"><rect class="card" width="475" height="600" rx="24" stroke="#2b9a5b"/><circle cx="55" cy="56" r="25" fill="#20814b"/><text x="48" y="64" class="n">2</text><text x="96" y="50" class="h" fill="#187443">Image &amp; Video</text><text x="96" y="87" class="h" fill="#187443">Analysis</text>
+<g class="t"><text x="46" y="142">EXIF Viewer Pro</text><text x="46" y="196">TinEye</text><text x="46" y="250">Search by Image</text><text x="46" y="304">InVID &amp; WeVerify</text><text x="46" y="358">Fake News Debunker</text><text x="46" y="412">RevEye</text><text x="46" y="466">FotoForensics</text><text x="46" y="520">Intel Techniques Reverse Image Search</text></g>
+<g class="line"><path d="M44 160H430"/><path d="M44 214H430"/><path d="M44 268H430"/><path d="M44 322H430"/><path d="M44 376H430"/><path d="M44 430H430"/><path d="M44 484H430"/></g></g>
+
+<!-- Card 3 -->
+<g transform="translate(1080 190)"><rect class="card" width="475" height="600" rx="24" stroke="#7a43cf"/><circle cx="55" cy="56" r="25" fill="#6e37c3"/><text x="48" y="64" class="n">3</text><text x="96" y="50" class="h" fill="#6230ae">Threat Intel &amp;</text><text x="96" y="87" class="h" fill="#6230ae">IOC Lookup</text>
+<g class="t"><text x="46" y="142">Pulsedive</text><text x="46" y="196">Mitaka</text><text x="46" y="250">Shodan</text><text x="46" y="304">VirusTotal</text><text x="46" y="358">urlscan.io</text><text x="46" y="412">Censys Search</text><text x="46" y="466">ThreatPinch</text><text x="46" y="520">OSIRIS</text></g>
+<g class="line"><path d="M44 160H430"/><path d="M44 214H430"/><path d="M44 268H430"/><path d="M44 322H430"/><path d="M44 376H430"/><path d="M44 430H430"/><path d="M44 484H430"/></g></g>
+
+<!-- Bottom cards -->
+<g transform="translate(44 832)"><rect class="card" width="350" height="570" rx="24" stroke="#f26b2a"/><circle cx="48" cy="52" r="23" fill="#ea5c19"/><text x="42" y="60" class="n">4</text><text x="86" y="46" class="h" fill="#dc5417">Data Extraction &amp;</text><text x="86" y="82" class="h" fill="#dc5417">Scraping</text><g class="t"><text x="38" y="136">Instant Data Scraper</text><text x="38" y="190">Data Scraper</text><text x="38" y="244">Simplescraper</text><text x="38" y="298">Link Gopher</text><text x="38" y="352">Linkclump</text><text x="38" y="406">Web Scraper</text><text x="38" y="460">ScrapeBee</text><text x="38" y="514">Thunderbit</text></g></g>
+<g transform="translate(420 832)"><rect class="card" width="350" height="570" rx="24" stroke="#1b9bb1"/><circle cx="48" cy="52" r="23" fill="#168ba0"/><text x="42" y="60" class="n">5</text><text x="86" y="46" class="h" fill="#157f92">Screenshots &amp;</text><text x="86" y="82" class="h" fill="#157f92">Media Capture</text><g class="t"><text x="38" y="136">GoFullPage</text><text x="38" y="190">FireShot</text><text x="38" y="244">Nimbus Screenshot</text><text x="38" y="298">Awesome Screenshot</text><text x="38" y="352">Screenity</text><text x="38" y="406">Screenshot YouTube</text><text x="38" y="460">Askify</text></g></g>
+<g transform="translate(796 832)"><rect class="card" width="350" height="570" rx="24" stroke="#2f6fed"/><circle cx="48" cy="52" r="23" fill="#2f6fed"/><text x="42" y="60" class="n">6</text><text x="86" y="64" class="h" fill="#245bd7">Downloaders</text><g class="t"><text x="38" y="136">DownThemAll!</text><text x="38" y="190">Video DownloadHelper</text><text x="38" y="244">Image Downloader</text><text x="38" y="298">TT Downloader</text><text x="38" y="352">Bulk Media Downloader</text><text x="38" y="406">FetchV</text></g></g>
+<g transform="translate(1172 832)"><rect class="card" width="383" height="570" rx="24" stroke="#d99a13"/><circle cx="48" cy="52" r="23" fill="#d79400"/><text x="42" y="60" class="n">7</text><text x="86" y="46" class="h" fill="#c88700">Blockchain &amp; Crypto</text><text x="86" y="82" class="h" fill="#c88700">Investigation</text><g class="t"><text x="38" y="136">MetaSleuth</text><text x="38" y="190">Breadcrumbs</text><text x="38" y="244">Blockchair</text><text x="38" y="298">Etherscan</text><text x="38" y="352">Tronscan</text><text x="38" y="406">Arkham</text></g></g>
+
+<path d="M70 1480H565M1035 1480H1530" stroke="#aebbd0" stroke-width="3"/><text x="610" y="1492" class="foot">Curated for OSINT Roadmap</text><text x="535" y="1540" class="foot2">Use lawfully, verify results, and protect privacy.</text>
+</svg>
