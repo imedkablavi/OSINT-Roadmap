@@ -31,7 +31,7 @@ GEOINT والتخصصات
 
 ## إضافات المتصفح وأدوات الويب
 
-![إضافات المتصفح وأدوات الويب لـ OSINT](../../assets/osint-browser-tools.jpg)
+![إضافات المتصفح وأدوات الويب لـ OSINT](../../assets/osint-browser-tools.svg)
 
 **[افتح دليل إضافات المتصفح وأدوات الويب بالعربية →](../../tools/browser-extensions.ar.md)**
 
