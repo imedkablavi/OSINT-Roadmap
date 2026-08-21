@@ -49,7 +49,7 @@ Core material:
 
 ## 🧰 Browser extensions & web tools
 
-![OSINT Browser Extensions & Web Tools](assets/osint-browser-tools.jpg)
+![OSINT Browser Extensions & Web Tools](assets/osint-browser-tools.svg)
 
 The repository now includes a curated browser-tool guide rather than an unreviewed extension dump.
 

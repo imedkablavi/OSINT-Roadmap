@@ -1,6 +1,6 @@
 # OSINT Tarayıcı Eklentileri ve Web Araçları
 
-![OSINT Tarayıcı Eklentileri ve Web Araçları](../assets/osint-browser-tools.jpg)
+![OSINT Tarayıcı Eklentileri ve Web Araçları](../assets/osint-browser-tools.svg)
 
 Bu sayfa rastgele eklenti kurmak için hazırlanmadı. Amaç **hangi aracı ne zaman kullanacağını, çıktının ne anlama geldiğini ve neyi kanıtlamadığını** anlamaktır.
 
