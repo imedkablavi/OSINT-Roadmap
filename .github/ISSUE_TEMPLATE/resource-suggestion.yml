@@ -1,0 +1,49 @@
+name: Suggest an OSINT resource
+description: Propose a useful tool, source, guide, lab, or regional resource
+title: "[Resource]: "
+labels: ["resource-suggestion"]
+body:
+  - type: input
+    id: name
+    attributes:
+      label: Resource name
+    validations:
+      required: true
+  - type: input
+    id: url
+    attributes:
+      label: Official or primary URL
+    validations:
+      required: true
+  - type: dropdown
+    id: category
+    attributes:
+      label: Category
+      options:
+        - Search & discovery
+        - Source verification
+        - Image & video verification
+        - GEOINT / maps
+        - SOCMINT / public social media
+        - Domains / infrastructure
+        - CTI
+        - Company / public records
+        - Documentation / reporting
+        - Practice lab / training
+        - Arabic resource
+        - Turkish resource
+        - Other
+    validations:
+      required: true
+  - type: textarea
+    id: value
+    attributes:
+      label: Why is it useful?
+      description: Explain the research question it helps answer and what its output does not prove.
+    validations:
+      required: true
+  - type: textarea
+    id: maintenance
+    attributes:
+      label: Maintenance / privacy / limitations
+      description: Note ownership, permissions, pricing, privacy concerns, stale status, or other limitations if known.
