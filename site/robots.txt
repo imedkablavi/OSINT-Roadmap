@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://imedkablavi.github.io/OSINT-Roadmap/sitemap.xml

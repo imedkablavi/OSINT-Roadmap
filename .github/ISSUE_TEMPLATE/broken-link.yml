@@ -1,0 +1,37 @@
+name: Report a broken or stale link
+description: Help keep the OSINT Roadmap current
+title: "[Link]: "
+labels: ["link-maintenance"]
+body:
+  - type: input
+    id: file
+    attributes:
+      label: Roadmap page or file
+      placeholder: tools/browser-extensions.md
+    validations:
+      required: true
+  - type: input
+    id: url
+    attributes:
+      label: Broken or stale URL
+    validations:
+      required: true
+  - type: dropdown
+    id: problem
+    attributes:
+      label: What changed?
+      options:
+        - Link is dead
+        - Redirects to an unrelated site
+        - Tool/project is abandoned
+        - Ownership changed
+        - Pricing/access changed significantly
+        - Privacy or security concern
+        - Better official URL exists
+        - Other
+    validations:
+      required: true
+  - type: textarea
+    id: replacement
+    attributes:
+      label: Suggested replacement or context

@@ -1,0 +1,18 @@
+cff-version: 1.2.0
+title: OSINT Roadmap
+message: If this project supports your research, teaching, or training, please cite the repository.
+type: software
+authors:
+  - family-names: Kablavi
+    given-names: Imed
+repository-code: https://github.com/imedkablavi/OSINT-Roadmap
+url: https://imedkablavi.github.io/OSINT-Roadmap/
+license: MIT
+keywords:
+  - OSINT
+  - open source intelligence
+  - GEOINT
+  - SOCMINT
+  - cyber threat intelligence
+  - digital investigations
+  - fact checking
