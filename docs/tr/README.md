@@ -31,7 +31,7 @@ Rapor + Portfolio
 
 ## Tarayıcı eklentileri ve web araçları
 
-![OSINT Tarayıcı Eklentileri ve Web Araçları](../../assets/osint-browser-tools.jpg)
+![OSINT Tarayıcı Eklentileri ve Web Araçları](../../assets/osint-browser-tools.svg)
 
 **[Türkçe browser extensions & web tools rehberini aç →](../../tools/browser-extensions.tr.md)**
 
