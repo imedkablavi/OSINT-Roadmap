@@ -1,0 +1,16 @@
+max_redirects = 10
+max_retries = 2
+retry_wait_time = 2
+accept = [200, 206, 429]
+exclude_mail = true
+include_verbatim = false
+exclude_loopback = true
+exclude_private = true
+user_agent = "Mozilla/5.0 (compatible; OSINT-Roadmap link checker; +https://github.com/imedkablavi/OSINT-Roadmap)"
+
+exclude = [
+  '^https://localhost',
+  '^http://localhost',
+  '^mailto:',
+  '^tel:'
+]
