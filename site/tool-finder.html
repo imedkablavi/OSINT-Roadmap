@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>OSINT Tool Finder — Find Tools by Input, Category, Cost and Skill Level</title>
+  <meta name="description" content="Interactive OSINT tool finder. Filter curated open-source intelligence tools by username, domain, IP, image, company, location, document, crypto address, category, cost and skill level.">
+  <link rel="canonical" href="https://imedkablavi.github.io/OSINT-Roadmap/tool-finder.html">
+  <link rel="stylesheet" href="style.css">
+  <style>
+    .filters{display:grid;grid-template-columns:2fr repeat(4,1fr);gap:12px;margin:22px 0}.filters input,.filters select{width:100%;padding:11px 12px;border-radius:9px;border:1px solid #34516e;background:#091827;color:#e8eef7}.toolbar{display:flex;justify-content:space-between;gap:16px;align-items:center;flex-wrap:wrap}.tool-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:14px}.tool{background:rgba(13,27,42,.92);border:1px solid #20364d;border-radius:14px;padding:18px;display:flex;flex-direction:column;gap:8px}.tool h2{font-size:1.16rem;margin:0}.chips{display:flex;gap:6px;flex-wrap:wrap}.chip{font-size:.76rem;padding:3px 7px;border:1px solid #34516e;border-radius:999px;color:#bdd0e5}.tool p{color:#b7c6d6;margin:2px 0 8px}.tool .open{margin-top:auto}.empty{padding:28px;border:1px dashed #34516e;border-radius:12px;color:#9fb0c3;text-align:center}@media(max-width:900px){.filters{grid-template-columns:1fr 1fr}}@media(max-width:560px){.filters{grid-template-columns:1fr}}
+  </style>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"SoftwareSourceCode","name":"OSINT Roadmap Tool Finder","description":"Interactive catalogue for selecting lawful public-source research tools by investigation input and task.","codeRepository":"https://github.com/imedkablavi/OSINT-Roadmap"}</script>
+</head>
+<body>
+<header class="top"><div class="wrap">
+  <div class="eyebrow">Interactive reference</div>
+  <h1>OSINT Tool Finder</h1>
+  <p class="lead">Start with what you actually have — a domain, username, image, company, location, IP, document, flight, vessel or crypto address — then narrow the toolset instead of opening random tabs.</p>
+  <div class="nav"><a class="btn" href="index.html">Home</a><a class="btn" href="osint-tools.html">Tool guide</a><a class="btn primary" href="https://github.com/imedkablavi/OSINT-Roadmap/blob/main/tools/tool-library.md">Full library + limitations</a></div>
+</div></header>
+<main class="wrap">
+<section>
+  <div class="notice"><strong>Evidence rule:</strong> a result from a tool is a lead or observation. Verify important findings against the underlying source and record time, query and context.</div>
+  <div class="filters" aria-label="Tool filters">
+    <input id="q" type="search" placeholder="Search tools or use cases…" aria-label="Search tools">
+    <select id="category" aria-label="Category"><option value="">All categories</option></select>
+    <select id="input" aria-label="Input type"><option value="">Any input</option></select>
+    <select id="cost" aria-label="Cost"><option value="">Any cost</option></select>
+    <select id="level" aria-label="Skill level"><option value="">Any level</option></select>
+  </div>
+  <div class="toolbar"><p class="muted" id="count">Loading catalogue…</p><button class="btn" id="reset" type="button">Reset filters</button></div>
+  <div id="tools" class="tool-grid" aria-live="polite"></div>
+</section>
+<section>
+  <h2>Good defaults by investigation type</h2>
+  <div class="grid">
+    <article class="card"><h3>I have a domain</h3><p>Start with ICANN Lookup, crt.sh, RIPEstat, urlscan.io and historical web archives. Add Shodan/Censys only when the research question needs already-observed service context.</p></article>
+    <article class="card"><h3>I have an image</h3><p>Use Google Lens, TinEye and Yandex as complementary indexes. Then inspect metadata, landmarks, chronology and original publication context.</p></article>
+    <article class="card"><h3>I have a company name</h3><p>Resolve the legal entity with OpenCorporates or an official registry, then use LEI, filings, sanctions and investigative datasets as additional layers.</p></article>
+    <article class="card"><h3>I have a location claim</h3><p>Cross-check maps, street-level imagery, terrain, sun direction and satellite imagery. One visual clue is rarely enough.</p></article>
+    <article class="card"><h3>I have an IP or IOC</h3><p>Prefer passive enrichment: VirusTotal, urlscan.io, Censys, Shodan, GreyNoise, RIPEstat and abuse.ch datasets. Keep scan time and data age in mind.</p></article>
+    <article class="card"><h3>I have a username</h3><p>Use username tools for discovery, then manually compare independent signals. Handle reuse alone is weak attribution.</p></article>
+  </div>
+</section>
+<section>
+  <h2>Learn the method behind the tools</h2>
+  <p>Tools change faster than good investigation practice. Use the <a href="https://github.com/imedkablavi/OSINT-Roadmap/blob/main/docs/research-methods.md">research methods</a>, <a href="https://github.com/imedkablavi/OSINT-Roadmap/blob/main/playbooks/README.md">investigation playbooks</a> and <a href="https://github.com/imedkablavi/OSINT-Roadmap/blob/main/docs/report-template.md">report template</a> with this finder.</p>
+</section>
+</main>
+<footer class="footer"><div class="wrap"><a href="index.html">OSINT Roadmap</a> · Catalogue reviewed 2026-08-22</div></footer>
+<script>
+const els={q:document.getElementById('q'),category:document.getElementById('category'),input:document.getElementById('input'),cost:document.getElementById('cost'),level:document.getElementById('level'),tools:document.getElementById('tools'),count:document.getElementById('count')};
+let catalogue=[];
+const uniq=a=>[...new Set(a)].sort((x,y)=>x.localeCompare(y));
+function fill(select,values){values.forEach(v=>{const o=document.createElement('option');o.value=v;o.textContent=v;select.appendChild(o)})}
+function render(){const query=els.q.value.trim().toLowerCase();const filtered=catalogue.filter(t=>{
+  const hay=[t.name,t.category,t.note,...t.input].join(' ').toLowerCase();
+  return (!query||hay.includes(query))&&(!els.category.value||t.category===els.category.value)&&(!els.input.value||t.input.includes(els.input.value))&&(!els.cost.value||t.cost===els.cost.value)&&(!els.level.value||t.level===els.level.value);
+});
+  els.count.textContent=`${filtered.length} of ${catalogue.length} curated tools`;
+  if(!filtered.length){els.tools.innerHTML='<div class="empty">No tools match these filters. Broaden the input or category instead of forcing a tool to fit the question.</div>';return}
+  els.tools.innerHTML=filtered.map(t=>`<article class="tool"><div class="kicker">${t.category}</div><h2>${t.name}</h2><div class="chips"><span class="chip">${t.level}</span><span class="chip">${t.cost}</span>${t.input.map(i=>`<span class="chip">${i}</span>`).join('')}</div><p>${t.note}</p><a class="btn open" href="${t.url}" target="_blank" rel="noopener noreferrer">Open official resource ↗</a></article>`).join('');
+}
+fetch('tools.json').then(r=>{if(!r.ok)throw new Error('catalogue');return r.json()}).then(data=>{catalogue=data;fill(els.category,uniq(data.map(t=>t.category)));fill(els.input,uniq(data.flatMap(t=>t.input)));fill(els.cost,uniq(data.map(t=>t.cost)));fill(els.level,uniq(data.map(t=>t.level)));render()}).catch(()=>{els.count.textContent='Catalogue failed to load';els.tools.innerHTML='<div class="empty">The tool catalogue could not be loaded. Use the full GitHub tool library instead.</div>'});
+[els.q,els.category,els.input,els.cost,els.level].forEach(el=>el.addEventListener(el.tagName==='INPUT'?'input':'change',render));
+document.getElementById('reset').addEventListener('click',()=>{els.q.value='';els.category.value='';els.input.value='';els.cost.value='';els.level.value='';render()});
+</script>
+</body></html>
