@@ -1,0 +1,31 @@
+name: HTML Validation
+
+on:
+  pull_request:
+    paths:
+      - 'site/**/*.html'
+      - '.github/workflows/html-validation.yml'
+  push:
+    branches: [main]
+    paths:
+      - 'site/**/*.html'
+      - '.github/workflows/html-validation.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  validate-html:
+    name: Validate HTML5
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v7
+
+      - name: Validate site HTML
+        uses: Cyb3r-Jak3/html5validator-action@v7.2.0
+        with:
+          root: site/
+          css: false
+          log_level: INFO
