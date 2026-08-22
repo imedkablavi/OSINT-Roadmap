@@ -1,10 +1,16 @@
 name: Deploy OSINT Roadmap Website
 
 on:
+  pull_request:
+    paths:
+      - 'site/**'
+      - 'scripts/pages_smoke.py'
+      - '.github/workflows/pages.yml'
   push:
     branches: [main]
     paths:
       - 'site/**'
+      - 'scripts/pages_smoke.py'
       - '.github/workflows/pages.yml'
   workflow_dispatch:
 
@@ -14,24 +20,81 @@ permissions:
   id-token: write
 
 concurrency:
-  group: pages
+  group: pages-${{ github.ref }}
   cancel-in-progress: true
 
 jobs:
+  smoke:
+    name: Pages artifact smoke test
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v7
+
+      - name: Setup Python
+        uses: actions/setup-python@v7
+        with:
+          python-version: '3.13'
+
+      - name: Start local static server
+        run: |
+          python -m http.server 4173 --directory site > /tmp/osint-pages-server.log 2>&1 &
+          echo $! > /tmp/osint-pages-server.pid
+          for attempt in {1..20}; do
+            if curl --fail --silent --show-error http://127.0.0.1:4173/ > /dev/null; then
+              exit 0
+            fi
+            sleep 0.5
+          done
+          cat /tmp/osint-pages-server.log
+          exit 1
+
+      - name: Smoke test deployment bundle locally
+        run: python scripts/pages_smoke.py --base-url http://127.0.0.1:4173/
+
+      - name: Package exact Pages artifact
+        uses: actions/upload-pages-artifact@v5
+        with:
+          path: site
+
+  pages-disabled:
+    name: Pages enablement status
+    needs: smoke
+    if: ${{ github.event_name != 'pull_request' && github.event.repository.has_pages != true }}
+    runs-on: ubuntu-latest
+    steps:
+      - name: Explain skipped deployment
+        run: echo "::notice::GitHub Pages is not enabled yet. The exact site bundle passed its smoke test; live deployment is intentionally skipped until Pages is enabled in step 11."
+
   deploy:
+    name: Deploy and verify GitHub Pages
+    needs: smoke
+    if: ${{ github.event_name != 'pull_request' && github.event.repository.has_pages == true }}
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
     runs-on: ubuntu-latest
+    timeout-minutes: 15
     steps:
-      - name: Checkout
-        uses: actions/checkout@v7
       - name: Configure Pages
         uses: actions/configure-pages@v6
-      - name: Upload site
-        uses: actions/upload-pages-artifact@v5
-        with:
-          path: site
+
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v5
+
+      - name: Checkout smoke test
+        uses: actions/checkout@v7
+
+      - name: Setup Python
+        uses: actions/setup-python@v7
+        with:
+          python-version: '3.13'
+
+      - name: Smoke test live deployment
+        run: >-
+          python scripts/pages_smoke.py
+          --base-url "${{ steps.deployment.outputs.page_url }}"
+          --retries 8
+          --retry-delay 5
