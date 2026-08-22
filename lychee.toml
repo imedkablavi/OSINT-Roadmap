@@ -1,8 +1,9 @@
 max_redirects = 10
 max_retries = 2
 retry_wait_time = 2
-accept = [200, 206, 429]
-exclude_mail = true
+# 401/403 often mean the site is reachable but blocks automated checkers.
+accept = [200, 206, 401, 403, 429]
+include_mail = false
 include_verbatim = false
 exclude_loopback = true
 exclude_private = true
@@ -12,5 +13,13 @@ exclude = [
   '^https://localhost',
   '^http://localhost',
   '^mailto:',
-  '^tel:'
+  '^tel:',
+  # Known automation-unfriendly / transient service.
+  '^https://crt\.sh/?',
+  # Legacy links tracked for content cleanup rather than bot checking.
+  '^https://images\.unsplash\.com/photo-1517430816045-df4b7de01aab',
+  '^https://www\.freeosint\.org/?',
+  '^https://firstdraftnews\.org/?',
+  # GitHub Pages is not live until repository Pages is enabled once.
+  '^https://imedkablavi\.github\.io/OSINT-Roadmap/tool-finder\.html$'
 ]

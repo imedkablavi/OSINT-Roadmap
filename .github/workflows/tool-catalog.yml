@@ -1,0 +1,31 @@
+name: Tool Catalogue
+
+on:
+  pull_request:
+    paths:
+      - 'site/tools.json'
+      - 'scripts/validate_tool_catalog.py'
+      - '.github/workflows/tool-catalog.yml'
+  push:
+    branches: [main]
+    paths:
+      - 'site/tools.json'
+      - 'scripts/validate_tool_catalog.py'
+      - '.github/workflows/tool-catalog.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Validate tool catalogue
+        run: python scripts/validate_tool_catalog.py
