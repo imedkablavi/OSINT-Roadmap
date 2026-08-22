@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="360" viewBox="0 0 1200 360" role="img" aria-labelledby="title desc">
+  <title id="title">OSINT investigation workflow</title>
+  <desc id="desc">A six-stage workflow: Question, Scope, Collect, Verify, Analyze, Report.</desc>
+  <rect width="1200" height="360" rx="28" fill="#0b1220"/>
+  <text x="70" y="72" fill="#f8fafc" font-family="system-ui,-apple-system,Segoe UI,sans-serif" font-size="34" font-weight="700">OSINT Investigation Workflow</text>
+  <text x="70" y="108" fill="#94a3b8" font-family="system-ui,-apple-system,Segoe UI,sans-serif" font-size="18">Question → scope → public-source collection → verification → analysis → defensible reporting</text>
+  <g font-family="system-ui,-apple-system,Segoe UI,sans-serif" text-anchor="middle">
+    <g transform="translate(70 165)"><rect width="150" height="100" rx="18" fill="#111c2f" stroke="#3b82f6" stroke-width="2"/><text x="75" y="45" fill="#60a5fa" font-size="16" font-weight="700">01</text><text x="75" y="72" fill="#f8fafc" font-size="21" font-weight="650">Question</text></g>
+    <g transform="translate(260 165)"><rect width="150" height="100" rx="18" fill="#111c2f" stroke="#38bdf8" stroke-width="2"/><text x="75" y="45" fill="#7dd3fc" font-size="16" font-weight="700">02</text><text x="75" y="72" fill="#f8fafc" font-size="21" font-weight="650">Scope</text></g>
+    <g transform="translate(450 165)"><rect width="150" height="100" rx="18" fill="#111c2f" stroke="#22c55e" stroke-width="2"/><text x="75" y="45" fill="#4ade80" font-size="16" font-weight="700">03</text><text x="75" y="72" fill="#f8fafc" font-size="21" font-weight="650">Collect</text></g>
+    <g transform="translate(640 165)"><rect width="150" height="100" rx="18" fill="#111c2f" stroke="#eab308" stroke-width="2"/><text x="75" y="45" fill="#facc15" font-size="16" font-weight="700">04</text><text x="75" y="72" fill="#f8fafc" font-size="21" font-weight="650">Verify</text></g>
+    <g transform="translate(830 165)"><rect width="150" height="100" rx="18" fill="#111c2f" stroke="#f97316" stroke-width="2"/><text x="75" y="45" fill="#fb923c" font-size="16" font-weight="700">05</text><text x="75" y="72" fill="#f8fafc" font-size="21" font-weight="650">Analyze</text></g>
+    <g transform="translate(1020 165)"><rect width="150" height="100" rx="18" fill="#111c2f" stroke="#a855f7" stroke-width="2"/><text x="75" y="45" fill="#c084fc" font-size="16" font-weight="700">06</text><text x="75" y="72" fill="#f8fafc" font-size="21" font-weight="650">Report</text></g>
+  </g>
+  <g stroke="#475569" stroke-width="3" fill="none" stroke-linecap="round"><path d="M220 215h38"/><path d="M410 215h38"/><path d="M600 215h38"/><path d="M790 215h38"/><path d="M980 215h38"/></g>
+  <g fill="#64748b"><path d="M252 208l12 7-12 7z"/><path d="M442 208l12 7-12 7z"/><path d="M632 208l12 7-12 7z"/><path d="M822 208l12 7-12 7z"/><path d="M1012 208l12 7-12 7z"/></g>
+  <text x="70" y="316" fill="#94a3b8" font-family="system-ui,-apple-system,Segoe UI,sans-serif" font-size="16">Use lawful public sources • preserve provenance • test alternatives • state confidence and limitations</text>
+</svg>
