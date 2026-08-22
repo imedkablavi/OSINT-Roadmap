@@ -11,7 +11,7 @@ Araştırma yöntemleri
         ↓
 Kaynak doğrulama
         ↓
-Araçlar ve browser eklentileri
+Araç kütüphanesi + Tool Finder
         ↓
 Pratik laboratuvarları
         ↓
@@ -28,6 +28,30 @@ Rapor + Portfolio
 - [Pratik laboratuvarları](practice-labs.md) — değerlendirilebilir çıktılar üreten çalışmalar
 - [Geolocation saha rehberi](geolocation-field-guide.md) — konum doğrulama iş akışı
 - [Rapor şablonu](report-template.md) — yeniden incelenebilir rapor yapısı
+
+## Türkçe OSINT araç kütüphanesi
+
+**[Türkçe araç kütüphanesini aç →](../../tools/tool-library.tr.md)**
+
+Yeni kütüphane 70'ten fazla araç ve kaynağı şu başlıklarda düzenler:
+
+- arama ve arşivleme
+- username ve kamuya açık kimlik ipuçları
+- görsel/video doğrulama
+- GEOINT ve uydu görüntüleri
+- domain, IP ve internet altyapısı
+- CTI ve IOC enrichment
+- şirket, sahiplik ve kamu kayıtları
+- havacılık ve deniz
+- belge ve veri işleme
+- investigation workspace ve relationship analysis
+- blockchain araştırması
+
+Her araç için Input, maliyet, seviye, en iyi kullanım ve ana sınırlama belirtilir.
+
+GitHub Pages etkinleştirildiğinde interaktif **Tool Finder** da kullanılabilir:
+
+`https://imedkablavi.github.io/OSINT-Roadmap/tool-finder.html`
 
 ## Tarayıcı eklentileri ve web araçları
 
@@ -50,7 +74,12 @@ Türkçe açıklamalar içerir:
 - Investigation Playbooks
 - OSINT portfolio oluşturma
 
-Derin teknik dosyalar gerektiğinde ortak tutuluyor; ancak öğrenme sırası, beklenen çıktılar, attribution kuralları ve uzmanlaşma kriterleri artık Türkçe olarak açıklanıyor.
+## Araç güncellemeleri
+
+- [OSINT Tool Radar — Ağustos 2026](../../updates/2026-08-tool-radar.md)
+- [Tüm proje güncellemeleri](../../updates/README.md)
+
+Tool Radar'ın amacı, araçlar değiştikçe roadmap'i güncel tutmak ve eski bağlantı listesine dönüşmesini engellemektir.
 
 ## İleri seviye referanslar
 
