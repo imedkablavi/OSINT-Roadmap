@@ -671,8 +671,8 @@ intitle:"report" "company name"
 * GIJN Investigative Tools
   https://gijn.org/resource/
 
-* First Draft Verification Toolbox — أرشيف تعليمي
-  https://firstdraftnews.org/verification-toolbox/
+* Verification Handbook — متوفر بالعربية والتركية
+  https://verificationhandbook.com/
 
 ---
 
