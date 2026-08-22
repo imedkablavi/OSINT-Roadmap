@@ -1,0 +1,47 @@
+name: Tool Finder Browser Test
+
+on:
+  pull_request:
+    paths:
+      - 'site/tool-finder.html'
+      - 'site/tools.json'
+      - 'site/style.css'
+      - 'tests/tool-finder.spec.js'
+      - 'playwright.config.js'
+      - '.github/workflows/tool-finder-browser.yml'
+  push:
+    branches: [main]
+    paths:
+      - 'site/tool-finder.html'
+      - 'site/tools.json'
+      - 'site/style.css'
+      - 'tests/tool-finder.spec.js'
+      - 'playwright.config.js'
+      - '.github/workflows/tool-finder-browser.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  browser-test:
+    name: Chromium Tool Finder E2E
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v7
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v7
+        with:
+          node-version: '24'
+
+      - name: Install Playwright test runner
+        run: npm install --no-save --no-audit --no-fund @playwright/test@1.62.1
+
+      - name: Install Chromium
+        run: npx playwright install --with-deps chromium
+
+      - name: Run Tool Finder browser tests
+        run: npx playwright test tests/tool-finder.spec.js --reporter=line
