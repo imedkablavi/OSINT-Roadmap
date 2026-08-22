@@ -348,7 +348,7 @@ intitle:"report" "company name"
 
 ## 🔁 سير عمل OSINT
 
-![Workflow](https://images.unsplash.com/photo-1517430816045-df4b7de01aab)
+![OSINT Workflow](assets/osint-workflow.svg)
 
 ```text
 1. تحديد الهدف
@@ -663,7 +663,7 @@ intitle:"report" "company name"
   https://osintcurio.us/
 
 * FreeOSINT
-  https://www.freeosint.org/
+  https://freeosint.github.io/
 
 * Google Search Help
   https://support.google.com/websearch/
@@ -671,8 +671,8 @@ intitle:"report" "company name"
 * GIJN Investigative Tools
   https://gijn.org/resource/
 
-* First Draft / Verification Resources
-  https://firstdraftnews.org/
+* Verification Handbook — متوفر بالعربية والتركية
+  https://verificationhandbook.com/
 
 ---
 
