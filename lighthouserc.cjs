@@ -1,7 +1,7 @@
 module.exports = {
   ci: {
     collect: {
-      startServerCommand: 'python3 -m http.server 4173 --directory site',
+      startServerCommand: 'python3 -u -m http.server 4173 --directory site',
       startServerReadyPattern: 'Serving HTTP',
       startServerReadyTimeout: 15000,
       numberOfRuns: 3,
@@ -25,8 +25,8 @@ module.exports = {
       assertions: {
         'categories:performance': ['error', { minScore: 0.90, aggregationMethod: 'median-run' }],
         'categories:accessibility': ['error', { minScore: 1.00, aggregationMethod: 'median-run' }],
-        'categories:best-practices': ['error', { minScore: 0.95, aggregationMethod: 'median-run' }],
-        'categories:seo': ['error', { minScore: 0.95, aggregationMethod: 'median-run' }],
+        'categories:best-practices': ['error', { minScore: 1.00, aggregationMethod: 'median-run' }],
+        'categories:seo': ['error', { minScore: 1.00, aggregationMethod: 'median-run' }],
         'first-contentful-paint': ['error', { maxNumericValue: 2500, aggregationMethod: 'median-run' }],
         'largest-contentful-paint': ['error', { maxNumericValue: 3000, aggregationMethod: 'median-run' }],
         'cumulative-layout-shift': ['error', { maxNumericValue: 0.10, aggregationMethod: 'median-run' }],
