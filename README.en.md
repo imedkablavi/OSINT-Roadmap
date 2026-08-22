@@ -400,7 +400,7 @@ This cannot be proven with the available evidence.
 
 ## 🔁 OSINT Workflow
 
-![Workflow](https://images.unsplash.com/photo-1517430816045-df4b7de01aab)
+![OSINT Workflow](assets/osint-workflow.svg)
 
 ```text
 1. Define the intelligence question
@@ -708,7 +708,7 @@ Use confidence levels to avoid overstating conclusions.
 * [Verification Handbook](https://verificationhandbook.com/)
 * [GIJN Resource Center](https://gijn.org/resource/)
 * [OSINTCurious](https://osintcurio.us/)
-* [FreeOSINT](https://www.freeosint.org/)
+* [FreeOSINT](https://freeosint.github.io/)
 * [Google Search Help](https://support.google.com/websearch/)
 * [Google Advanced Search](https://www.google.com/advanced_search)
 
