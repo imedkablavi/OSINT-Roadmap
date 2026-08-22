@@ -1,0 +1,50 @@
+name: Lighthouse
+
+on:
+  pull_request:
+    paths:
+      - 'site/**'
+      - 'lighthouserc.cjs'
+      - '.github/workflows/lighthouse.yml'
+  push:
+    branches: [main]
+    paths:
+      - 'site/**'
+      - 'lighthouserc.cjs'
+      - '.github/workflows/lighthouse.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  lighthouse:
+    name: Lighthouse quality budgets
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v7
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v7
+        with:
+          node-version: 24
+
+      - name: Install Lighthouse CI
+        run: npm install --no-save --no-audit --no-fund @lhci/cli@0.15.1
+
+      - name: Show Chrome version
+        run: google-chrome --version
+
+      - name: Run Lighthouse budgets
+        run: npx lhci autorun --config=lighthouserc.cjs
+
+      - name: Upload Lighthouse reports
+        if: always()
+        uses: actions/upload-artifact@v7
+        with:
+          name: lighthouse-reports
+          path: lighthouse-reports
+          retention-days: 7
+          if-no-files-found: warn
