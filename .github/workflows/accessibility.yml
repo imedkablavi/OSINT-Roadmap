@@ -1,0 +1,43 @@
+name: Accessibility
+
+on:
+  pull_request:
+    paths:
+      - 'site/**'
+      - 'tests/accessibility.spec.js'
+      - 'playwright.config.js'
+      - '.github/workflows/accessibility.yml'
+  push:
+    branches: [main]
+    paths:
+      - 'site/**'
+      - 'tests/accessibility.spec.js'
+      - 'playwright.config.js'
+      - '.github/workflows/accessibility.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  accessibility:
+    name: WCAG accessibility scan
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v7
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v7
+        with:
+          node-version: 24
+
+      - name: Install accessibility test dependencies
+        run: npm install --no-save --no-audit --no-fund @playwright/test@1.62.1 @axe-core/playwright@4.13.0
+
+      - name: Install Chromium
+        run: npx playwright install --with-deps chromium
+
+      - name: Run accessibility tests
+        run: npx playwright test tests/accessibility.spec.js --reporter=line
