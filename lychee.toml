@@ -16,6 +16,7 @@ exclude = [
   '^tel:',
   # Known automation-unfriendly / transient service.
   '^https://crt\.sh/?',
-  # GitHub Pages is not live until repository Pages is enabled once.
-  '^https://imedkablavi\.github\.io/OSINT-Roadmap/tool-finder\.html$'
+  # Temporary: Pages URLs are canonical/hreflang targets in site HTML but the site is
+  # not live until GitHub Pages is enabled in step 11. Relative site links are still checked locally.
+  '^https://imedkablavi\.github\.io/OSINT-Roadmap/'
 ]
