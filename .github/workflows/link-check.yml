@@ -4,12 +4,20 @@ on:
   pull_request:
     paths:
       - '**/*.md'
+      - 'site/**/*.html'
+      - 'site/**/*.css'
+      - 'site/**/*.xml'
+      - 'site/**/*.txt'
       - '.github/workflows/link-check.yml'
       - 'lychee.toml'
   push:
     branches: [main]
     paths:
       - '**/*.md'
+      - 'site/**/*.html'
+      - 'site/**/*.css'
+      - 'site/**/*.xml'
+      - 'site/**/*.txt'
       - '.github/workflows/link-check.yml'
       - 'lychee.toml'
   schedule:
@@ -21,7 +29,7 @@ permissions:
 
 jobs:
   links:
-    name: Check documentation links
+    name: Check documentation and site links
     runs-on: ubuntu-latest
     steps:
       - name: Checkout repository
@@ -34,6 +42,10 @@ jobs:
             --config lychee.toml
             --no-progress
             './**/*.md'
+            './site/**/*.html'
+            './site/**/*.css'
+            './site/**/*.xml'
+            './site/**/*.txt'
           fail: true
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
