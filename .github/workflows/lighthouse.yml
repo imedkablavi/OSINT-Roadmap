@@ -4,12 +4,16 @@ on:
   pull_request:
     paths:
       - 'site/**'
+      - '**/*.md'
+      - 'scripts/build_search_index.py'
       - 'lighthouserc.cjs'
       - '.github/workflows/lighthouse.yml'
   push:
     branches: [main]
     paths:
       - 'site/**'
+      - '**/*.md'
+      - 'scripts/build_search_index.py'
       - 'lighthouserc.cjs'
       - '.github/workflows/lighthouse.yml'
   workflow_dispatch:
@@ -25,6 +29,14 @@ jobs:
     steps:
       - name: Checkout repository
         uses: actions/checkout@v7
+
+      - name: Setup Python
+        uses: actions/setup-python@v7
+        with:
+          python-version: '3.13'
+
+      - name: Build full-content search index
+        run: python scripts/build_search_index.py
 
       - name: Setup Node.js
         uses: actions/setup-node@v7
