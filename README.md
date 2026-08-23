@@ -7,10 +7,23 @@
 ![Languages](https://img.shields.io/badge/languages-EN%20%7C%20AR%20%7C%20TR-orange)
 ![Focus](https://img.shields.io/badge/focus-ethical%20OSINT-lightgrey)
 [![Link Health](https://github.com/imedkablavi/OSINT-Roadmap/actions/workflows/link-check.yml/badge.svg)](https://github.com/imedkablavi/OSINT-Roadmap/actions/workflows/link-check.yml)
+[![Accessibility](https://github.com/imedkablavi/OSINT-Roadmap/actions/workflows/accessibility.yml/badge.svg)](https://github.com/imedkablavi/OSINT-Roadmap/actions/workflows/accessibility.yml)
+[![Lighthouse](https://github.com/imedkablavi/OSINT-Roadmap/actions/workflows/lighthouse.yml/badge.svg)](https://github.com/imedkablavi/OSINT-Roadmap/actions/workflows/lighthouse.yml)
+[![Tool Freshness](https://github.com/imedkablavi/OSINT-Roadmap/actions/workflows/tool-freshness.yml/badge.svg)](https://github.com/imedkablavi/OSINT-Roadmap/actions/workflows/tool-freshness.yml)
 
 A roadmap should tell you more than which tools exist. It should tell you **what question to ask, what evidence is strong enough, what can go wrong, and what to do next**.
 
 This repository is built around that idea.
+
+## ⚡ Try the interactive project
+
+**[Launch the OSINT Tool Finder →](https://imedkablavi.github.io/OSINT-Roadmap/tool-finder.html)**  
+Filter 80+ curated tools by the clue you already have: domain, username, image, IP, company, location, document, aircraft, vessel, crypto address, cost and skill level.
+
+**[Search the entire OSINT Roadmap →](https://imedkablavi.github.io/OSINT-Roadmap/search.html)**  
+Search guides, playbooks, labs, glossaries, case studies and multilingual documentation from one static privacy-friendly index.
+
+> The interactive links become live as soon as GitHub Pages is enabled for this repository.
 
 ## 🌐 Choose your language
 
@@ -52,7 +65,7 @@ Core material:
 
 ## 🔎 OSINT Tool Library & Tool Finder
 
-The project now maintains a **curated library of 70+ tools and learning resources** instead of an unreviewed link dump.
+The project now maintains a **curated library of 80+ tools and learning resources** instead of an unreviewed link dump.
 
 The library covers:
 
@@ -68,18 +81,16 @@ The library covers:
 - investigation workspaces and relationship analysis;
 - blockchain research.
 
-Every category records the **input, cost, skill level, best use and main limitation** of a tool.
+Every category records the **input, cost, skill level, best use and main limitation** of a tool. The interactive catalogue also displays a **last-reviewed date for every tool**, with per-tool overrides as individual resources are re-checked.
 
 - [English Tool Library](tools/tool-library.md)
 - [مكتبة الأدوات بالعربية](tools/tool-library.ar.md)
 - [Türkçe Araç Kütüphanesi](tools/tool-library.tr.md)
 - [Tools Hub](tools/README.md)
+- [Interactive Tool Finder](https://imedkablavi.github.io/OSINT-Roadmap/tool-finder.html)
+- [Full-content search](https://imedkablavi.github.io/OSINT-Roadmap/search.html)
 
-When GitHub Pages is enabled, the interactive finder is available at:
-
-`https://imedkablavi.github.io/OSINT-Roadmap/tool-finder.html`
-
-It lets you filter tools by inputs such as `Domain`, `Username`, `Image`, `IP`, `Organization`, `Location`, `Document`, `Aircraft`, `Vessel` or `Crypto Address`, as well as cost and skill level.
+The Tool Finder lets you filter tools by inputs such as `Domain`, `Username`, `Image`, `IP`, `Organization`, `Location`, `Document`, `Aircraft`, `Vessel` or `Crypto Address`, as well as cost and skill level.
 
 ## 🧰 Browser extensions & web tools
 
@@ -101,7 +112,7 @@ Tools change ownership, pricing, permissions and interfaces. A useful OSINT proj
 - [Updates archive](updates/README.md)
 - RSS feed after Pages is enabled: `https://imedkablavi.github.io/OSINT-Roadmap/feed.xml`
 
-Tool Radar notes document what changed, why it matters and what researchers should do differently.
+Tool Radar notes document what changed, why it matters and what researchers should do differently. A separate weekly **Tool Freshness** workflow checks review age even when a URL still works, so stale catalogue entries are detected independently of broken-link checks.
 
 ## 🗺️ Visual roadmap
 
@@ -259,14 +270,18 @@ or bypassing a security restriction, stop.
 
 ## 🔧 Repository quality
 
-Documentation links are checked automatically with GitHub Actions:
+The project is tested automatically with GitHub Actions:
 
-- on pull requests that change Markdown;
-- after relevant changes land on `main`;
-- once a week for link rot;
-- manually through `workflow_dispatch`.
+- link health across Markdown and the static site;
+- HTML standards validation;
+- Chromium E2E tests for Tool Finder and full-content search;
+- WCAG A/AA accessibility scans;
+- Lighthouse performance, accessibility, best-practices and SEO budgets;
+- Pages artifact and deployment smoke tests;
+- structured tool-catalogue validation;
+- weekly stale-tool review-age detection independent of broken links.
 
-See [.github/workflows/link-check.yml](.github/workflows/link-check.yml).
+Most checks run on relevant pull requests and after changes land on `main`; link/freshness maintenance also runs on schedules.
 
 ## 🤝 Contributing
 
@@ -278,7 +293,7 @@ Corrections and contributions are welcome, especially:
 - improved translations;
 - new investigation playbooks;
 - visual-verification methods;
-- stale-link fixes;
+- stale-link and stale-tool fixes;
 - clearer explanations of what a tool can and cannot prove.
 
 See [CONTRIBUTING.md](CONTRIBUTING.md).
