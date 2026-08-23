@@ -4,8 +4,14 @@ const AxeBuilder = require('@axe-core/playwright').default;
 const pages = [
   ['Home', '/'],
   ['Learn OSINT', '/learn-osint.html'],
+  ['OSINT for Beginners', '/osint-for-beginners.html'],
   ['OSINT Tools', '/osint-tools.html'],
   ['Tool Finder', '/tool-finder.html'],
+  ['Search', '/search.html'],
+  ['Username OSINT', '/username-osint.html'],
+  ['Reverse Image OSINT', '/reverse-image-osint.html'],
+  ['Domain OSINT', '/domain-osint.html'],
+  ['Company OSINT', '/company-osint.html'],
   ['GEOINT Guide', '/geoint-guide.html'],
   ['CTI OSINT', '/cti-osint.html'],
   ['Digital Footprint', '/digital-footprint.html'],
@@ -46,5 +52,17 @@ test('Tool Finder core controls are keyboard reachable without a focus trap', as
     if (requiredIds.has(id)) reached.add(id);
   }
 
+  expect([...reached].sort()).toEqual([...requiredIds].sort());
+});
+
+test('Full search controls are keyboard reachable', async ({ page }) => {
+  await page.goto('/search.html', { waitUntil: 'networkidle' });
+  const requiredIds = new Set(['q', 'lang', 'kind']);
+  const reached = new Set();
+  for (let i = 0; i < 10; i += 1) {
+    await page.keyboard.press('Tab');
+    const id = await page.evaluate(() => document.activeElement?.id || '');
+    if (requiredIds.has(id)) reached.add(id);
+  }
   expect([...reached].sort()).toEqual([...requiredIds].sort());
 });
