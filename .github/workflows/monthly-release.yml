@@ -1,0 +1,90 @@
+name: Monthly Release
+
+on:
+  schedule:
+    - cron: '27 6 1 * *'
+  workflow_dispatch:
+    inputs:
+      version:
+        description: 'Optional release version override, for example 2026.09'
+        required: false
+        type: string
+
+permissions:
+  contents: write
+
+jobs:
+  release:
+    name: Publish monthly roadmap snapshot
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v7
+        with:
+          fetch-depth: 0
+
+      - name: Resolve monthly version
+        id: version
+        env:
+          INPUT_VERSION: ${{ inputs.version }}
+        run: |
+          if [ -n "$INPUT_VERSION" ]; then
+            version="$INPUT_VERSION"
+          else
+            version="$(date -u +'%Y.%m')"
+          fi
+          if ! [[ "$version" =~ ^[0-9]{4}\.(0[1-9]|1[0-2])$ ]]; then
+            echo "Invalid version: $version (expected YYYY.MM)" >&2
+            exit 1
+          fi
+          echo "version=$version" >> "$GITHUB_OUTPUT"
+
+      - name: Check whether release already exists
+        id: existing
+        env:
+          GH_TOKEN: ${{ github.token }}
+          VERSION: ${{ steps.version.outputs.version }}
+        run: |
+          if gh release view "$VERSION" >/dev/null 2>&1; then
+            echo "exists=true" >> "$GITHUB_OUTPUT"
+            echo "Release $VERSION already exists; nothing to do."
+          else
+            echo "exists=false" >> "$GITHUB_OUTPUT"
+          fi
+
+      - name: Build release notes preface
+        if: ${{ steps.existing.outputs.exists != 'true' }}
+        id: notes
+        env:
+          VERSION: ${{ steps.version.outputs.version }}
+        run: |
+          ym="${VERSION/./-}"
+          radar="updates/${ym}-tool-radar.md"
+          {
+            echo 'body<<EOF'
+            echo "Monthly snapshot of OSINT Roadmap **${VERSION}**."
+            echo
+            echo 'This release freezes a discoverable point-in-time version of the learning paths, curated tool catalogue, playbooks, labs and project quality checks.'
+            if [ -f "$radar" ]; then
+              echo
+              echo "Tool Radar for this month: ${radar}"
+            fi
+            echo
+            echo 'Important: tool availability, pricing and behavior can change after this snapshot. Check current Tool Finder review metadata and the latest Tool Radar before relying on an entry.'
+            echo 'EOF'
+          } >> "$GITHUB_OUTPUT"
+
+      - name: Publish GitHub Release
+        if: ${{ steps.existing.outputs.exists != 'true' }}
+        env:
+          GH_TOKEN: ${{ github.token }}
+          VERSION: ${{ steps.version.outputs.version }}
+          PREFACE: ${{ steps.notes.outputs.body }}
+        run: |
+          printf '%s\n\n' "$PREFACE" > /tmp/release-notes.md
+          gh release create "$VERSION" \
+            --target main \
+            --title "OSINT Roadmap $VERSION" \
+            --notes-file /tmp/release-notes.md \
+            --generate-notes
