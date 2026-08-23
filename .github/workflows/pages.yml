@@ -6,6 +6,7 @@ on:
       - 'site/**'
       - '**/*.md'
       - 'scripts/build_search_index.py'
+      - 'scripts/build_contributors.py'
       - 'scripts/pages_smoke.py'
       - '.github/workflows/pages.yml'
   push:
@@ -14,6 +15,7 @@ on:
       - 'site/**'
       - '**/*.md'
       - 'scripts/build_search_index.py'
+      - 'scripts/build_contributors.py'
       - 'scripts/pages_smoke.py'
       - '.github/workflows/pages.yml'
   workflow_dispatch:
@@ -43,6 +45,11 @@ jobs:
 
       - name: Build full-content search index
         run: python scripts/build_search_index.py
+
+      - name: Build contributor credits snapshot
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
+        run: python scripts/build_contributors.py
 
       - name: Start local static server
         run: |
