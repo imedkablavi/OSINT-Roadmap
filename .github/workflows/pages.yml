@@ -4,12 +4,16 @@ on:
   pull_request:
     paths:
       - 'site/**'
+      - '**/*.md'
+      - 'scripts/build_search_index.py'
       - 'scripts/pages_smoke.py'
       - '.github/workflows/pages.yml'
   push:
     branches: [main]
     paths:
       - 'site/**'
+      - '**/*.md'
+      - 'scripts/build_search_index.py'
       - 'scripts/pages_smoke.py'
       - '.github/workflows/pages.yml'
   workflow_dispatch:
@@ -36,6 +40,9 @@ jobs:
         uses: actions/setup-python@v7
         with:
           python-version: '3.13'
+
+      - name: Build full-content search index
+        run: python scripts/build_search_index.py
 
       - name: Start local static server
         run: |
@@ -65,7 +72,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Explain skipped deployment
-        run: echo "::notice::GitHub Pages is not enabled yet. The exact site bundle passed its smoke test; live deployment is intentionally skipped until Pages is enabled in step 11."
+        run: echo "::notice::GitHub Pages is not enabled yet. The exact site bundle passed its smoke test; live deployment is intentionally skipped until Pages is enabled."
 
   deploy:
     name: Deploy and verify GitHub Pages
