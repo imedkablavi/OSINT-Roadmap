@@ -12,6 +12,7 @@ on:
       - 'scripts/build_search_index.py'
       - 'tests/tool-finder.spec.js'
       - 'tests/search.spec.js'
+      - 'tests/tool-finder-preview.spec.js'
       - 'playwright.config.js'
       - '.github/workflows/tool-finder-browser.yml'
   push:
@@ -26,6 +27,7 @@ on:
       - 'scripts/build_search_index.py'
       - 'tests/tool-finder.spec.js'
       - 'tests/search.spec.js'
+      - 'tests/tool-finder-preview.spec.js'
       - 'playwright.config.js'
       - '.github/workflows/tool-finder-browser.yml'
   workflow_dispatch:
@@ -63,3 +65,14 @@ jobs:
 
       - name: Run interactive browser tests
         run: npx playwright test tests/tool-finder.spec.js tests/search.spec.js --reporter=line
+
+      - name: Capture real Tool Finder preview
+        run: npx playwright test tests/tool-finder-preview.spec.js --reporter=line
+
+      - name: Upload Tool Finder preview
+        uses: actions/upload-artifact@v7
+        with:
+          name: tool-finder-preview
+          path: preview-artifact/tool-finder-preview.png
+          retention-days: 7
+          if-no-files-found: error
