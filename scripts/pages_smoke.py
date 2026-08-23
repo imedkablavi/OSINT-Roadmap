@@ -8,8 +8,8 @@ real GitHub Pages URL after deployment is enabled.
 from __future__ import annotations
 
 import argparse
+from html.parser import HTMLParser
 import json
-import re
 import sys
 import time
 import urllib.error
@@ -52,6 +52,24 @@ LANGUAGE_ROUTES = {
     "ar/": ("ar", EXPECTED_PRODUCTION_ROOT + "ar/"),
     "tr/": ("tr", EXPECTED_PRODUCTION_ROOT + "tr/"),
 }
+
+
+class LinkExtractor(HTMLParser):
+    """Collect real href attributes from parsed HTML tags only.
+
+    This deliberately ignores tag-looking strings inside script/template text,
+    preventing JavaScript snippets such as href=\"${t.url}\" from being treated
+    as deployed routes.
+    """
+
+    def __init__(self) -> None:
+        super().__init__(convert_charrefs=True)
+        self.hrefs: list[str] = []
+
+    def handle_starttag(self, tag: str, attrs: list[tuple[str, str | None]]) -> None:
+        for name, value in attrs:
+            if name.lower() == "href" and value:
+                self.hrefs.append(value)
 
 
 def url_for(base: str, path: str) -> str:
@@ -105,9 +123,10 @@ def require_metadata(path: str, text: str, lang: str, canonical: str) -> None:
 
 
 def require_internal_routes(base_url: str, text: str, page_path: str, retries: int, delay: float) -> None:
-    hrefs = re.findall(r'href=["\']([^"\']+)["\']', text, flags=re.IGNORECASE)
+    parser = LinkExtractor()
+    parser.feed(text)
     checked: set[str] = set()
-    for href in hrefs:
+    for href in parser.hrefs:
         parsed = urllib.parse.urlparse(href)
         if parsed.scheme or parsed.netloc or href.startswith(("#", "mailto:", "tel:", "javascript:")):
             continue
