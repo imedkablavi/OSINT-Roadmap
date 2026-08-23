@@ -5,6 +5,7 @@ on:
     paths:
       - 'site/tool-finder.html'
       - 'site/tools.json'
+      - 'site/tool-review.json'
       - 'site/style.css'
       - 'tests/tool-finder.spec.js'
       - 'playwright.config.js'
@@ -14,6 +15,7 @@ on:
     paths:
       - 'site/tool-finder.html'
       - 'site/tools.json'
+      - 'site/tool-review.json'
       - 'site/style.css'
       - 'tests/tool-finder.spec.js'
       - 'playwright.config.js'
