@@ -59,10 +59,15 @@ test('Full search controls are keyboard reachable', async ({ page }) => {
   await page.goto('/search.html', { waitUntil: 'networkidle' });
   const requiredIds = new Set(['q', 'lang', 'kind']);
   const reached = new Set();
+
+  let id = await page.evaluate(() => document.activeElement?.id || '');
+  if (requiredIds.has(id)) reached.add(id);
+
   for (let i = 0; i < 10; i += 1) {
     await page.keyboard.press('Tab');
-    const id = await page.evaluate(() => document.activeElement?.id || '');
+    id = await page.evaluate(() => document.activeElement?.id || '');
     if (requiredIds.has(id)) reached.add(id);
   }
+
   expect([...reached].sort()).toEqual([...requiredIds].sort());
 });
