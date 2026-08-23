@@ -1,20 +1,23 @@
 const { test, expect } = require('@playwright/test');
 
-async function openFinder(page) {
+async function openFinder(page, path = '/tool-finder.html') {
   const browserErrors = [];
   page.on('pageerror', error => browserErrors.push(`pageerror: ${error.message}`));
   page.on('console', message => {
     if (message.type() === 'error') browserErrors.push(`console: ${message.text()}`);
   });
 
-  await page.goto('/tool-finder.html');
-  await expect(page.locator('#count')).toHaveText('80 of 80 curated tools');
-  await expect(page.locator('article.tool')).toHaveCount(80);
+  await page.goto(path);
+  await expect(page.locator('#count')).toHaveText(/\d+ of 80 curated tools/);
   expect(browserErrors).toEqual([]);
 }
 
-test('loads the full curated catalogue without browser errors', async ({ page }) => {
+test('loads the full curated catalogue and freshness metadata without browser errors', async ({ page }) => {
   await openFinder(page);
+  await expect(page.locator('#count')).toHaveText('80 of 80 curated tools');
+  await expect(page.locator('article.tool')).toHaveCount(80);
+  await expect(page.locator('.chip.reviewed')).toHaveCount(80);
+  await expect(page.locator('#catalog-review')).toContainText('2026-08-23');
 
   await expect(page.locator('#category option')).not.toHaveCount(1);
   await expect(page.locator('#input option')).not.toHaveCount(1);
@@ -29,6 +32,15 @@ test('search narrows results to a matching tool', async ({ page }) => {
   await expect(page.locator('#count')).toHaveText('1 of 80 curated tools');
   await expect(page.locator('article.tool')).toHaveCount(1);
   await expect(page.getByRole('heading', { name: 'OCRmyPDF', exact: true })).toBeVisible();
+  await expect(page.locator('.chip.reviewed')).toContainText('Reviewed 2026-08-23');
+});
+
+test('query-string searches deep-link into Tool Finder', async ({ page }) => {
+  await openFinder(page, '/tool-finder.html?q=domain');
+  await expect(page.locator('#q')).toHaveValue('domain');
+  const count = await page.locator('article.tool').count();
+  expect(count).toBeGreaterThan(0);
+  expect(count).toBeLessThan(80);
 });
 
 test('input filter only returns tools that accept the selected input', async ({ page }) => {

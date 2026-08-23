@@ -1,21 +1,31 @@
-name: Tool Finder Browser Test
+name: Interactive Site Browser Test
 
 on:
   pull_request:
     paths:
       - 'site/tool-finder.html'
+      - 'site/search.html'
       - 'site/tools.json'
+      - 'site/tool-review.json'
       - 'site/style.css'
+      - '**/*.md'
+      - 'scripts/build_search_index.py'
       - 'tests/tool-finder.spec.js'
+      - 'tests/search.spec.js'
       - 'playwright.config.js'
       - '.github/workflows/tool-finder-browser.yml'
   push:
     branches: [main]
     paths:
       - 'site/tool-finder.html'
+      - 'site/search.html'
       - 'site/tools.json'
+      - 'site/tool-review.json'
       - 'site/style.css'
+      - '**/*.md'
+      - 'scripts/build_search_index.py'
       - 'tests/tool-finder.spec.js'
+      - 'tests/search.spec.js'
       - 'playwright.config.js'
       - '.github/workflows/tool-finder-browser.yml'
   workflow_dispatch:
@@ -25,12 +35,20 @@ permissions:
 
 jobs:
   browser-test:
-    name: Chromium Tool Finder E2E
+    name: Chromium interactive site E2E
     runs-on: ubuntu-latest
-    timeout-minutes: 15
+    timeout-minutes: 18
     steps:
       - name: Checkout repository
         uses: actions/checkout@v7
+
+      - name: Setup Python
+        uses: actions/setup-python@v7
+        with:
+          python-version: '3.13'
+
+      - name: Build full-content search index
+        run: python scripts/build_search_index.py
 
       - name: Setup Node.js
         uses: actions/setup-node@v7
@@ -43,5 +61,5 @@ jobs:
       - name: Install Chromium
         run: npx playwright install --with-deps chromium
 
-      - name: Run Tool Finder browser tests
-        run: npx playwright test tests/tool-finder.spec.js --reporter=line
+      - name: Run interactive browser tests
+        run: npx playwright test tests/tool-finder.spec.js tests/search.spec.js --reporter=line

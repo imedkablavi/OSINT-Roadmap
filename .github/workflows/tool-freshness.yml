@@ -1,0 +1,84 @@
+name: Tool Freshness
+
+on:
+  pull_request:
+    paths:
+      - 'site/tools.json'
+      - 'site/tool-review.json'
+      - 'scripts/check_tool_freshness.py'
+      - '.github/workflows/tool-freshness.yml'
+  push:
+    branches: [main]
+    paths:
+      - 'site/tools.json'
+      - 'site/tool-review.json'
+      - 'scripts/check_tool_freshness.py'
+      - '.github/workflows/tool-freshness.yml'
+  schedule:
+    - cron: '17 5 * * 1'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  issues: write
+
+jobs:
+  freshness:
+    name: Curated tool review freshness
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v7
+
+      - name: Setup Python
+        uses: actions/setup-python@v7
+        with:
+          python-version: '3.13'
+
+      - name: Audit per-tool review age
+        id: audit
+        shell: bash
+        run: |
+          set +e
+          python scripts/check_tool_freshness.py 2>&1 | tee /tmp/tool-freshness.log
+          code=${PIPESTATUS[0]}
+          echo "code=$code" >> "$GITHUB_OUTPUT"
+          exit 0
+
+      - name: Fail pull requests on invalid or stale metadata
+        if: ${{ github.event_name == 'pull_request' && steps.audit.outputs.code != '0' }}
+        run: |
+          cat /tmp/tool-freshness.log
+          exit 1
+
+      - name: Fail pushes on invalid metadata
+        if: ${{ github.event_name == 'push' && steps.audit.outputs.code == '1' }}
+        run: exit 1
+
+      - name: Open or update stale-tool review issue
+        if: ${{ (github.event_name == 'schedule' || github.event_name == 'workflow_dispatch') && steps.audit.outputs.code == '2' }}
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          issue=$(gh issue list --state open --search 'in:title "Tool freshness review required"' --json number --jq '.[0].number // empty')
+          body=$(cat /tmp/tool-freshness.log)
+          if [ -n "$issue" ]; then
+            gh issue comment "$issue" --body "Weekly freshness audit still needs attention.\n\n\`\`\`text\n${body}\n\`\`\`"
+          else
+            gh issue create --title 'Tool freshness review required' --body "The scheduled freshness audit found curated tools whose review date exceeded the configured budget. This is separate from broken-link detection.\n\n\`\`\`text\n${body}\n\`\`\`\n\nRe-check the affected tools, then update only their entries in \`site/tool-review.json\`."
+          fi
+
+      - name: Close resolved freshness issue
+        if: ${{ (github.event_name == 'schedule' || github.event_name == 'workflow_dispatch') && steps.audit.outputs.code == '0' }}
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          issue=$(gh issue list --state open --search 'in:title "Tool freshness review required"' --json number --jq '.[0].number // empty')
+          if [ -n "$issue" ]; then
+            gh issue close "$issue" --comment 'The scheduled freshness audit is green again; closing automatically.'
+          fi
+
+      - name: Reject invalid metadata in scheduled runs
+        if: ${{ (github.event_name == 'schedule' || github.event_name == 'workflow_dispatch') && steps.audit.outputs.code == '1' }}
+        run: exit 1

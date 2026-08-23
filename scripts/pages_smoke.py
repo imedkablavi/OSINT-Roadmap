@@ -21,6 +21,12 @@ EXPECTED_PAGES = {
     "learn-osint.html": "OSINT",
     "osint-tools.html": "OSINT",
     "tool-finder.html": "OSINT Tool Finder",
+    "search.html": "Search the OSINT Roadmap",
+    "osint-for-beginners.html": "OSINT for Beginners",
+    "username-osint.html": "Username OSINT",
+    "reverse-image-osint.html": "Reverse Image OSINT",
+    "domain-osint.html": "Domain OSINT",
+    "company-osint.html": "Company OSINT",
     "geoint-guide.html": "GEOINT",
     "cti-osint.html": "OSINT",
     "digital-footprint.html": "Digital",
@@ -32,6 +38,8 @@ EXPECTED_PAGES = {
 STATIC_RESOURCES = (
     "style.css",
     "tools.json",
+    "tool-review.json",
+    "search-index.json",
     "robots.txt",
     "sitemap.xml",
     "feed.xml",
@@ -94,9 +102,35 @@ def run(base_url: str, retries: int, delay: float) -> None:
     require(len(names) == len(set(names)), "tools.json contains duplicate tool names")
     print(f"PASS catalogue: {len(tools)} tools")
 
+    review = json.loads(resources["tool-review.json"].decode("utf-8"))
+    require(review.get("catalog_reviewed"), "tool-review.json is missing catalog_reviewed")
+    require(int(review.get("stale_after_days", 0)) >= 30, "stale_after_days is unexpectedly low")
+    require(isinstance(review.get("overrides", {}), dict), "tool-review overrides must be an object")
+    print(f"PASS freshness metadata: baseline {review['catalog_reviewed']}")
+
+    search_index = json.loads(resources["search-index.json"].decode("utf-8"))
+    require(isinstance(search_index, list), "search-index.json must contain a JSON array")
+    require(len(search_index) >= 30, f"search index unexpectedly small: {len(search_index)}")
+    require(any(item.get("lang") == "ar" for item in search_index), "search index is missing Arabic content")
+    require(any(item.get("lang") == "tr" for item in search_index), "search index is missing Turkish content")
+    require(any("playbook" in item.get("path", "").lower() for item in search_index), "search index is missing playbooks")
+    print(f"PASS search index: {len(search_index)} documents")
+
     sitemap_text = resources["sitemap.xml"].decode("utf-8")
     ElementTree.fromstring(sitemap_text)
-    for path in ("tool-finder.html", "osint-tools.html", "geoint-guide.html", "ar/", "tr/"):
+    for path in (
+        "tool-finder.html",
+        "search.html",
+        "osint-for-beginners.html",
+        "username-osint.html",
+        "reverse-image-osint.html",
+        "domain-osint.html",
+        "company-osint.html",
+        "osint-tools.html",
+        "geoint-guide.html",
+        "ar/",
+        "tr/",
+    ):
         expected = EXPECTED_PRODUCTION_ROOT + path
         require(expected in sitemap_text, f"sitemap.xml is missing {expected}")
     print("PASS sitemap: valid XML and critical routes present")
