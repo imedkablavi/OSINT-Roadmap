@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Search the OSINT Roadmap — Guides, Playbooks, Tools and Labs</title>
+  <meta name="description" content="Search the full OSINT Roadmap across guides, playbooks, labs, tool documentation, glossaries and multilingual learning material.">
+  <link rel="canonical" href="https://imedkablavi.github.io/OSINT-Roadmap/search.html">
+  <link rel="stylesheet" href="style.css">
+  <style>
+    .searchbox{display:grid;grid-template-columns:minmax(0,1fr) 180px 180px;gap:10px;margin:24px 0}.searchbox input,.searchbox select{width:100%;padding:12px;border:1px solid #34516e;border-radius:10px;background:#091827;color:#e8eef7}.results{display:grid;gap:12px}.result{padding:18px;border:1px solid var(--line);border-radius:14px;background:rgba(13,27,42,.86)}.result h2{font-size:1.12rem;margin:0 0 6px}.result p{margin:6px 0}.meta{font-size:.82rem;color:var(--muted)}mark{background:#6b4f00;color:#fff3bf;padding:0 .12em;border-radius:3px}@media(max-width:720px){.searchbox{grid-template-columns:1fr}}
+  </style>
+</head>
+<body>
+<header class="top"><div class="wrap">
+  <div class="eyebrow">Full project search</div>
+  <h1>Search the OSINT Roadmap</h1>
+  <p class="lead">Search guides, labs, playbooks, glossaries, case studies, tool documentation and the static learning site from one place.</p>
+  <div class="nav"><a class="btn" href="index.html">Home</a><a class="btn" href="tool-finder.html">Tool Finder</a><a class="btn" href="learn-osint.html">Learning path</a></div>
+</div></header>
+<main class="wrap"><section>
+  <div class="searchbox" aria-label="Search controls">
+    <input id="q" type="search" autocomplete="off" placeholder="Try: reverse image, attribution, company, username…" aria-label="Search the roadmap">
+    <select id="lang" aria-label="Language"><option value="">All languages</option><option value="en">English</option><option value="ar">العربية</option><option value="tr">Türkçe</option></select>
+    <select id="kind" aria-label="Content type"><option value="">All content</option><option>Documentation</option><option>Website</option></select>
+  </div>
+  <p class="muted" id="status">Loading search index…</p>
+  <div id="results" class="results" aria-live="polite"></div>
+</section></main>
+<footer class="footer"><div class="wrap">OSINT Roadmap · Search stays client-side after the static index is loaded.</div></footer>
+<script>
+const q=document.getElementById('q'),lang=document.getElementById('lang'),kind=document.getElementById('kind'),status=document.getElementById('status'),results=document.getElementById('results');
+let docs=[];
+const esc=s=>s.replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+const terms=s=>s.toLocaleLowerCase().split(/\s+/).map(x=>x.trim()).filter(Boolean);
+function snippet(text,needles){if(!needles.length)return text.slice(0,220);const lower=text.toLocaleLowerCase();let pos=Math.min(...needles.map(n=>{const p=lower.indexOf(n);return p<0?1e9:p}));if(!Number.isFinite(pos)||pos===1e9)pos=0;const start=Math.max(0,pos-75),end=Math.min(text.length,start+280);return (start?'…':'')+text.slice(start,end)+(end<text.length?'…':'')}
+function highlight(text,needles){let out=esc(text);needles.sort((a,b)=>b.length-a.length).forEach(n=>{if(n.length<2)return;const safe=n.replace(/[.*+?^${}()|[\]\\]/g,'\\$&');out=out.replace(new RegExp(`(${safe})`,'ig'),'<mark>$1</mark>')});return out}
+function render(){const needle=terms(q.value);const filtered=docs.map(d=>{const title=d.title.toLocaleLowerCase(),path=d.path.toLocaleLowerCase(),body=d.text.toLocaleLowerCase();let score=0;for(const n of needle){if(title.includes(n))score+=12;if(path.includes(n))score+=5;const hits=body.split(n).length-1;score+=Math.min(hits,8)}return {d,score}}).filter(x=>(!needle.length||needle.every(n=>(x.d.title+' '+x.d.path+' '+x.d.text).toLocaleLowerCase().includes(n)))&&(!lang.value||x.d.lang===lang.value)&&(!kind.value||x.d.kind===kind.value)).sort((a,b)=>b.score-a.score||a.d.title.localeCompare(b.d.title)).slice(0,60);
+status.textContent=`${filtered.length}${filtered.length===60?' top':''} result${filtered.length===1?'':'s'}${needle.length?` for “${q.value.trim()}”`:''}`;
+if(!filtered.length){results.innerHTML='<div class="notice">No matching content. Try a broader term or remove a language/type filter.</div>';return}
+results.innerHTML=filtered.map(({d})=>`<article class="result"><div class="meta">${esc(d.kind)} · ${esc(d.lang.toUpperCase())} · ${esc(d.path)}</div><h2><a href="${esc(d.url)}">${highlight(d.title,[...needle])}</a></h2><p>${highlight(snippet(d.text,[...needle]),[...needle])}</p></article>`).join('')}
+[q,lang,kind].forEach(el=>el.addEventListener(el.tagName==='INPUT'?'input':'change',render));
+const initial=new URLSearchParams(location.search).get('q');if(initial)q.value=initial;
+fetch('search-index.json').then(r=>{if(!r.ok)throw new Error('index');return r.json()}).then(data=>{docs=data;render();q.focus()}).catch(()=>{status.textContent='Search index failed to load';results.innerHTML='<div class="notice">The generated search index is unavailable. Use the GitHub repository search as a fallback.</div>'});
+</script>
+</body>
+</html>
