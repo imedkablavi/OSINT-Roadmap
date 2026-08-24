@@ -70,48 +70,248 @@ Core material:
 
 ---
 
-## 🧭 What makes this roadmap different?
+## 🔎 OSINT Tool Library & Tool Finder
 
-This project is organized around the investigation process rather than around a giant list of links:
+The project now maintains a **curated library of 110+ tools and primary-source research resources** instead of an unreviewed link dump.
 
-1. Define the research question and legal/ethical scope.
-2. Start from the clue or source you actually have.
-3. Select the smallest useful tool or primary source.
-4. Preserve provenance, time and query context.
-5. Verify important findings independently.
-6. Separate observations from inference and unknowns.
-7. Report confidence and limitations explicitly.
+The library covers:
 
-The project stays static and privacy-friendly: the interactive Tool Finder and full-content Search run client-side after their static data files load.
+- search, archives and monitoring;
+- usernames, email, phone and public identity clues;
+- image and video verification;
+- GEOINT, maps and satellite imagery;
+- domains, IPs and internet infrastructure;
+- CTI and public IOC enrichment;
+- company, ownership, procurement, legal and public records;
+- aviation, maritime and rail research;
+- document extraction and data cleanup;
+- investigation workspaces, timelines and relationship analysis;
+- blockchain research;
+- academic and researcher metadata.
 
-## 🧰 Project areas
+Every category records the **input, cost, skill level, best use and main limitation** of a tool. The interactive catalogue also displays a **last-reviewed date for every tool**, with per-tool overrides as individual resources are re-checked.
 
-- Learning roadmaps from beginner to advanced
-- Research methods and source verification
-- 110+ curated tools and primary-source resources
-- Verified open-source subset with license/upstream provenance
-- Tool Finder and full-project Search
-- GEOINT and visual verification
-- Cyber Threat Intelligence OSINT
-- Company and public-record research
-- Identity, username, email and phone research
-- Document, dataset and metadata analysis
-- Transport and blockchain research
-- Academic and researcher metadata
-- Practice labs, case studies and playbooks
-- Evidence preservation and professional reporting
-- EN / AR / TR learning material
+- [English Tool Library](tools/tool-library.md)
+- [مكتبة الأدوات بالعربية](tools/tool-library.ar.md)
+- [Türkçe Araç Kütüphanesi](tools/tool-library.tr.md)
+- [Clue-first Investigator Tool Stack](tools/investigator-stack.md)
+- [Verified Open-Source Tools](tools/open-source-tools.md)
+- [Tools Hub](tools/README.md)
+- [Interactive Tool Finder](https://imedkablavi.github.io/OSINT-Roadmap/tool-finder.html)
+- [Full-content search](https://imedkablavi.github.io/OSINT-Roadmap/search.html)
 
-## 🔄 Maintenance
+The Tool Finder lets you filter tools by inputs such as `Domain`, `Username`, `Email`, `Phone`, `Image`, `IP`, `Organization`, `Location`, `Document`, `Aircraft`, `Vessel`, `Crypto Address`, `DOI` or `ORCID`, as well as cost and skill level. Verified open-source entries also expose their license and upstream source metadata.
 
-The catalogue is maintained rather than treated as a permanent link dump. CI checks structured catalogue validity, duplicate names/URLs, review age, link health, interactive browser behavior, accessibility, HTML validity, Lighthouse budgets and the exact GitHub Pages deployment bundle.
+## 🧰 Browser extensions & web tools
 
-See [CONTRIBUTING.md](CONTRIBUTING.md) before proposing a tool. Tool additions should document the use case and important limitation, prefer official/upstream sources, and avoid unsupported capability claims.
+![OSINT Browser Extensions & Web Tools](assets/osint-browser-tools.svg)
 
-## ⚖️ Responsible use
+The repository includes a separate browser-tool guide for extensions and web helpers where permissions and privacy matter.
 
-This roadmap is for lawful public-source research and authorized investigation. Public availability does not automatically authorize active scanning, privacy-invasive collection or misuse of personal data. A tool result is a lead or observation, not automatic proof.
+- [English guide](tools/browser-extensions.md)
+- [الدليل العربي](tools/browser-extensions.ar.md)
+- [Türkçe rehber](tools/browser-extensions.tr.md)
 
-## ⭐ Support the project
+The guide covers web capture and archiving, image/video verification, threat-intelligence lookups, data extraction, screenshots, download helpers and blockchain research. It also explains extension permissions, privacy risks, research-browser separation, and what each category **does not prove**.
 
-If this roadmap helps your research or learning, a GitHub Star makes the project easier for other researchers to discover. Contributions that improve accuracy, freshness, translation or reproducibility are welcome.
+## 📡 Tool Radar & project updates
+
+Tools change ownership, pricing, permissions and interfaces. A useful OSINT project needs a maintenance loop, not a one-time list.
+
+- [OSINT Tool Radar — August 2026](updates/2026-08-tool-radar.md)
+- [Updates archive](updates/README.md)
+- RSS feed: `https://imedkablavi.github.io/OSINT-Roadmap/feed.xml`
+
+Tool Radar notes document what changed, why it matters and what researchers should do differently. A separate weekly **Tool Freshness** workflow checks review age even when a URL still works, so stale catalogue entries are detected independently of broken-link checks.
+
+## 🗺️ Visual roadmap
+
+**[Open the interactive GitHub-rendered roadmap →](docs/visual-roadmap.md)**
+
+```text
+Foundations
+    ↓
+Discovery
+    ↓
+Verification
+    ↓
+Analysis
+    ↓
+Reporting
+    ↓
+Specialization
+    ↓
+Portfolio + Review
+```
+
+The roadmap is method-first because tools change much faster than good investigation practice.
+
+## 🎯 Professional specialization tracks
+
+Once the core workflow is comfortable, move into a track instead of collecting random advanced tools.
+
+| Track | What you learn |
+| --- | --- |
+| [Cyber Threat Intelligence](tracks/cti.md) | PIRs, passive indicator enrichment, infrastructure relationships, ATT&CK mapping, timelines, attribution discipline |
+| [Digital Footprint Investigation](tracks/digital-footprint.md) | public trace discovery, archive history, stable identifiers, attribution, privacy minimization |
+| [Company Investigation](tracks/company-investigation.md) | legal entity resolution, filings, ownership, corporate timelines, sanctions checks, relationship mapping |
+| [Advanced GEOINT Challenges](challenges/advanced-geoint.md) | a 10-level geolocation/chronolocation challenge ladder with a scoring rubric |
+
+Arabic and Turkish learners also have localized specialization hubs:
+
+- [المسارات الاحترافية بالعربية](docs/ar/advanced-paths.md)
+- [Türkçe profesyonel uzmanlaşma yolları](docs/tr/advanced-paths.md)
+
+## 🧭 Investigation playbooks
+
+Sometimes you do not need another chapter. You need to know what to do with the clue already in front of you.
+
+**[Open the Investigation Playbooks →](playbooks/README.md)**
+
+Playbooks cover:
+
+- I have a domain
+- I have a username
+- I have an image
+- I have a video
+- I have a company name
+- I have an IP address
+- I have a public document
+- I have a news claim
+- I have a location claim
+
+Every playbook includes verification questions and stop conditions.
+
+## 🧪 Practice that produces evidence of skill
+
+The repository uses an artifact-based learning model:
+
+```text
+Do not mark a skill complete because you read about it.
+Mark it complete when you can produce and defend the work.
+```
+
+- [Practice labs](docs/practice-labs.md)
+- [Advanced GEOINT challenge ladder](challenges/advanced-geoint.md)
+- [Skill Matrix & Progress Tracker](docs/skill-matrix.md)
+- [Real-world case-study lessons](case-studies/README.md)
+
+The skill matrix ranges from **L0 — Unfamiliar** to **L4 — Mentor** and requires a practical artifact for progression.
+
+## ⚡ Field reference
+
+Need a fast reminder while working?
+
+**[OSINT Quick Reference / Cheat Sheet →](cheatsheets/osint-quick-reference.md)**
+
+It covers search patterns, source verification, image/video checks, username attribution, passive domain research, company research, timelines, confidence language, evidence tables, reporting, and stop rules.
+
+## 📖 OSINT glossary in three languages
+
+- [English](glossary/README.en.md)
+- [العربية](glossary/README.ar.md)
+- [Türkçe](glossary/README.tr.md)
+
+The glossary covers methodology terms as well as technical concepts such as provenance, corroboration, attribution, chronolocation, passive DNS, Certificate Transparency, entity resolution, source dependency, and stop conditions.
+
+## 🔬 What makes this roadmap different?
+
+The project is deliberately not a directory of thousands of links.
+
+It teaches:
+
+- how to frame an intelligence question;
+- how to distinguish discovery from verification;
+- how to trace information back to its source;
+- how to identify copied-source chains;
+- how to challenge the first hypothesis;
+- how to calibrate attribution and confidence;
+- how to document what a tool **cannot** prove;
+- how to stop collecting when additional data adds no analytical value;
+- how to use AI for assistance without treating model output as evidence;
+- how to produce reports another researcher can reproduce.
+
+```text
+Finding information is discovery.
+Proving what it means is investigation.
+```
+
+## 🤖 AI-assisted OSINT
+
+AI can be useful for:
+
+- generating search-query variants;
+- transliteration and language discovery;
+- entity extraction from your own collected material;
+- organizing notes;
+- suggesting alternative hypotheses;
+- cleaning structured data.
+
+But:
+
+```text
+AI may suggest the next question.
+A verifiable source must support the answer.
+```
+
+Names, dates, quotations, relationships, URLs, and conclusions still need verification against underlying sources.
+
+## 🛡️ Scope and ethics
+
+This project focuses on lawful public-source research.
+
+It does not teach:
+
+- unauthorized access;
+- credential attacks;
+- account takeover;
+- access-control bypass;
+- deceptive social engineering;
+- stalking or harassment;
+- doxxing;
+- intrusive scanning without authorization.
+
+A practical stop rule:
+
+```text
+If the next step requires intrusion, deception, private access,
+or bypassing a security restriction, stop.
+```
+
+## 🔧 Repository quality
+
+The project is tested automatically with GitHub Actions:
+
+- link health across Markdown and the static site;
+- HTML standards validation;
+- Chromium E2E tests for Tool Finder and full-content search;
+- WCAG A/AA accessibility scans;
+- Lighthouse performance, accessibility, best-practices and SEO budgets;
+- Pages artifact and deployment smoke tests;
+- structured multi-file tool-catalogue validation;
+- weekly stale-tool review-age detection independent of broken links.
+
+Most checks run on relevant pull requests and after changes land on `main`; link/freshness maintenance also runs on schedules.
+
+## 🤝 Contributing
+
+Corrections and contributions are welcome, especially:
+
+- better primary sources;
+- new safe practice labs;
+- regional public-record guides;
+- improved translations;
+- new investigation playbooks;
+- visual-verification methods;
+- stale-link and stale-tool fixes;
+- clearer explanations of what a tool can and cannot prove.
+
+See [CONTRIBUTING.md](CONTRIBUTING.md).
+
+## License
+
+MIT License © Imed Kablavi
+
+---
+
+If the project is useful, a ⭐ helps more students, researchers, journalists, and security learners discover it.
