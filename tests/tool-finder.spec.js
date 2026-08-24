@@ -98,7 +98,7 @@ test('open-source tools are discoverable with provenance metadata', async ({ pag
   const cards = page.locator('article.tool');
   const count = await cards.count();
   expect(count).toBeGreaterThanOrEqual(5);
-  await expect(cards.first().locator('.chip.opensource')).toBeVisible();
+  await expect(cards.first().getByText('Open Source', { exact: true })).toBeVisible();
 });
 
 test('mobile viewport keeps filters and result actions usable', async ({ page }) => {
