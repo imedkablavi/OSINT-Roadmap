@@ -16,7 +16,13 @@ Bu sayfa her aracı çalıştırmanız gereken bir kontrol listesi değil, bir *
 | Görsel | Google Lens, TinEye, Yandex Images | ExifTool, Sherloq, Tesseract OCR | Adli görüntü anomalileri ipucudur, manipülasyon kanıtı değildir |
 | Video / ses | InVID & WeVerify, FFmpeg, MediaInfo | ExifTool ve kare bazlı kontroller | Kapsayıcı ve etiket metadatası yeniden yazılabilir |
 | Konum | OpenStreetMap, Google Maps/Earth, SunCalc | Overpass Turbo, OpenAerialMap, Mapillary, kepler.gl, QGIS | Harita ve görüntü kapsamı bölgeye ve tarihe göre değişir |
+| Tarihsel hava / zaman iddiası | NOAA Climate Data Online | NASA FIRMS ve yerel resmi meteoroloji kaynakları | İddiayı kayıtla karşılaştırmadan önce istasyon, saat dilimi, gözlem türü ve veri boşluklarını eşleştirin |
 | Şirket | Resmi sicil, OpenCorporates, GLEIF | SEC EDGAR, Companies House, OpenSanctions, ICIJ, USAspending, TED | Kayıtları bağlamadan önce doğru tüzel kişiyi çözümleyin |
+| Yaptırım adı/kuruluşu/gemisi | OFAC Sanctions Search, UK Sanctions List, UN Consolidated List | OpenSanctions ve rejime özel resmi listeler | Yaklaşık/ad eşleşmesi kimlik doğrulaması değildir; alias, doğum tarihi/ID ve yaptırım rejimini doğrulayın |
+| Lobicilik / politika etkisi | LDA.gov, EU Transparency Register | Yabancı temsil ilişkisi varsa DOJ FARA | Beyanlar bildirilen faaliyeti gösterir; usulsüzlüğü veya gerçek politika etkisini kanıtlamaz |
+| ABD'de yabancı müvekkil temsili | DOJ FARA Filings Search | LDA.gov ve birincil dosyalar | Kayıt bir hukuki bildirim statüsüdür, yanlış davranış kanıtı değildir |
+| Kamu alımları / sözleşmeler | USAspending.gov, TED | Open Contracting Data Registry ve ulusal ihale portalı | Süreç aşaması, değişiklikler, alt sözleşmeler ve yayıncı veri kalitesi eşleşmenin anlamını değiştirebilir |
+| Gerçek faydalanıcı sicili | Ulusal resmi sicil | Yetki alanındaki kaynağı bulmak için Open Ownership Map | Erişim ve kapsam değişir; eski ulusötesi Open Ownership Register kullanımdan kaldırıldı |
 | ABD kâr amacı gütmeyen kuruluşu | ProPublica Nonprofit Explorer | Kaynak IRS dosyaları, USAspending | Dosyalama dönemlerini ve işlem gecikmelerini karşılaştırın |
 | ABD mahkeme davası/kişi/şirket | CourtListener / RECAP | Dava uyarıları ve birincil mahkeme kaynakları | Yargı alanı ve usul aşaması bağlamı gerekir |
 | IOC / hash | VirusTotal, CIRCL hashlookup, abuse.ch | IntelOwl, YETI, MISP, OpenCTI | Bulut servisine gönderilen gösterge veya dosya üçüncü tarafla paylaşılabilir |
@@ -49,6 +55,7 @@ Bu sayfa her aracı çalıştırmanız gereken bir kontrol listesi değil, bir *
 - Telefon, e-posta ve hesap araştırmasında kişisel veri toplamayı azaltın ve yetkili/hukuka uygun tanımlayıcılar kullanın.
 - Altyapıda pasif gözlemi tercih edin; probing/scanning için hedefin size ait olması veya açık izin gerekir.
 - Dosya, URL veya IOC'leri CTI/bulut servislerine göndermeden önce saklama ve yeniden paylaşım politikasını kontrol edin.
+- Yaptırım, lobicilik, FARA, mahkeme ve kamu ihale kayıtları kimlik, tarih, yetki alanı ve usul bağlamı gerektirir; bir kayıt eşleşmesi yanlış davranış kararı değildir.
 - İhlal kaydı, kullanıcı adı tekrar kullanımı, kripto kümelemesi, metadata, görüntü adli sinyalleri veya otomatik enrichment sonuçlarını kimlik kanıtı olarak kabul etmeyin.
 
 ## Açık kaynak tercihi

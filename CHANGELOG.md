@@ -9,10 +9,15 @@ This project follows [Semantic Versioning](https://semver.org/) for public relea
 ### Added
 - Production release audit and stronger Pages smoke-test coverage.
 - SEO parity checks for English, Arabic, and Turkish routes.
+- A specialist OSINT catalogue that expands Tool Finder coverage across web preservation, identity, media forensics, GEOINT, CTI, public records, transport, datasets, timelines, blockchain, academic research and public SOCMINT discovery.
+- Clue-first investigator tool stacks in English, Arabic and Turkish.
+- Verified primary-source coverage for UK and UN sanctions, EU and US lobbying disclosures, DOJ FARA filings, NOAA historical weather, global OCDS procurement discovery and beneficial-ownership register discovery.
 
 ### Changed
-- Arabic and Turkish landing pages now expose consistent canonical, hreflang, RSS discovery, social metadata, and structured data.
-- Localized landing pages now match the maintained 80+ tool catalogue claim.
+- Arabic and Turkish landing pages expose consistent canonical, hreflang, RSS discovery, social metadata, and structured data.
+- Tool Finder, catalogue validation, Pages smoke tests and freshness automation operate across the core and specialist catalogues.
+- Public landing-page copy uses a conservative `110+` catalogue claim while the current structured catalogue contains 132 reviewed tools and primary-source resources.
+- Newly added resources carry explicit review dates and limitations so matches, filings, sanctions records, metadata and automated enrichment are not presented as automatic proof.
 
 ## Release policy
 
