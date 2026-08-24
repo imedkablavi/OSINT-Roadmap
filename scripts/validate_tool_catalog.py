@@ -16,6 +16,11 @@ def fail(message: str) -> None:
     raise SystemExit(f"tool-catalog validation failed: {message}")
 
 
+def valid_https_url(value: str) -> bool:
+    parsed = urlparse(value)
+    return parsed.scheme == "https" and bool(parsed.netloc)
+
+
 def main() -> None:
     try:
         data = json.loads(CATALOG.read_text(encoding="utf-8"))
@@ -47,8 +52,7 @@ def main() -> None:
             fail(f"duplicate tool name: {name}")
         names.add(name.casefold())
 
-        parsed = urlparse(url)
-        if parsed.scheme != "https" or not parsed.netloc:
+        if not valid_https_url(url):
             fail(f"{name}: URL must be an absolute HTTPS URL")
         if url.casefold() in urls:
             fail(f"duplicate tool URL: {url}")
@@ -62,6 +66,17 @@ def main() -> None:
         for field in ("category", "cost", "note"):
             if not isinstance(item[field], str) or not item[field].strip():
                 fail(f"{name}: {field} must be a non-empty string")
+
+        if "open_source" in item and not isinstance(item["open_source"], bool):
+            fail(f"{name}: open_source must be a boolean when present")
+
+        if item.get("open_source") is True:
+            license_name = item.get("license")
+            source_url = item.get("source_url")
+            if not isinstance(license_name, str) or not license_name.strip():
+                fail(f"{name}: open-source entries must declare a license")
+            if not isinstance(source_url, str) or not valid_https_url(source_url.strip()):
+                fail(f"{name}: open-source entries must declare an absolute HTTPS source_url")
 
     print(f"Validated {len(data)} curated tools; no duplicate names or URLs found.")
 
