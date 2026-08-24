@@ -10,6 +10,16 @@ This directory contains the roadmap's maintained tool references.
 
 The main library is organized by **research question and input**, not by popularity. Each category explains cost, skill level, best use and the main limitation of the output.
 
+## Verified open-source tools
+
+A focused list of open-source tools with verified upstream repositories, licenses, use cases and limitations is maintained in all three project languages:
+
+- [English — Verified Open-Source OSINT Tools](open-source-tools.md)
+- [العربية — أدوات OSINT مفتوحة المصدر الموثقة](open-source-tools.ar.md)
+- [Türkçe — Doğrulanmış Açık Kaynak OSINT Araçları](open-source-tools.tr.md)
+
+The current verified additions include **theHarvester, OWASP Amass, Subfinder, OpenCTI Community Edition and MISP**. Open source does not remove authorization or provider-terms requirements; active infrastructure techniques remain limited to owned or explicitly authorized scope.
+
 ## Interactive Tool Finder
 
 When GitHub Pages is enabled, use:
