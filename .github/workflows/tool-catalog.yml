@@ -4,12 +4,14 @@ on:
   pull_request:
     paths:
       - 'site/tools.json'
+      - 'site/tools-specialist.json'
       - 'scripts/validate_tool_catalog.py'
       - '.github/workflows/tool-catalog.yml'
   push:
     branches: [main]
     paths:
       - 'site/tools.json'
+      - 'site/tools-specialist.json'
       - 'scripts/validate_tool_catalog.py'
       - '.github/workflows/tool-catalog.yml'
   workflow_dispatch:
