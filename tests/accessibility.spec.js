@@ -1,8 +1,9 @@
 const { test, expect } = require('@playwright/test');
 const AxeBuilder = require('@axe-core/playwright').default;
-const catalogue = require('../site/tools.json');
+const coreCatalogue = require('../site/tools.json');
+const specialistCatalogue = require('../site/tools-specialist.json');
 
-const CATALOG_SIZE = catalogue.length;
+const CATALOG_SIZE = coreCatalogue.length + specialistCatalogue.length;
 
 const pages = [
   ['Home', '/'],
