@@ -16,7 +16,13 @@ This is a **selection map**, not a checklist to run every tool. Start with the c
 | Image | Google Lens, TinEye, Yandex Images | ExifTool, Sherloq, Tesseract OCR | Forensic anomalies are cues, not manipulation proof |
 | Video / audio | InVID & WeVerify, FFmpeg, MediaInfo | ExifTool, frame-level image checks | Containers and tags can be rewritten |
 | Location | OpenStreetMap, Google Maps/Earth, SunCalc | Overpass Turbo, OpenAerialMap, Mapillary, kepler.gl, QGIS | Map and imagery coverage varies by region/date |
+| Historical weather / time claim | NOAA Climate Data Online | NASA FIRMS, local official meteorological sources | Match station, timezone, observation type and data gaps before comparing a claim |
 | Company | Official registry, OpenCorporates, GLEIF | SEC EDGAR, Companies House, OpenSanctions, ICIJ, USAspending, TED | Resolve the legal entity before connecting records |
+| Sanctions name/entity/vessel | OFAC Sanctions Search, UK Sanctions List, UN Consolidated List | OpenSanctions and regime-specific official lists | Fuzzy/name matches are not identification; verify aliases, DOB/IDs and the exact regime |
+| Lobbying / policy influence | LDA.gov, EU Transparency Register | DOJ FARA when a foreign-principal relationship is relevant | Filings and declarations describe reported activity; they do not prove misconduct or actual policy influence |
+| Foreign-principal representation in the US | DOJ FARA Filings Search | LDA.gov, primary filing documents | Registration is a disclosure status, not evidence of wrongdoing |
+| Public procurement | USAspending.gov, TED | Open Contracting Data Registry, national procurement portal | Procurement stages, amendments, subawards and publisher data quality can change the meaning of a match |
+| Beneficial-ownership register | National official register | Open Ownership Map to locate jurisdiction sources | Access and coverage vary; the former transnational Open Ownership Register was retired |
 | US nonprofit | ProPublica Nonprofit Explorer | IRS source filings, USAspending | Compare filing periods and processing dates |
 | US court case/person/company | CourtListener / RECAP | Docket alerts and primary court sources | Legal records need jurisdiction and procedural context |
 | IOC / hash | VirusTotal, CIRCL hashlookup, abuse.ch | IntelOwl, YETI, MISP, OpenCTI | Submitting indicators/files may disclose them to providers |
@@ -49,6 +55,7 @@ For most investigations you do **not** need 100 tools. A defensible baseline is:
 - For phone, email and account research, minimize personal-data collection and use authorized identifiers.
 - For infrastructure, passive observations are preferred; active scanning/probing is outside ordinary OSINT unless you own the target or have explicit permission.
 - Before submitting files, URLs or indicators to CTI/cloud services, check whether the provider stores or redistributes them.
+- Sanctions, lobbying, FARA, court and procurement records require identity, date, jurisdiction and procedural context; a record match is not a wrongdoing verdict.
 - Do not treat breach presence, username reuse, crypto clustering, metadata, image-forensics signals or automated enrichment as identity proof.
 
 ## Open-source preference
