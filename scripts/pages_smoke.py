@@ -8,6 +8,7 @@ real GitHub Pages URL after deployment is enabled.
 from __future__ import annotations
 
 import argparse
+from html.parser import HTMLParser
 import json
 import sys
 import time
@@ -46,6 +47,29 @@ STATIC_RESOURCES = (
 )
 
 EXPECTED_PRODUCTION_ROOT = "https://imedkablavi.github.io/OSINT-Roadmap/"
+LANGUAGE_ROUTES = {
+    "": ("en", EXPECTED_PRODUCTION_ROOT),
+    "ar/": ("ar", EXPECTED_PRODUCTION_ROOT + "ar/"),
+    "tr/": ("tr", EXPECTED_PRODUCTION_ROOT + "tr/"),
+}
+
+
+class LinkExtractor(HTMLParser):
+    """Collect real href attributes from parsed HTML tags only.
+
+    This deliberately ignores tag-looking strings inside script/template text,
+    preventing JavaScript snippets such as href=\"${t.url}\" from being treated
+    as deployed routes.
+    """
+
+    def __init__(self) -> None:
+        super().__init__(convert_charrefs=True)
+        self.hrefs: list[str] = []
+
+    def handle_starttag(self, tag: str, attrs: list[tuple[str, str | None]]) -> None:
+        for name, value in attrs:
+            if name.lower() == "href" and value:
+                self.hrefs.append(value)
 
 
 def url_for(base: str, path: str) -> str:
@@ -76,16 +100,64 @@ def require(condition: bool, message: str) -> None:
         raise AssertionError(message)
 
 
+def require_metadata(path: str, text: str, lang: str, canonical: str) -> None:
+    lower = text.lower()
+    require(f'<html lang="{lang}"' in lower, f"/{path} has wrong or missing lang attribute")
+    if lang == "ar":
+        require('dir="rtl"' in lower, "/ar/ is missing RTL direction")
+    require(f'rel="canonical" href="{canonical}"' in text, f"/{path} has wrong canonical")
+    for hreflang, href in (
+        ("en", EXPECTED_PRODUCTION_ROOT),
+        ("ar", EXPECTED_PRODUCTION_ROOT + "ar/"),
+        ("tr", EXPECTED_PRODUCTION_ROOT + "tr/"),
+        ("x-default", EXPECTED_PRODUCTION_ROOT),
+    ):
+        require(
+            f'hreflang="{hreflang}" href="{href}"' in text,
+            f"/{path} missing hreflang={hreflang}",
+        )
+    require('type="application/rss+xml"' in lower, f"/{path} is missing RSS discovery")
+    require('type="application/ld+json"' in lower, f"/{path} is missing structured data")
+    require('property="og:title"' in lower, f"/{path} is missing Open Graph metadata")
+    require('name="twitter:card"' in lower, f"/{path} is missing Twitter card metadata")
+
+
+def require_internal_routes(base_url: str, text: str, page_path: str, retries: int, delay: float) -> None:
+    parser = LinkExtractor()
+    parser.feed(text)
+    checked: set[str] = set()
+    for href in parser.hrefs:
+        parsed = urllib.parse.urlparse(href)
+        if parsed.scheme or parsed.netloc or href.startswith(("#", "mailto:", "tel:", "javascript:")):
+            continue
+        target = urllib.parse.urljoin(url_for(base_url, page_path), href)
+        parsed_target = urllib.parse.urlparse(target)
+        if parsed_target.path.lower().endswith((".css", ".js", ".json", ".xml", ".ico", ".svg", ".png", ".jpg", ".jpeg", ".webp")):
+            continue
+        clean_target = urllib.parse.urlunparse(parsed_target._replace(fragment=""))
+        if clean_target in checked:
+            continue
+        checked.add(clean_target)
+        fetch(clean_target, retries, delay)
+
+
 def run(base_url: str, retries: int, delay: float) -> None:
     print(f"Smoke-testing {base_url}")
 
+    page_texts: dict[str, str] = {}
     for path, marker in EXPECTED_PAGES.items():
         body, content_type = fetch(url_for(base_url, path), retries, delay)
         text = body.decode("utf-8", errors="replace")
+        page_texts[path] = text
         require("text/html" in content_type, f"{path or '/'} is not HTML: {content_type}")
         require(marker.lower() in text.lower(), f"{path or '/'} is missing marker: {marker}")
         require("<html" in text.lower(), f"{path or '/'} does not look like HTML")
-        print(f"PASS page: /{path}")
+        require_internal_routes(base_url, text, path, retries, delay)
+        print(f"PASS page + internal routes: /{path}")
+
+    for path, (lang, canonical) in LANGUAGE_ROUTES.items():
+        require_metadata(path, page_texts[path], lang, canonical)
+        print(f"PASS metadata: /{path}")
 
     resources: dict[str, bytes] = {}
     for path in STATIC_RESOURCES:
@@ -118,26 +190,15 @@ def run(base_url: str, retries: int, delay: float) -> None:
 
     sitemap_text = resources["sitemap.xml"].decode("utf-8")
     ElementTree.fromstring(sitemap_text)
-    for path in (
-        "tool-finder.html",
-        "search.html",
-        "osint-for-beginners.html",
-        "username-osint.html",
-        "reverse-image-osint.html",
-        "domain-osint.html",
-        "company-osint.html",
-        "osint-tools.html",
-        "geoint-guide.html",
-        "ar/",
-        "tr/",
-    ):
+    for path in EXPECTED_PAGES:
         expected = EXPECTED_PRODUCTION_ROOT + path
         require(expected in sitemap_text, f"sitemap.xml is missing {expected}")
-    print("PASS sitemap: valid XML and critical routes present")
+    print("PASS sitemap: valid XML and all smoke-tested routes present")
 
     feed_text = resources["feed.xml"].decode("utf-8")
     ElementTree.fromstring(feed_text)
     require("OSINT Roadmap" in feed_text, "feed.xml is missing project identity")
+    require(EXPECTED_PRODUCTION_ROOT in feed_text, "feed.xml is missing production project URL")
     print("PASS feed: valid XML")
 
     robots_text = resources["robots.txt"].decode("utf-8")

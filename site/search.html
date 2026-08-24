@@ -8,7 +8,7 @@
   <link rel="canonical" href="https://imedkablavi.github.io/OSINT-Roadmap/search.html">
   <link rel="stylesheet" href="style.css">
   <style>
-    .searchbox{display:grid;grid-template-columns:minmax(0,1fr) 180px 180px;gap:10px;margin:24px 0}.searchbox input,.searchbox select{width:100%;padding:12px;border:1px solid #34516e;border-radius:10px;background:#091827;color:#e8eef7}.results{display:grid;gap:12px}.result{padding:18px;border:1px solid var(--line);border-radius:14px;background:rgba(13,27,42,.86)}.result h2{font-size:1.12rem;margin:0 0 6px}.result p{margin:6px 0}.meta{font-size:.82rem;color:var(--muted)}mark{background:#6b4f00;color:#fff3bf;padding:0 .12em;border-radius:3px}@media(max-width:720px){.searchbox{grid-template-columns:1fr}}
+    .searchbox{display:grid;grid-template-columns:minmax(0,1fr) 180px 180px;gap:10px;margin:24px 0}.search-field{display:flex;flex-direction:column;gap:6px}.search-field label{font-size:.8rem;font-weight:700;color:#bdd0e5}.searchbox input,.searchbox select{width:100%;padding:12px;border:1px solid #34516e;border-radius:10px;background:#091827;color:#e8eef7}.results{display:grid;gap:12px}.result{padding:18px;border:1px solid var(--line);border-radius:14px;background:rgba(13,27,42,.86);min-width:0}.result h2{font-size:1.12rem;margin:0 0 6px;overflow-wrap:anywhere}.result p{margin:6px 0;overflow-wrap:anywhere}.meta{font-size:.82rem;color:var(--muted);overflow-wrap:anywhere}mark{background:#6b4f00;color:#fff3bf;padding:0 .12em;border-radius:3px}@media(max-width:720px){.searchbox{grid-template-columns:1fr}}
   </style>
 </head>
 <body>
@@ -20,12 +20,12 @@
 </div></header>
 <main class="wrap"><section>
   <div class="searchbox" aria-label="Search controls">
-    <input id="q" type="search" autocomplete="off" placeholder="Try: reverse image, attribution, company, username…" aria-label="Search the roadmap">
-    <select id="lang" aria-label="Language"><option value="">All languages</option><option value="en">English</option><option value="ar">العربية</option><option value="tr">Türkçe</option></select>
-    <select id="kind" aria-label="Content type"><option value="">All content</option><option>Documentation</option><option>Website</option></select>
+    <div class="search-field"><label for="q">Search</label><input id="q" type="search" autocomplete="off" placeholder="Try: reverse image, attribution, company, username…"></div>
+    <div class="search-field"><label for="lang">Language</label><select id="lang"><option value="">All languages</option><option value="en">English</option><option value="ar">العربية</option><option value="tr">Türkçe</option></select></div>
+    <div class="search-field"><label for="kind">Content type</label><select id="kind"><option value="">All content</option><option>Documentation</option><option>Website</option></select></div>
   </div>
-  <p class="muted" id="status">Loading search index…</p>
-  <div id="results" class="results" aria-live="polite"></div>
+  <p class="muted" id="status" role="status" aria-live="polite">Loading search index…</p>
+  <div id="results" class="results"></div>
 </section></main>
 <footer class="footer"><div class="wrap">OSINT Roadmap · Search stays client-side after the static index is loaded.</div></footer>
 <script>

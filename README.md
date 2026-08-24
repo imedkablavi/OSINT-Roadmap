@@ -23,7 +23,8 @@ Filter 80+ curated tools by the clue you already have: domain, username, image, 
 **[Search the entire OSINT Roadmap →](https://imedkablavi.github.io/OSINT-Roadmap/search.html)**  
 Search guides, playbooks, labs, glossaries, case studies and multilingual documentation from one static privacy-friendly index.
 
-> The interactive links become live as soon as GitHub Pages is enabled for this repository.
+**[Browse the verified open-source tool subset →](tools/open-source-tools.md)**  
+See selected open-source tools with upstream source, license, practical role, limitations, and safe-use notes in English, Arabic, and Turkish.
 
 ## 🌐 Choose your language
 
@@ -86,11 +87,12 @@ Every category records the **input, cost, skill level, best use and main limitat
 - [English Tool Library](tools/tool-library.md)
 - [مكتبة الأدوات بالعربية](tools/tool-library.ar.md)
 - [Türkçe Araç Kütüphanesi](tools/tool-library.tr.md)
+- [Verified Open-Source Tools](tools/open-source-tools.md)
 - [Tools Hub](tools/README.md)
 - [Interactive Tool Finder](https://imedkablavi.github.io/OSINT-Roadmap/tool-finder.html)
 - [Full-content search](https://imedkablavi.github.io/OSINT-Roadmap/search.html)
 
-The Tool Finder lets you filter tools by inputs such as `Domain`, `Username`, `Image`, `IP`, `Organization`, `Location`, `Document`, `Aircraft`, `Vessel` or `Crypto Address`, as well as cost and skill level.
+The Tool Finder lets you filter tools by inputs such as `Domain`, `Username`, `Image`, `IP`, `Organization`, `Location`, `Document`, `Aircraft`, `Vessel` or `Crypto Address`, as well as cost and skill level. Verified open-source entries also expose their license and upstream source metadata.
 
 ## 🧰 Browser extensions & web tools
 
@@ -110,7 +112,7 @@ Tools change ownership, pricing, permissions and interfaces. A useful OSINT proj
 
 - [OSINT Tool Radar — August 2026](updates/2026-08-tool-radar.md)
 - [Updates archive](updates/README.md)
-- RSS feed after Pages is enabled: `https://imedkablavi.github.io/OSINT-Roadmap/feed.xml`
+- RSS feed: `https://imedkablavi.github.io/OSINT-Roadmap/feed.xml`
 
 Tool Radar notes document what changed, why it matters and what researchers should do differently. A separate weekly **Tool Freshness** workflow checks review age even when a URL still works, so stale catalogue entries are detected independently of broken-link checks.
 

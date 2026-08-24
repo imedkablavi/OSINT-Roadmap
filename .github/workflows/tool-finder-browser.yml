@@ -33,6 +33,10 @@ on:
 permissions:
   contents: read
 
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
 jobs:
   browser-test:
     name: Chromium interactive site E2E

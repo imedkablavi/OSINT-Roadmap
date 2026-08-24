@@ -1,5 +1,8 @@
 const { test, expect } = require('@playwright/test');
 const AxeBuilder = require('@axe-core/playwright').default;
+const catalogue = require('../site/tools.json');
+
+const CATALOG_SIZE = catalogue.length;
 
 const pages = [
   ['Home', '/'],
@@ -41,18 +44,26 @@ for (const [name, path] of pages) {
 
 test('Tool Finder core controls are keyboard reachable without a focus trap', async ({ page }) => {
   await page.goto('/tool-finder.html', { waitUntil: 'networkidle' });
-  await expect(page.locator('.tool')).toHaveCount(80);
+  await expect(page.locator('.tool')).toHaveCount(CATALOG_SIZE);
 
   const requiredIds = new Set(['q', 'category', 'input', 'cost', 'level', 'reset']);
   const reached = new Set();
 
-  for (let i = 0; i < 16; i += 1) {
+  for (let i = 0; i < 18; i += 1) {
     await page.keyboard.press('Tab');
     const id = await page.evaluate(() => document.activeElement?.id || '');
     if (requiredIds.has(id)) reached.add(id);
   }
 
   expect([...reached].sort()).toEqual([...requiredIds].sort());
+});
+
+test('Tool Finder visible labels are associated with core filters', async ({ page }) => {
+  await page.goto('/tool-finder.html', { waitUntil: 'networkidle' });
+
+  for (const id of ['q', 'category', 'input', 'cost', 'level']) {
+    await expect(page.locator(`label[for="${id}"]`)).toHaveCount(1);
+  }
 });
 
 test('Full search controls are keyboard reachable', async ({ page }) => {

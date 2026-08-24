@@ -37,3 +37,23 @@ test('language and content-type filters work', async ({ page }) => {
   const websiteMeta = await page.locator('.result .meta').allTextContents();
   expect(websiteMeta.every(text => text.includes('Website'))).toBeTruthy();
 });
+
+test('search controls have visible labels', async ({ page }) => {
+  await openSearch(page);
+  for (const id of ['q', 'lang', 'kind']) {
+    await expect(page.locator(`label[for="${id}"]`)).toHaveCount(1);
+  }
+});
+
+test('mobile search has no horizontal overflow and remains usable', async ({ page }) => {
+  await page.setViewportSize({ width: 390, height: 844 });
+  await openSearch(page);
+
+  await page.locator('#q').fill('report');
+  await expect(page.locator('.result').first()).toBeVisible();
+  await expect(page.locator('#lang')).toBeVisible();
+  await expect(page.locator('#kind')).toBeVisible();
+
+  const overflow = await page.evaluate(() => document.documentElement.scrollWidth > document.documentElement.clientWidth);
+  expect(overflow).toBe(false);
+});
