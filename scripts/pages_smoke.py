@@ -41,6 +41,7 @@ STATIC_RESOURCES = (
     "tools.json",
     "tools-specialist.json",
     "tool-review.json",
+    "tool-trust.json",
     "search-index.json",
     "robots.txt",
     "sitemap.xml",
@@ -175,6 +176,18 @@ def run(base_url: str, retries: int, delay: float) -> None:
     require(int(review.get("stale_after_days", 0)) >= 30, "stale_after_days is unexpectedly low")
     require(isinstance(review.get("overrides", {}), dict), "tool-review overrides must be an object")
     print(f"PASS freshness metadata: baseline {review['catalog_reviewed']}")
+
+    trust = json.loads(resources["tool-trust.json"].decode("utf-8"))
+    require(trust.get("schema_version") == 1, "tool-trust.json has an unsupported schema version")
+    require(isinstance(trust.get("entries"), dict), "tool-trust entries must be an object")
+    require(len(trust["entries"]) >= 20, "tool-trust metadata is unexpectedly sparse")
+    unknown_trust_names = sorted(set(trust["entries"]) - set(names))
+    require(not unknown_trust_names, f"tool-trust metadata references unknown tools: {unknown_trust_names}")
+    source_types = {entry.get("source_type") for entry in trust["entries"].values()}
+    require("Official primary source" in source_types, "tool-trust metadata has no official primary sources")
+    require("Registry / primary source" in source_types, "tool-trust metadata has no registry primary sources")
+    require("Public dataset / index" in source_types, "tool-trust metadata has no public dataset/index entries")
+    print(f"PASS trust metadata: {len(trust['entries'])} explicit classifications")
 
     search_index = json.loads(resources["search-index.json"].decode("utf-8"))
     require(isinstance(search_index, list), "search-index.json must contain a JSON array")
