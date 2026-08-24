@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Validate the structured OSINT tool catalogue used by the Pages Tool Finder."""
+"""Validate all structured OSINT catalogues used by the Pages Tool Finder."""
 
 from __future__ import annotations
 
@@ -7,7 +7,8 @@ import json
 from pathlib import Path
 from urllib.parse import urlparse
 
-CATALOG = Path(__file__).resolve().parents[1] / "site" / "tools.json"
+SITE = Path(__file__).resolve().parents[1] / "site"
+CATALOGS = (SITE / "tools.json", SITE / "tools-specialist.json")
 REQUIRED = {"name", "url", "category", "input", "cost", "level", "note"}
 LEVELS = {"Beginner", "Intermediate", "Advanced"}
 
@@ -21,25 +22,33 @@ def valid_https_url(value: str) -> bool:
     return parsed.scheme == "https" and bool(parsed.netloc)
 
 
+def load_catalogues() -> list[tuple[str, dict]]:
+    combined: list[tuple[str, dict]] = []
+    for path in CATALOGS:
+        try:
+            data = json.loads(path.read_text(encoding="utf-8"))
+        except (OSError, json.JSONDecodeError) as exc:
+            fail(f"{path.name}: {exc}")
+        if not isinstance(data, list) or not data:
+            fail(f"{path.name}: catalogue must be a non-empty JSON array")
+        for item in data:
+            combined.append((path.name, item))
+    return combined
+
+
 def main() -> None:
-    try:
-        data = json.loads(CATALOG.read_text(encoding="utf-8"))
-    except (OSError, json.JSONDecodeError) as exc:
-        fail(str(exc))
-
-    if not isinstance(data, list) or not data:
-        fail("catalogue must be a non-empty JSON array")
-
+    entries = load_catalogues()
     names: set[str] = set()
     urls: set[str] = set()
 
-    for index, item in enumerate(data, start=1):
+    for index, (catalogue_name, item) in enumerate(entries, start=1):
+        where = f"{catalogue_name} entry {index}"
         if not isinstance(item, dict):
-            fail(f"entry {index} is not an object")
+            fail(f"{where} is not an object")
 
         missing = REQUIRED - item.keys()
         if missing:
-            fail(f"entry {index} is missing: {', '.join(sorted(missing))}")
+            fail(f"{where} is missing: {', '.join(sorted(missing))}")
 
         name = str(item["name"]).strip()
         url = str(item["url"]).strip()
@@ -47,15 +56,15 @@ def main() -> None:
         inputs = item["input"]
 
         if not name:
-            fail(f"entry {index} has an empty name")
+            fail(f"{where} has an empty name")
         if name.casefold() in names:
-            fail(f"duplicate tool name: {name}")
+            fail(f"duplicate tool name across catalogues: {name}")
         names.add(name.casefold())
 
         if not valid_https_url(url):
             fail(f"{name}: URL must be an absolute HTTPS URL")
         if url.casefold() in urls:
-            fail(f"duplicate tool URL: {url}")
+            fail(f"duplicate tool URL across catalogues: {url}")
         urls.add(url.casefold())
 
         if level not in LEVELS:
@@ -78,7 +87,7 @@ def main() -> None:
             if not isinstance(source_url, str) or not valid_https_url(source_url.strip()):
                 fail(f"{name}: open-source entries must declare an absolute HTTPS source_url")
 
-    print(f"Validated {len(data)} curated tools; no duplicate names or URLs found.")
+    print(f"Validated {len(entries)} curated tools across {len(CATALOGS)} catalogues; no duplicate names or URLs found.")
 
 
 if __name__ == "__main__":
