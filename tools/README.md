@@ -10,6 +10,16 @@ This directory contains the roadmap's maintained tool references.
 
 The main library is organized by **research question and input**, not by popularity. Each category explains cost, skill level, best use and the main limitation of the output.
 
+## Investigator stack — start from the clue you have
+
+The expanded investigator stack maps common starting clues to a small, defensible set of tools instead of encouraging users to run everything:
+
+- [English — OSINT Investigator Tool Stack](investigator-stack.md)
+- [العربية — حزمة أدوات الباحث في OSINT](investigator-stack.ar.md)
+- [Türkçe — OSINT Araştırmacı Araç Seti](investigator-stack.tr.md)
+
+It covers usernames, email, phone, domains, IP/ASN, images, video/audio, GEOINT, companies, court records, CTI, transport, crypto, documents, datasets, timelines, academic research and evidence preservation.
+
 ## Verified open-source tools
 
 A focused list of open-source tools with verified upstream repositories, licenses, use cases and limitations is maintained in all three project languages:
@@ -18,31 +28,26 @@ A focused list of open-source tools with verified upstream repositories, license
 - [العربية — أدوات OSINT مفتوحة المصدر الموثقة](open-source-tools.ar.md)
 - [Türkçe — Doğrulanmış Açık Kaynak OSINT Araçları](open-source-tools.tr.md)
 
-The current verified additions include **theHarvester, OWASP Amass, Subfinder, OpenCTI Community Edition and MISP**. Open source does not remove authorization or provider-terms requirements; active infrastructure techniques remain limited to owned or explicitly authorized scope.
+Open source does not remove authorization, privacy or provider-terms requirements. Public source code without a clear license is **not** labelled open source in the structured catalogue.
 
 ## Interactive Tool Finder
 
-When GitHub Pages is enabled, use:
+Use:
 
 **https://imedkablavi.github.io/OSINT-Roadmap/tool-finder.html**
 
-The finder filters the curated catalogue by:
+The finder combines the core and specialist catalogues and filters by:
 
-- Domain
-- IP
-- URL
-- Username
-- Email
-- Image
-- Video
-- Location
-- Coordinates
-- Organization
-- Name
-- Document / File
-- Aircraft / Flight
-- Vessel
-- Crypto Address
+- Domain / URL / IP / ASN
+- Username / Email / Phone / Name
+- Image / Video / Audio
+- Location / Coordinates
+- Organization / public records
+- Document / File / Dataset
+- Aircraft / Flight / Vessel / rail context
+- Crypto Address / Transaction / Block
+- DOI / ORCID / academic research
+- Category / cost / skill level / open-source license
 
 ## Browser extensions
 

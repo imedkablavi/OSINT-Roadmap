@@ -39,6 +39,7 @@ EXPECTED_PAGES = {
 STATIC_RESOURCES = (
     "style.css",
     "tools.json",
+    "tools-specialist.json",
     "tool-review.json",
     "search-index.json",
     "robots.txt",
@@ -55,12 +56,7 @@ LANGUAGE_ROUTES = {
 
 
 class LinkExtractor(HTMLParser):
-    """Collect real href attributes from parsed HTML tags only.
-
-    This deliberately ignores tag-looking strings inside script/template text,
-    preventing JavaScript snippets such as href=\"${t.url}\" from being treated
-    as deployed routes.
-    """
+    """Collect real href attributes from parsed HTML tags only."""
 
     def __init__(self) -> None:
         super().__init__(convert_charrefs=True)
@@ -80,10 +76,7 @@ def fetch(url: str, retries: int, delay: float) -> tuple[bytes, str]:
     last_error: Exception | None = None
     for attempt in range(1, retries + 1):
         try:
-            request = urllib.request.Request(
-                url,
-                headers={"User-Agent": "OSINT-Roadmap-Pages-Smoke/1.0"},
-            )
+            request = urllib.request.Request(url, headers={"User-Agent": "OSINT-Roadmap-Pages-Smoke/1.0"})
             with urllib.request.urlopen(request, timeout=15) as response:
                 if response.status != 200:
                     raise RuntimeError(f"HTTP {response.status}")
@@ -112,10 +105,7 @@ def require_metadata(path: str, text: str, lang: str, canonical: str) -> None:
         ("tr", EXPECTED_PRODUCTION_ROOT + "tr/"),
         ("x-default", EXPECTED_PRODUCTION_ROOT),
     ):
-        require(
-            f'hreflang="{hreflang}" href="{href}"' in text,
-            f"/{path} missing hreflang={hreflang}",
-        )
+        require(f'hreflang="{hreflang}" href="{href}"' in text, f"/{path} missing hreflang={hreflang}")
     require('type="application/rss+xml"' in lower, f"/{path} is missing RSS discovery")
     require('type="application/ld+json"' in lower, f"/{path} is missing structured data")
     require('property="og:title"' in lower, f"/{path} is missing Open Graph metadata")
@@ -166,13 +156,19 @@ def run(base_url: str, retries: int, delay: float) -> None:
         resources[path] = body
         print(f"PASS resource: /{path}")
 
-    tools = json.loads(resources["tools.json"].decode("utf-8"))
-    require(isinstance(tools, list), "tools.json must contain a JSON array")
-    require(len(tools) >= 80, f"expected at least 80 tools, found {len(tools)}")
+    core_tools = json.loads(resources["tools.json"].decode("utf-8"))
+    specialist_tools = json.loads(resources["tools-specialist.json"].decode("utf-8"))
+    require(isinstance(core_tools, list), "tools.json must contain a JSON array")
+    require(isinstance(specialist_tools, list), "tools-specialist.json must contain a JSON array")
+    tools = [*core_tools, *specialist_tools]
+    require(len(tools) >= 110, f"expected at least 110 combined tools, found {len(tools)}")
     names = [tool.get("name") for tool in tools]
+    urls = [tool.get("url") for tool in tools]
     require(all(names), "every tool must have a name")
-    require(len(names) == len(set(names)), "tools.json contains duplicate tool names")
-    print(f"PASS catalogue: {len(tools)} tools")
+    require(all(urls), "every tool must have a URL")
+    require(len(names) == len(set(names)), "combined catalogues contain duplicate tool names")
+    require(len(urls) == len(set(urls)), "combined catalogues contain duplicate tool URLs")
+    print(f"PASS combined catalogue: {len(tools)} tools")
 
     review = json.loads(resources["tool-review.json"].decode("utf-8"))
     require(review.get("catalog_reviewed"), "tool-review.json is missing catalog_reviewed")
@@ -203,10 +199,7 @@ def run(base_url: str, retries: int, delay: float) -> None:
 
     robots_text = resources["robots.txt"].decode("utf-8")
     require("User-agent:" in robots_text, "robots.txt is missing User-agent")
-    require(
-        EXPECTED_PRODUCTION_ROOT + "sitemap.xml" in robots_text,
-        "robots.txt does not advertise the production sitemap",
-    )
+    require(EXPECTED_PRODUCTION_ROOT + "sitemap.xml" in robots_text, "robots.txt does not advertise the production sitemap")
     print("PASS robots.txt: sitemap advertised")
 
     print("Pages smoke test passed.")

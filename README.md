@@ -18,7 +18,10 @@ This repository is built around that idea.
 ## ⚡ Try the interactive project
 
 **[Launch the OSINT Tool Finder →](https://imedkablavi.github.io/OSINT-Roadmap/tool-finder.html)**  
-Filter 80+ curated tools by the clue you already have: domain, username, image, IP, company, location, document, aircraft, vessel, crypto address, cost and skill level.
+Filter 110+ curated tools and primary-source resources by the clue you already have: domain, username, email, phone, image, IP, company, location, document, aircraft, vessel, crypto address, academic identifier, cost and skill level.
+
+**[Use the clue-first investigator stack →](tools/investigator-stack.md)**  
+Start from the input you actually have and choose a small, defensible toolchain with explicit limitations instead of running every tool.
 
 **[Search the entire OSINT Roadmap →](https://imedkablavi.github.io/OSINT-Roadmap/search.html)**  
 Search guides, playbooks, labs, glossaries, case studies and multilingual documentation from one static privacy-friendly index.
@@ -37,6 +40,7 @@ Core material:
 - [Research methods](docs/research-methods.md)
 - [Tool matrix](docs/tool-matrix.md)
 - [Curated OSINT Tool Library](tools/tool-library.md)
+- [Investigator tool stack](tools/investigator-stack.md)
 - [Practice labs](docs/practice-labs.md)
 - [Browser extensions & web tools](tools/browser-extensions.md)
 - [Report template](docs/report-template.md)
@@ -48,6 +52,7 @@ Core material:
 
 - [مركز التعلم العربي](docs/ar/README.md)
 - [مكتبة أدوات OSINT بالعربية](tools/tool-library.ar.md)
+- [حزمة أدوات الباحث](tools/investigator-stack.ar.md)
 - [إضافات المتصفح وأدوات الويب](tools/browser-extensions.ar.md)
 - [المسارات الاحترافية بالعربية](docs/ar/advanced-paths.md)
 - [قاموس OSINT بالعربية](glossary/README.ar.md)
@@ -58,6 +63,7 @@ Core material:
 
 - [Türkçe öğrenme merkezi](docs/tr/README.md)
 - [Türkçe OSINT Araç Kütüphanesi](tools/tool-library.tr.md)
+- [Araştırmacı araç seti](tools/investigator-stack.tr.md)
 - [Tarayıcı eklentileri & web araçları](tools/browser-extensions.tr.md)
 - [Profesyonel uzmanlaşma yolları](docs/tr/advanced-paths.md)
 - [Türkçe OSINT sözlüğü](glossary/README.tr.md)
@@ -66,33 +72,35 @@ Core material:
 
 ## 🔎 OSINT Tool Library & Tool Finder
 
-The project now maintains a **curated library of 80+ tools and learning resources** instead of an unreviewed link dump.
+The project now maintains a **curated library of 110+ tools and primary-source research resources** instead of an unreviewed link dump.
 
 The library covers:
 
 - search, archives and monitoring;
-- usernames and public identity clues;
+- usernames, email, phone and public identity clues;
 - image and video verification;
 - GEOINT, maps and satellite imagery;
 - domains, IPs and internet infrastructure;
 - CTI and public IOC enrichment;
-- company, ownership and public records;
-- aviation and maritime research;
+- company, ownership, procurement, legal and public records;
+- aviation, maritime and rail research;
 - document extraction and data cleanup;
-- investigation workspaces and relationship analysis;
-- blockchain research.
+- investigation workspaces, timelines and relationship analysis;
+- blockchain research;
+- academic and researcher metadata.
 
 Every category records the **input, cost, skill level, best use and main limitation** of a tool. The interactive catalogue also displays a **last-reviewed date for every tool**, with per-tool overrides as individual resources are re-checked.
 
 - [English Tool Library](tools/tool-library.md)
 - [مكتبة الأدوات بالعربية](tools/tool-library.ar.md)
 - [Türkçe Araç Kütüphanesi](tools/tool-library.tr.md)
+- [Clue-first Investigator Tool Stack](tools/investigator-stack.md)
 - [Verified Open-Source Tools](tools/open-source-tools.md)
 - [Tools Hub](tools/README.md)
 - [Interactive Tool Finder](https://imedkablavi.github.io/OSINT-Roadmap/tool-finder.html)
 - [Full-content search](https://imedkablavi.github.io/OSINT-Roadmap/search.html)
 
-The Tool Finder lets you filter tools by inputs such as `Domain`, `Username`, `Image`, `IP`, `Organization`, `Location`, `Document`, `Aircraft`, `Vessel` or `Crypto Address`, as well as cost and skill level. Verified open-source entries also expose their license and upstream source metadata.
+The Tool Finder lets you filter tools by inputs such as `Domain`, `Username`, `Email`, `Phone`, `Image`, `IP`, `Organization`, `Location`, `Document`, `Aircraft`, `Vessel`, `Crypto Address`, `DOI` or `ORCID`, as well as cost and skill level. Verified open-source entries also expose their license and upstream source metadata.
 
 ## 🧰 Browser extensions & web tools
 
@@ -280,7 +288,7 @@ The project is tested automatically with GitHub Actions:
 - WCAG A/AA accessibility scans;
 - Lighthouse performance, accessibility, best-practices and SEO budgets;
 - Pages artifact and deployment smoke tests;
-- structured tool-catalogue validation;
+- structured multi-file tool-catalogue validation;
 - weekly stale-tool review-age detection independent of broken links.
 
 Most checks run on relevant pull requests and after changes land on `main`; link/freshness maintenance also runs on schedules.

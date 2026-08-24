@@ -1,6 +1,8 @@
 const { test, expect } = require('@playwright/test');
-const catalogue = require('../site/tools.json');
+const coreCatalogue = require('../site/tools.json');
+const specialistCatalogue = require('../site/tools-specialist.json');
 
+const catalogue = [...coreCatalogue, ...specialistCatalogue];
 const CATALOG_SIZE = catalogue.length;
 
 async function openFinder(page, path = '/tool-finder.html') {
@@ -36,6 +38,23 @@ test('search narrows results to a matching tool', async ({ page }) => {
   await expect(page.locator('article.tool')).toHaveCount(1);
   await expect(page.getByRole('heading', { name: 'OCRmyPDF', exact: true })).toBeVisible();
   await expect(page.locator('.chip.reviewed')).toContainText('Reviewed 2026-08-23');
+});
+
+test('specialist expansion tools are searchable in the same finder', async ({ page }) => {
+  await openFinder(page);
+  await page.locator('#q').fill('PhoneInfoga');
+  await expect(page.locator('#count')).toHaveText(`1 of ${CATALOG_SIZE} curated tools`);
+  await expect(page.getByRole('heading', { name: 'PhoneInfoga', exact: true })).toBeVisible();
+  await expect(page.getByText('GPL-3.0', { exact: true })).toBeVisible();
+});
+
+test('new academic research category is available', async ({ page }) => {
+  await openFinder(page);
+  await page.locator('#category').selectOption('Academic & Research');
+  await expect(page.locator('article.tool')).toHaveCount(3);
+  await expect(page.getByRole('heading', { name: 'OpenAlex', exact: true })).toBeVisible();
+  await expect(page.getByRole('heading', { name: 'Crossref Metadata Search', exact: true })).toBeVisible();
+  await expect(page.getByRole('heading', { name: 'ORCID Search', exact: true })).toBeVisible();
 });
 
 test('query-string searches deep-link into Tool Finder', async ({ page }) => {
@@ -97,7 +116,7 @@ test('open-source tools are discoverable with provenance metadata', async ({ pag
   await page.locator('#q').fill('Open Source');
   const cards = page.locator('article.tool');
   const count = await cards.count();
-  expect(count).toBeGreaterThanOrEqual(5);
+  expect(count).toBeGreaterThanOrEqual(20);
   await expect(cards.first().getByText('Open Source', { exact: true })).toBeVisible();
 });
 
