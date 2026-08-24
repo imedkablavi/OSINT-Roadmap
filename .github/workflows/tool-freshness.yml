@@ -4,6 +4,7 @@ on:
   pull_request:
     paths:
       - 'site/tools.json'
+      - 'site/tools-specialist.json'
       - 'site/tool-review.json'
       - 'scripts/check_tool_freshness.py'
       - '.github/workflows/tool-freshness.yml'
@@ -11,6 +12,7 @@ on:
     branches: [main]
     paths:
       - 'site/tools.json'
+      - 'site/tools-specialist.json'
       - 'site/tool-review.json'
       - 'scripts/check_tool_freshness.py'
       - '.github/workflows/tool-freshness.yml'
