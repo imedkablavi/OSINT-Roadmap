@@ -9,7 +9,7 @@ import json
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
-TOOLS = ROOT / "site" / "tools.json"
+TOOL_FILES = (ROOT / "site" / "tools.json", ROOT / "site" / "tools-specialist.json")
 REVIEW = ROOT / "site" / "tool-review.json"
 
 
@@ -24,7 +24,9 @@ def main() -> int:
     args = parser.parse_args()
 
     today = parse_date(args.today) if args.today else dt.datetime.now(dt.timezone.utc).date()
-    tools = json.loads(TOOLS.read_text(encoding="utf-8"))
+    tools = []
+    for path in TOOL_FILES:
+        tools.extend(json.loads(path.read_text(encoding="utf-8")))
     review = json.loads(REVIEW.read_text(encoding="utf-8"))
 
     baseline = parse_date(review["catalog_reviewed"])
@@ -53,7 +55,7 @@ def main() -> int:
         if age > threshold:
             stale.append((age, tool["name"], reviewed))
 
-    print(f"Freshness audit: {len(tools)} tools; stale threshold {threshold} days")
+    print(f"Freshness audit: {len(tools)} tools across {len(TOOL_FILES)} catalogues; stale threshold {threshold} days")
     print(f"Oldest review age: {max(ages, default=0)} days")
     print(f"Per-tool overrides: {len(overrides)}")
 
