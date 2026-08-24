@@ -18,7 +18,24 @@ The expanded investigator stack maps common starting clues to a small, defensibl
 - [العربية — حزمة أدوات الباحث في OSINT](investigator-stack.ar.md)
 - [Türkçe — OSINT Araştırmacı Araç Seti](investigator-stack.tr.md)
 
-It covers usernames, email, phone, domains, IP/ASN, images, video/audio, GEOINT, companies, court records, CTI, transport, crypto, documents, datasets, timelines, academic research and evidence preservation.
+It covers usernames, email, phone, domains, IP/ASN, images, video/audio, GEOINT, companies, sanctions, lobbying/FARA, procurement, beneficial ownership, court records, CTI, transport, crypto, documents, datasets, timelines, academic research and evidence preservation.
+
+## Source trust taxonomy
+
+Tool Finder separates **what a resource is** from what its output proves. `site/tool-trust.json` adds reviewed metadata without changing the underlying tool catalogue.
+
+Source types are deliberately small and controlled:
+
+- **Official primary source** — an official government or intergovernmental system publishing the underlying record or dataset.
+- **Registry / primary source** — an authoritative registry or standards-based source such as legal-entity, domain or publication metadata.
+- **Public dataset / index** — a maintained public index or aggregation that should still be traced to its upstream sources for important claims.
+- **Community / secondary source** — community-maintained or secondary material useful for discovery and corroboration, not a replacement for the underlying evidence.
+- **Open-source tool** — derived from the catalogue only when an upstream repository and explicit license are present.
+- **Hosted service / resource** — the conservative default when a stronger source classification is not explicitly supported.
+
+`Jurisdiction` records legal or institutional scope where it matters, such as `US`, `UK`, `EU`, `UN / Global` or `EPO / Global`. Unclassified resources default to `Global / varies` rather than guessing a legal scope.
+
+A source-type badge is **not a confidence score**. Official records can contain amendments, reporting delays, name collisions or jurisdiction-specific meanings. Always inspect date, identifiers, provenance and the record's procedural context.
 
 ## Verified open-source tools
 
@@ -47,6 +64,7 @@ The finder combines the core and specialist catalogues and filters by:
 - Aircraft / Flight / Vessel / rail context
 - Crypto Address / Transaction / Block
 - DOI / ORCID / academic research
+- Source type / jurisdiction
 - Category / cost / skill level / open-source license
 
 ## Browser extensions

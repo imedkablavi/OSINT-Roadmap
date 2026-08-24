@@ -3,29 +3,31 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
-  <title>OSINT Tool Finder — Find Tools by Input, Category, Cost and Skill Level</title>
-  <meta name="description" content="Interactive OSINT tool finder. Filter curated open-source intelligence tools by username, domain, IP, image, company, location, document, crypto address, category, cost and skill level.">
+  <title>OSINT Tool Finder — Filter by Input, Source Type, Jurisdiction and Cost</title>
+  <meta name="description" content="Interactive OSINT tool finder. Filter curated tools and primary-source resources by investigation input, source type, jurisdiction, category, cost and skill level.">
   <link rel="canonical" href="https://imedkablavi.github.io/OSINT-Roadmap/tool-finder.html">
   <link rel="stylesheet" href="style.css">
   <style>
-    .filters{display:grid;grid-template-columns:2fr repeat(4,1fr);gap:12px;margin:22px 0}.filter-field{display:flex;flex-direction:column;gap:6px}.filter-field label{font-size:.8rem;font-weight:700;color:#bdd0e5}.filters input,.filters select{width:100%;padding:11px 12px;border-radius:9px;border:1px solid #34516e;background:#091827;color:#e8eef7}.toolbar{display:flex;justify-content:space-between;gap:16px;align-items:center;flex-wrap:wrap}.tool-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:14px}.tool{background:rgba(13,27,42,.92);border:1px solid #20364d;border-radius:14px;padding:18px;display:flex;flex-direction:column;gap:8px;min-width:0}.tool h2{font-size:1.16rem;margin:0;overflow-wrap:anywhere}.chips{display:flex;gap:6px;flex-wrap:wrap}.chip{font-size:.76rem;padding:3px 7px;border:1px solid #34516e;border-radius:999px;color:#bdd0e5}.chip.reviewed{border-color:#2e6d50;color:#aee8c5}.chip.opensource{border-color:#6b5da8;color:#d7cbff}.tool p{color:#b7c6d6;margin:2px 0 8px}.tool .open{margin-top:auto}.tool-actions{display:flex;gap:8px;flex-wrap:wrap;margin-top:auto}.empty{grid-column:1/-1;padding:28px;border:1px dashed #34516e;border-radius:12px;color:#9fb0c3;text-align:center}@media(max-width:900px){.filters{grid-template-columns:1fr 1fr}}@media(max-width:560px){.filters{grid-template-columns:1fr}.tool-grid{grid-template-columns:minmax(0,1fr)}}
+    .filters{display:grid;grid-template-columns:minmax(220px,2fr) repeat(6,minmax(0,1fr));gap:12px;margin:22px 0}.filter-field{display:flex;flex-direction:column;gap:6px}.filter-field label{font-size:.8rem;font-weight:700;color:#bdd0e5}.filters input,.filters select{width:100%;padding:11px 12px;border-radius:9px;border:1px solid #34516e;background:#091827;color:#e8eef7}.toolbar{display:flex;justify-content:space-between;gap:16px;align-items:center;flex-wrap:wrap}.tool-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:14px}.tool{background:rgba(13,27,42,.92);border:1px solid #20364d;border-radius:14px;padding:18px;display:flex;flex-direction:column;gap:8px;min-width:0}.tool h2{font-size:1.16rem;margin:0;overflow-wrap:anywhere}.chips{display:flex;gap:6px;flex-wrap:wrap}.chip{font-size:.76rem;padding:3px 7px;border:1px solid #34516e;border-radius:999px;color:#bdd0e5}.chip.reviewed{border-color:#2e6d50;color:#aee8c5}.chip.opensource{border-color:#6b5da8;color:#d7cbff}.chip.official{border-color:#38755d;color:#bfe8d3;font-weight:700}.chip.registry{border-color:#4c7192;color:#c9def0}.chip.sourcekind,.chip.jurisdiction{border-style:dashed}.tool p{color:#b7c6d6;margin:2px 0 8px}.tool .open{margin-top:auto}.tool-actions{display:flex;gap:8px;flex-wrap:wrap;margin-top:auto}.empty{grid-column:1/-1;padding:28px;border:1px dashed #34516e;border-radius:12px;color:#9fb0c3;text-align:center}@media(max-width:1200px){.filters{grid-template-columns:repeat(3,minmax(0,1fr))}.filters .filter-field:first-child{grid-column:1/-1}}@media(max-width:700px){.filters{grid-template-columns:1fr 1fr}.filters .filter-field:first-child{grid-column:1/-1}}@media(max-width:500px){.filters{grid-template-columns:1fr}.filters .filter-field:first-child{grid-column:auto}.tool-grid{grid-template-columns:minmax(0,1fr)}}
   </style>
-  <script type="application/ld+json">{"@context":"https://schema.org","@type":"SoftwareSourceCode","name":"OSINT Roadmap Tool Finder","description":"Interactive catalogue for selecting lawful public-source research tools by investigation input and task.","codeRepository":"https://github.com/imedkablavi/OSINT-Roadmap"}</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"SoftwareSourceCode","name":"OSINT Roadmap Tool Finder","description":"Interactive catalogue for selecting lawful public-source research tools and primary sources by investigation input, source type and jurisdiction.","codeRepository":"https://github.com/imedkablavi/OSINT-Roadmap"}</script>
 </head>
 <body>
 <header class="top"><div class="wrap">
   <div class="eyebrow">Interactive reference</div>
   <h1>OSINT Tool Finder</h1>
-  <p class="lead">Start with what you actually have — a domain, username, image, company, location, IP, document, flight, vessel or crypto address — then narrow the toolset instead of opening random tabs.</p>
-  <div class="nav"><a class="btn" href="index.html">Home</a><a class="btn" href="search.html">Search roadmap</a><a class="btn" href="osint-tools.html">Tool guide</a><a class="btn" href="tool-finder.html?q=Open%20Source">Open-source tools</a><a class="btn primary" href="https://github.com/imedkablavi/OSINT-Roadmap/blob/main/tools/tool-library.md">Full library + limitations</a></div>
+  <p class="lead">Start with the clue you actually have, then narrow by task, source type and jurisdiction. Prefer an underlying primary source when the question can be answered directly instead of treating every third-party tool result as evidence.</p>
+  <div class="nav"><a class="btn" href="index.html">Home</a><a class="btn" href="search.html">Search roadmap</a><a class="btn" href="osint-tools.html">Tool guide</a><a class="btn" href="tool-finder.html?q=Open%20Source">Open-source tools</a><a class="btn primary" href="https://github.com/imedkablavi/OSINT-Roadmap/blob/main/tools/investigator-stack.md">Clue-first investigator stack</a></div>
 </div></header>
 <main class="wrap">
 <section>
-  <div class="notice"><strong>Evidence rule:</strong> a result from a tool is a lead or observation. Verify important findings against the underlying source and record time, query and context.</div>
+  <div class="notice"><strong>Evidence rule:</strong> source type describes where a result comes from, not whether the result is automatically true. Verify identity, date, jurisdiction and provenance before making an important claim.</div>
   <div class="filters" aria-label="Tool filters">
-    <div class="filter-field"><label for="q">Search</label><input id="q" type="search" placeholder="Tool name, use case, license…" autocomplete="off"></div>
+    <div class="filter-field"><label for="q">Search</label><input id="q" type="search" placeholder="Tool, use case, source type, jurisdiction, license…" autocomplete="off"></div>
     <div class="filter-field"><label for="category">Category</label><select id="category"><option value="">All categories</option></select></div>
     <div class="filter-field"><label for="input">Input</label><select id="input"><option value="">Any input</option></select></div>
+    <div class="filter-field"><label for="sourceType">Source type</label><select id="sourceType"><option value="">Any source type</option></select></div>
+    <div class="filter-field"><label for="jurisdiction">Jurisdiction</label><select id="jurisdiction"><option value="">Any jurisdiction</option></select></div>
     <div class="filter-field"><label for="cost">Cost</label><select id="cost"><option value="">Any cost</option></select></div>
     <div class="filter-field"><label for="level">Skill level</label><select id="level"><option value="">Any level</option></select></div>
   </div>
@@ -37,55 +39,62 @@
   <div class="grid">
     <article class="card"><h3>I have a domain</h3><p>Start with ICANN Lookup, crt.sh, RIPEstat, urlscan.io and historical web archives. Add Shodan/Censys only when the research question needs already-observed service context.</p></article>
     <article class="card"><h3>I have an image</h3><p>Use Google Lens, TinEye and Yandex as complementary indexes. Then inspect metadata, landmarks, chronology and original publication context.</p></article>
-    <article class="card"><h3>I have a company name</h3><p>Resolve the legal entity with OpenCorporates or an official registry, then use LEI, filings, sanctions and investigative datasets as additional layers.</p></article>
-    <article class="card"><h3>I have a location claim</h3><p>Cross-check maps, street-level imagery, terrain, sun direction and satellite imagery. One visual clue is rarely enough.</p></article>
+    <article class="card"><h3>I have a company name</h3><p>Resolve the legal entity with an official registry, then use LEI, filings, sanctions, procurement and investigative datasets as additional layers.</p></article>
+    <article class="card"><h3>I have a location claim</h3><p>Cross-check maps, street-level imagery, terrain, sun direction, historical weather and satellite imagery. One visual clue is rarely enough.</p></article>
     <article class="card"><h3>I have an IP or IOC</h3><p>Prefer passive enrichment: VirusTotal, urlscan.io, Censys, Shodan, GreyNoise, RIPEstat and abuse.ch datasets. Keep scan time and data age in mind.</p></article>
-    <article class="card"><h3>I have a username</h3><p>Use username tools for discovery, then manually compare independent signals. Handle reuse alone is weak attribution.</p></article>
+    <article class="card"><h3>I have a public-record match</h3><p>Use jurisdiction filters to find the underlying official or registry source. A name, sanctions, lobbying, court or procurement match still needs identifier and date context.</p></article>
   </div>
 </section>
 <section>
   <h2>Learn the method behind the tools</h2>
-  <p>Tools change faster than good investigation practice. Use the <a href="https://github.com/imedkablavi/OSINT-Roadmap/blob/main/docs/research-methods.md">research methods</a>, <a href="https://github.com/imedkablavi/OSINT-Roadmap/blob/main/playbooks/README.md">investigation playbooks</a> and <a href="https://github.com/imedkablavi/OSINT-Roadmap/blob/main/docs/report-template.md">report template</a> with this finder.</p>
+  <p>Tools change faster than good investigation practice. Use the <a href="https://github.com/imedkablavi/OSINT-Roadmap/blob/main/docs/research-methods.md">research methods</a>, <a href="https://github.com/imedkablavi/OSINT-Roadmap/blob/main/playbooks/README.md">investigation playbooks</a>, <a href="https://github.com/imedkablavi/OSINT-Roadmap/blob/main/tools/investigator-stack.md">investigator stack</a> and <a href="https://github.com/imedkablavi/OSINT-Roadmap/blob/main/docs/report-template.md">report template</a> with this finder.</p>
 </section>
 </main>
 <footer class="footer"><div class="wrap"><a href="index.html">OSINT Roadmap</a> · <span id="catalog-review">Catalogue freshness metadata loading…</span></div></footer>
 <script>
-const els={q:document.getElementById('q'),category:document.getElementById('category'),input:document.getElementById('input'),cost:document.getElementById('cost'),level:document.getElementById('level'),tools:document.getElementById('tools'),count:document.getElementById('count')};
-let catalogue=[],reviewMeta={catalog_reviewed:'unknown',overrides:{}};
+const els={q:document.getElementById('q'),category:document.getElementById('category'),input:document.getElementById('input'),sourceType:document.getElementById('sourceType'),jurisdiction:document.getElementById('jurisdiction'),cost:document.getElementById('cost'),level:document.getElementById('level'),tools:document.getElementById('tools'),count:document.getElementById('count')};
+let catalogue=[],reviewMeta={catalog_reviewed:'unknown',overrides:{}},trustMeta={default_source_type:'Hosted service / resource',default_jurisdiction:'Global / varies',entries:{}};
 const uniq=a=>[...new Set(a)].sort((x,y)=>x.localeCompare(y));
 const reviewed=t=>(reviewMeta.overrides&&reviewMeta.overrides[t.name])||reviewMeta.catalog_reviewed||'unknown';
+const trustFor=t=>(trustMeta.entries&&trustMeta.entries[t.name])||{};
+const sourceType=t=>trustFor(t).source_type||(t.open_source===true?'Open-source tool':trustMeta.default_source_type||'Hosted service / resource');
+const jurisdiction=t=>trustFor(t).jurisdiction||trustMeta.default_jurisdiction||'Global / varies';
 function fill(select,values){values.forEach(v=>{const o=document.createElement('option');o.value=v;o.textContent=v;select.appendChild(o)})}
 function chip(text,className=''){const el=document.createElement('span');el.className=`chip${className?` ${className}`:''}`;el.textContent=text;return el}
 function safeHttps(value){try{const url=new URL(value);return url.protocol==='https:'?url.href:null}catch{return null}}
+function sourceChipClass(type){if(type==='Official primary source')return 'official';if(type==='Registry / primary source')return 'registry';return 'sourcekind'}
 function toolCard(t){
   const article=document.createElement('article');article.className='tool';
   const category=document.createElement('div');category.className='kicker';category.textContent=t.category;article.appendChild(category);
   const heading=document.createElement('h2');heading.textContent=t.name;article.appendChild(heading);
   const chips=document.createElement('div');chips.className='chips';chips.append(chip(t.level),chip(t.cost),chip(`Reviewed ${reviewed(t)}`,'reviewed'));
+  const type=sourceType(t);chips.append(chip(type,sourceChipClass(type)));
+  const explicitJurisdiction=trustFor(t).jurisdiction;if(explicitJurisdiction)chips.append(chip(`Jurisdiction: ${explicitJurisdiction}`,'jurisdiction'));
   if(t.open_source===true){chips.append(chip('Open Source','opensource'));if(t.license)chips.append(chip(t.license,'opensource'))}
   t.input.forEach(i=>chips.appendChild(chip(i)));article.appendChild(chips);
   const note=document.createElement('p');note.textContent=t.note;article.appendChild(note);
   const actions=document.createElement('div');actions.className='tool-actions';
-  const resourceUrl=safeHttps(t.url);if(resourceUrl){const link=document.createElement('a');link.className='btn open';link.href=resourceUrl;link.target='_blank';link.rel='noopener noreferrer';link.textContent='Open official resource ↗';actions.appendChild(link)}
+  const resourceUrl=safeHttps(t.url);if(resourceUrl){const link=document.createElement('a');link.className='btn open';link.href=resourceUrl;link.target='_blank';link.rel='noopener noreferrer';link.textContent=type==='Official primary source'?'Open official source ↗':type==='Registry / primary source'?'Open registry source ↗':'Open resource ↗';actions.appendChild(link)}
   const sourceUrl=t.open_source===true?safeHttps(t.source_url):null;if(sourceUrl&&sourceUrl!==resourceUrl){const source=document.createElement('a');source.className='btn source';source.href=sourceUrl;source.target='_blank';source.rel='noopener noreferrer';source.textContent='Source code ↗';actions.appendChild(source)}
   article.appendChild(actions);return article;
 }
 function render(){const query=els.q.value.trim().toLowerCase();const filtered=catalogue.filter(t=>{
-  const extra=t.open_source===true?['open source',t.license||'',t.source_url||'']:[];
-  const hay=[t.name,t.category,t.note,...t.input,...extra].join(' ').toLowerCase();
-  return (!query||hay.includes(query))&&(!els.category.value||t.category===els.category.value)&&(!els.input.value||t.input.includes(els.input.value))&&(!els.cost.value||t.cost===els.cost.value)&&(!els.level.value||t.level===els.level.value);
+  const type=sourceType(t),jur=jurisdiction(t);const extra=t.open_source===true?['open source',t.license||'',t.source_url||'']:[];
+  const hay=[t.name,t.category,t.note,type,jur,...t.input,...extra].join(' ').toLowerCase();
+  return (!query||hay.includes(query))&&(!els.category.value||t.category===els.category.value)&&(!els.input.value||t.input.includes(els.input.value))&&(!els.sourceType.value||type===els.sourceType.value)&&(!els.jurisdiction.value||jur===els.jurisdiction.value)&&(!els.cost.value||t.cost===els.cost.value)&&(!els.level.value||t.level===els.level.value);
 });
   els.count.textContent=`${filtered.length} of ${catalogue.length} curated tools`;els.tools.replaceChildren();
-  if(!filtered.length){const empty=document.createElement('div');empty.className='empty';empty.textContent='No tools match these filters. Broaden the input or category instead of forcing a tool to fit the question.';els.tools.appendChild(empty);return}
+  if(!filtered.length){const empty=document.createElement('div');empty.className='empty';empty.textContent='No tools match these filters. Broaden the input, source type or jurisdiction instead of forcing a tool to fit the question.';els.tools.appendChild(empty);return}
   filtered.forEach(t=>els.tools.appendChild(toolCard(t)));
 }
 Promise.all([
   fetch('tools.json').then(r=>{if(!r.ok)throw new Error('core catalogue');return r.json()}),
   fetch('tools-specialist.json').then(r=>{if(!r.ok)throw new Error('specialist catalogue');return r.json()}),
-  fetch('tool-review.json').then(r=>{if(!r.ok)throw new Error('review metadata');return r.json()})
-]).then(([core,specialist,review])=>{catalogue=[...core,...specialist];reviewMeta=review;document.getElementById('catalog-review').textContent=`Baseline catalogue review ${review.catalog_reviewed}; individual re-checks override this date.`;fill(els.category,uniq(catalogue.map(t=>t.category)));fill(els.input,uniq(catalogue.flatMap(t=>t.input)));fill(els.cost,uniq(catalogue.map(t=>t.cost)));fill(els.level,uniq(catalogue.map(t=>t.level)));render()}).catch(()=>{els.count.textContent='Catalogue failed to load';els.tools.replaceChildren();const empty=document.createElement('div');empty.className='empty';empty.textContent='The tool catalogue could not be loaded. Use the full GitHub tool library instead.';els.tools.appendChild(empty);document.getElementById('catalog-review').textContent='Catalogue freshness metadata unavailable.'});
-[els.q,els.category,els.input,els.cost,els.level].forEach(el=>el.addEventListener(el.tagName==='INPUT'?'input':'change',render));
-document.getElementById('reset').addEventListener('click',()=>{els.q.value='';els.category.value='';els.input.value='';els.cost.value='';els.level.value='';render();els.q.focus()});
+  fetch('tool-review.json').then(r=>{if(!r.ok)throw new Error('review metadata');return r.json()}),
+  fetch('tool-trust.json').then(r=>{if(!r.ok)throw new Error('trust metadata');return r.json()})
+]).then(([core,specialist,review,trust])=>{catalogue=[...core,...specialist];reviewMeta=review;trustMeta=trust;document.getElementById('catalog-review').textContent=`Baseline catalogue review ${review.catalog_reviewed}; source-type metadata schema v${trust.schema_version}; individual re-checks override the baseline date.`;fill(els.category,uniq(catalogue.map(t=>t.category)));fill(els.input,uniq(catalogue.flatMap(t=>t.input)));fill(els.sourceType,uniq(catalogue.map(sourceType)));fill(els.jurisdiction,uniq(catalogue.map(jurisdiction)));fill(els.cost,uniq(catalogue.map(t=>t.cost)));fill(els.level,uniq(catalogue.map(t=>t.level)));render()}).catch(()=>{els.count.textContent='Catalogue failed to load';els.tools.replaceChildren();const empty=document.createElement('div');empty.className='empty';empty.textContent='The tool catalogue or trust metadata could not be loaded. Use the full GitHub tool library instead.';els.tools.appendChild(empty);document.getElementById('catalog-review').textContent='Catalogue metadata unavailable.'});
+[els.q,els.category,els.input,els.sourceType,els.jurisdiction,els.cost,els.level].forEach(el=>el.addEventListener(el.tagName==='INPUT'?'input':'change',render));
+document.getElementById('reset').addEventListener('click',()=>{els.q.value='';els.category.value='';els.input.value='';els.sourceType.value='';els.jurisdiction.value='';els.cost.value='';els.level.value='';render();els.q.focus()});
 const initial=new URLSearchParams(location.search).get('q');if(initial)els.q.value=initial;
 </script>
 </body></html>

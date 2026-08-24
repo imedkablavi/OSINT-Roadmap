@@ -43,14 +43,14 @@ for (const [name, path] of pages) {
   });
 }
 
-test('Tool Finder core controls are keyboard reachable without a focus trap', async ({ page }) => {
+test('Tool Finder core and trust controls are keyboard reachable without a focus trap', async ({ page }) => {
   await page.goto('/tool-finder.html', { waitUntil: 'networkidle' });
   await expect(page.locator('.tool')).toHaveCount(CATALOG_SIZE);
 
-  const requiredIds = new Set(['q', 'category', 'input', 'cost', 'level', 'reset']);
+  const requiredIds = new Set(['q', 'category', 'input', 'sourceType', 'jurisdiction', 'cost', 'level', 'reset']);
   const reached = new Set();
 
-  for (let i = 0; i < 18; i += 1) {
+  for (let i = 0; i < 24; i += 1) {
     await page.keyboard.press('Tab');
     const id = await page.evaluate(() => document.activeElement?.id || '');
     if (requiredIds.has(id)) reached.add(id);
@@ -59,10 +59,10 @@ test('Tool Finder core controls are keyboard reachable without a focus trap', as
   expect([...reached].sort()).toEqual([...requiredIds].sort());
 });
 
-test('Tool Finder visible labels are associated with core filters', async ({ page }) => {
+test('Tool Finder visible labels are associated with every filter', async ({ page }) => {
   await page.goto('/tool-finder.html', { waitUntil: 'networkidle' });
 
-  for (const id of ['q', 'category', 'input', 'cost', 'level']) {
+  for (const id of ['q', 'category', 'input', 'sourceType', 'jurisdiction', 'cost', 'level']) {
     await expect(page.locator(`label[for="${id}"]`)).toHaveCount(1);
   }
 });

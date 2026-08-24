@@ -5,6 +5,7 @@ on:
     paths:
       - 'site/tools.json'
       - 'site/tools-specialist.json'
+      - 'site/tool-trust.json'
       - 'scripts/validate_tool_catalog.py'
       - '.github/workflows/tool-catalog.yml'
   push:
@@ -12,6 +13,7 @@ on:
     paths:
       - 'site/tools.json'
       - 'site/tools-specialist.json'
+      - 'site/tool-trust.json'
       - 'scripts/validate_tool_catalog.py'
       - '.github/workflows/tool-catalog.yml'
   workflow_dispatch:
