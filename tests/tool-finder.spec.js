@@ -49,7 +49,7 @@ test('specialist expansion tools are searchable in the same finder', async ({ pa
   await expect(page.locator('#count')).toHaveText(`1 of ${CATALOG_SIZE} curated tools`);
   await expect(page.getByRole('heading', { name: 'PhoneInfoga', exact: true })).toBeVisible();
   await expect(page.getByText('GPL-3.0', { exact: true })).toBeVisible();
-  await expect(page.getByText('Open-source tool', { exact: true })).toBeVisible();
+  await expect(page.locator('article.tool .chip.sourcekind', { hasText: 'Open-source tool' })).toHaveCount(1);
 });
 
 test('official primary-source filter returns only explicitly classified official sources', async ({ page }) => {
