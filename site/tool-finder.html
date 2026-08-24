@@ -8,7 +8,7 @@
   <link rel="canonical" href="https://imedkablavi.github.io/OSINT-Roadmap/tool-finder.html">
   <link rel="stylesheet" href="style.css">
   <style>
-    .filters{display:grid;grid-template-columns:2fr repeat(4,1fr);gap:12px;margin:22px 0}.filters input,.filters select{width:100%;padding:11px 12px;border-radius:9px;border:1px solid #34516e;background:#091827;color:#e8eef7}.toolbar{display:flex;justify-content:space-between;gap:16px;align-items:center;flex-wrap:wrap}.tool-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:14px}.tool{background:rgba(13,27,42,.92);border:1px solid #20364d;border-radius:14px;padding:18px;display:flex;flex-direction:column;gap:8px}.tool h2{font-size:1.16rem;margin:0}.chips{display:flex;gap:6px;flex-wrap:wrap}.chip{font-size:.76rem;padding:3px 7px;border:1px solid #34516e;border-radius:999px;color:#bdd0e5}.chip.reviewed{border-color:#2e6d50;color:#aee8c5}.tool p{color:#b7c6d6;margin:2px 0 8px}.tool .open{margin-top:auto}.empty{padding:28px;border:1px dashed #34516e;border-radius:12px;color:#9fb0c3;text-align:center}@media(max-width:900px){.filters{grid-template-columns:1fr 1fr}}@media(max-width:560px){.filters{grid-template-columns:1fr}}
+    .filters{display:grid;grid-template-columns:2fr repeat(4,1fr);gap:12px;margin:22px 0}.filter-field{display:flex;flex-direction:column;gap:6px}.filter-field label{font-size:.8rem;font-weight:700;color:#bdd0e5}.filters input,.filters select{width:100%;padding:11px 12px;border-radius:9px;border:1px solid #34516e;background:#091827;color:#e8eef7}.toolbar{display:flex;justify-content:space-between;gap:16px;align-items:center;flex-wrap:wrap}.tool-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:14px}.tool{background:rgba(13,27,42,.92);border:1px solid #20364d;border-radius:14px;padding:18px;display:flex;flex-direction:column;gap:8px;min-width:0}.tool h2{font-size:1.16rem;margin:0;overflow-wrap:anywhere}.chips{display:flex;gap:6px;flex-wrap:wrap}.chip{font-size:.76rem;padding:3px 7px;border:1px solid #34516e;border-radius:999px;color:#bdd0e5}.chip.reviewed{border-color:#2e6d50;color:#aee8c5}.chip.opensource{border-color:#6b5da8;color:#d7cbff}.tool p{color:#b7c6d6;margin:2px 0 8px}.tool .open{margin-top:auto}.tool-actions{display:flex;gap:8px;flex-wrap:wrap;margin-top:auto}.empty{grid-column:1/-1;padding:28px;border:1px dashed #34516e;border-radius:12px;color:#9fb0c3;text-align:center}@media(max-width:900px){.filters{grid-template-columns:1fr 1fr}}@media(max-width:560px){.filters{grid-template-columns:1fr}.tool-grid{grid-template-columns:minmax(0,1fr)}}
   </style>
   <script type="application/ld+json">{"@context":"https://schema.org","@type":"SoftwareSourceCode","name":"OSINT Roadmap Tool Finder","description":"Interactive catalogue for selecting lawful public-source research tools by investigation input and task.","codeRepository":"https://github.com/imedkablavi/OSINT-Roadmap"}</script>
 </head>
@@ -17,20 +17,20 @@
   <div class="eyebrow">Interactive reference</div>
   <h1>OSINT Tool Finder</h1>
   <p class="lead">Start with what you actually have — a domain, username, image, company, location, IP, document, flight, vessel or crypto address — then narrow the toolset instead of opening random tabs.</p>
-  <div class="nav"><a class="btn" href="index.html">Home</a><a class="btn" href="search.html">Search roadmap</a><a class="btn" href="osint-tools.html">Tool guide</a><a class="btn primary" href="https://github.com/imedkablavi/OSINT-Roadmap/blob/main/tools/tool-library.md">Full library + limitations</a></div>
+  <div class="nav"><a class="btn" href="index.html">Home</a><a class="btn" href="search.html">Search roadmap</a><a class="btn" href="osint-tools.html">Tool guide</a><a class="btn" href="https://github.com/imedkablavi/OSINT-Roadmap/blob/main/tools/open-source-tools.md">Open-source tools</a><a class="btn primary" href="https://github.com/imedkablavi/OSINT-Roadmap/blob/main/tools/tool-library.md">Full library + limitations</a></div>
 </div></header>
 <main class="wrap">
 <section>
   <div class="notice"><strong>Evidence rule:</strong> a result from a tool is a lead or observation. Verify important findings against the underlying source and record time, query and context.</div>
   <div class="filters" aria-label="Tool filters">
-    <input id="q" type="search" placeholder="Search tools or use cases…" aria-label="Search tools">
-    <select id="category" aria-label="Category"><option value="">All categories</option></select>
-    <select id="input" aria-label="Input type"><option value="">Any input</option></select>
-    <select id="cost" aria-label="Cost"><option value="">Any cost</option></select>
-    <select id="level" aria-label="Skill level"><option value="">Any level</option></select>
+    <div class="filter-field"><label for="q">Search</label><input id="q" type="search" placeholder="Tool name, use case, license…" autocomplete="off"></div>
+    <div class="filter-field"><label for="category">Category</label><select id="category"><option value="">All categories</option></select></div>
+    <div class="filter-field"><label for="input">Input</label><select id="input"><option value="">Any input</option></select></div>
+    <div class="filter-field"><label for="cost">Cost</label><select id="cost"><option value="">Any cost</option></select></div>
+    <div class="filter-field"><label for="level">Skill level</label><select id="level"><option value="">Any level</option></select></div>
   </div>
-  <div class="toolbar"><p class="muted" id="count">Loading catalogue…</p><button class="btn" id="reset" type="button">Reset filters</button></div>
-  <div id="tools" class="tool-grid" aria-live="polite"></div>
+  <div class="toolbar"><p class="muted" id="count" role="status" aria-live="polite">Loading catalogue…</p><button class="btn" id="reset" type="button">Reset filters</button></div>
+  <div id="tools" class="tool-grid"></div>
 </section>
 <section>
   <h2>Good defaults by investigation type</h2>
@@ -55,20 +55,36 @@ let catalogue=[],reviewMeta={catalog_reviewed:'unknown',overrides:{}};
 const uniq=a=>[...new Set(a)].sort((x,y)=>x.localeCompare(y));
 const reviewed=t=>(reviewMeta.overrides&&reviewMeta.overrides[t.name])||reviewMeta.catalog_reviewed||'unknown';
 function fill(select,values){values.forEach(v=>{const o=document.createElement('option');o.value=v;o.textContent=v;select.appendChild(o)})}
+function chip(text,className=''){const el=document.createElement('span');el.className=`chip${className?` ${className}`:''}`;el.textContent=text;return el}
+function safeHttps(value){try{const url=new URL(value);return url.protocol==='https:'?url.href:null}catch{return null}}
+function toolCard(t){
+  const article=document.createElement('article');article.className='tool';
+  const category=document.createElement('div');category.className='kicker';category.textContent=t.category;article.appendChild(category);
+  const heading=document.createElement('h2');heading.textContent=t.name;article.appendChild(heading);
+  const chips=document.createElement('div');chips.className='chips';chips.append(chip(t.level),chip(t.cost),chip(`Reviewed ${reviewed(t)}`,'reviewed'));
+  if(t.open_source===true){chips.append(chip('Open Source','opensource'));if(t.license)chips.append(chip(t.license,'opensource'))}
+  t.input.forEach(i=>chips.appendChild(chip(i)));article.appendChild(chips);
+  const note=document.createElement('p');note.textContent=t.note;article.appendChild(note);
+  const actions=document.createElement('div');actions.className='tool-actions';
+  const resourceUrl=safeHttps(t.url);if(resourceUrl){const link=document.createElement('a');link.className='btn open';link.href=resourceUrl;link.target='_blank';link.rel='noopener noreferrer';link.textContent='Open official resource ↗';actions.appendChild(link)}
+  const sourceUrl=t.open_source===true?safeHttps(t.source_url):null;if(sourceUrl&&sourceUrl!==resourceUrl){const source=document.createElement('a');source.className='btn source';source.href=sourceUrl;source.target='_blank';source.rel='noopener noreferrer';source.textContent='Source code ↗';actions.appendChild(source)}
+  article.appendChild(actions);return article;
+}
 function render(){const query=els.q.value.trim().toLowerCase();const filtered=catalogue.filter(t=>{
-  const hay=[t.name,t.category,t.note,...t.input].join(' ').toLowerCase();
+  const extra=t.open_source===true?['open source',t.license||'',t.source_url||'']:[];
+  const hay=[t.name,t.category,t.note,...t.input,...extra].join(' ').toLowerCase();
   return (!query||hay.includes(query))&&(!els.category.value||t.category===els.category.value)&&(!els.input.value||t.input.includes(els.input.value))&&(!els.cost.value||t.cost===els.cost.value)&&(!els.level.value||t.level===els.level.value);
 });
-  els.count.textContent=`${filtered.length} of ${catalogue.length} curated tools`;
-  if(!filtered.length){els.tools.innerHTML='<div class="empty">No tools match these filters. Broaden the input or category instead of forcing a tool to fit the question.</div>';return}
-  els.tools.innerHTML=filtered.map(t=>`<article class="tool"><div class="kicker">${t.category}</div><h2>${t.name}</h2><div class="chips"><span class="chip">${t.level}</span><span class="chip">${t.cost}</span><span class="chip reviewed">Reviewed ${reviewed(t)}</span>${t.input.map(i=>`<span class="chip">${i}</span>`).join('')}</div><p>${t.note}</p><a class="btn open" href="${t.url}" target="_blank" rel="noopener noreferrer">Open official resource ↗</a></article>`).join('');
+  els.count.textContent=`${filtered.length} of ${catalogue.length} curated tools`;els.tools.replaceChildren();
+  if(!filtered.length){const empty=document.createElement('div');empty.className='empty';empty.textContent='No tools match these filters. Broaden the input or category instead of forcing a tool to fit the question.';els.tools.appendChild(empty);return}
+  filtered.forEach(t=>els.tools.appendChild(toolCard(t)));
 }
 Promise.all([
   fetch('tools.json').then(r=>{if(!r.ok)throw new Error('catalogue');return r.json()}),
   fetch('tool-review.json').then(r=>{if(!r.ok)throw new Error('review metadata');return r.json()})
-]).then(([data,review])=>{catalogue=data;reviewMeta=review;document.getElementById('catalog-review').textContent=`Baseline catalogue review ${review.catalog_reviewed}; individual re-checks override this date.`;fill(els.category,uniq(data.map(t=>t.category)));fill(els.input,uniq(data.flatMap(t=>t.input)));fill(els.cost,uniq(data.map(t=>t.cost)));fill(els.level,uniq(data.map(t=>t.level)));render()}).catch(()=>{els.count.textContent='Catalogue failed to load';els.tools.innerHTML='<div class="empty">The tool catalogue could not be loaded. Use the full GitHub tool library instead.</div>';document.getElementById('catalog-review').textContent='Catalogue freshness metadata unavailable.'});
+]).then(([data,review])=>{catalogue=data;reviewMeta=review;document.getElementById('catalog-review').textContent=`Baseline catalogue review ${review.catalog_reviewed}; individual re-checks override this date.`;fill(els.category,uniq(data.map(t=>t.category)));fill(els.input,uniq(data.flatMap(t=>t.input)));fill(els.cost,uniq(data.map(t=>t.cost)));fill(els.level,uniq(data.map(t=>t.level)));render()}).catch(()=>{els.count.textContent='Catalogue failed to load';els.tools.replaceChildren();const empty=document.createElement('div');empty.className='empty';empty.textContent='The tool catalogue could not be loaded. Use the full GitHub tool library instead.';els.tools.appendChild(empty);document.getElementById('catalog-review').textContent='Catalogue freshness metadata unavailable.'});
 [els.q,els.category,els.input,els.cost,els.level].forEach(el=>el.addEventListener(el.tagName==='INPUT'?'input':'change',render));
-document.getElementById('reset').addEventListener('click',()=>{els.q.value='';els.category.value='';els.input.value='';els.cost.value='';els.level.value='';render()});
+document.getElementById('reset').addEventListener('click',()=>{els.q.value='';els.category.value='';els.input.value='';els.cost.value='';els.level.value='';render();els.q.focus()});
 const initial=new URLSearchParams(location.search).get('q');if(initial)els.q.value=initial;
 </script>
 </body></html>
