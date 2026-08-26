@@ -22,12 +22,12 @@ Rapor + Portfolio
 
 ## Temel rehberler
 
-- [Araştırma yöntemleri](research-methods.md) — provenance, sideways search, alternatif hipotezler, timeline ve stop conditions
-- [Kaynak doğrulama kontrol listesi](source-verification-checklist.md) — bir kaynağa güvenmeden önce neyi kontrol etmelisin
-- [Araç matrisi](tool-matrix.md) — aracın kullanım amacı ve çıktının neyi kanıtlamadığı
-- [Pratik laboratuvarları](practice-labs.md) — değerlendirilebilir çıktılar üreten çalışmalar
-- [Geolocation saha rehberi](geolocation-field-guide.md) — konum doğrulama iş akışı
-- [Rapor şablonu](report-template.md) — yeniden incelenebilir rapor yapısı
+- [Araştırma yöntemleri](research-methods.md) - provenance, sideways search, alternatif hipotezler, timeline ve stop conditions
+- [Kaynak doğrulama kontrol listesi](source-verification-checklist.md) - bir kaynağa güvenmeden önce neyi kontrol etmelisin
+- [Araç matrisi](tool-matrix.md) - aracın kullanım amacı ve çıktının neyi kanıtlamadığı
+- [Pratik laboratuvarları](practice-labs.md) - değerlendirilebilir çıktılar üreten çalışmalar
+- [Geolocation saha rehberi](geolocation-field-guide.md) - konum doğrulama iş akışı
+- [Rapor şablonu](report-template.md) - yeniden incelenebilir rapor yapısı
 
 ## Türkçe OSINT araç kütüphanesi
 
@@ -76,7 +76,7 @@ Türkçe açıklamalar içerir:
 
 ## Araç güncellemeleri
 
-- [OSINT Tool Radar — Ağustos 2026](../../updates/2026-08-tool-radar.md)
+- [OSINT Tool Radar - Ağustos 2026](../../updates/2026-08-tool-radar.md)
 - [Tüm proje güncellemeleri](../../updates/README.md)
 
 Tool Radar'ın amacı, araçlar değiştikçe roadmap'i güncel tutmak ve eski bağlantı listesine dönüşmesini engellemektir.

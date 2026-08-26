@@ -1,4 +1,4 @@
-# OSINT Glossary — English
+# OSINT Glossary - English
 
 A concise reference for terms used throughout this repository.
 

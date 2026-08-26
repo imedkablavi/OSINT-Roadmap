@@ -4,7 +4,7 @@
 
 هذه الصفحة تشرح المسارات المتقدمة بالعربية وتحدد ما يجب أن تتعلمه في كل مسار.
 
-## 1. Cyber Threat Intelligence — CTI
+## 1. Cyber Threat Intelligence - CTI
 
 ### الهدف
 

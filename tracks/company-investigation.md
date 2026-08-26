@@ -15,7 +15,7 @@ You should be able to:
 - document source jurisdiction and update dates;
 - separate verified corporate relationships from inferred associations.
 
-## Stage 1 — Entity resolution
+## Stage 1 - Entity resolution
 
 Start by proving you have the right entity.
 
@@ -32,7 +32,7 @@ Collect:
 
 Do not rely on a company name alone. Names can be duplicated across jurisdictions.
 
-## Stage 2 — Source hierarchy
+## Stage 2 - Source hierarchy
 
 Prefer:
 
@@ -45,7 +45,7 @@ Prefer:
 
 Aggregators are useful for discovery, but important facts should be checked against the underlying record when available.
 
-## Stage 3 — Ownership and control
+## Stage 3 - Ownership and control
 
 Record each relationship separately.
 
@@ -56,7 +56,7 @@ Record each relationship separately.
 
 Check whether the record is current. A historical director is not necessarily a current director.
 
-## Stage 4 — Corporate timeline
+## Stage 4 - Corporate timeline
 
 Track:
 
@@ -70,7 +70,7 @@ Track:
 - sanctions/listing events;
 - dissolution or insolvency events.
 
-## Stage 5 — Sanctions and watchlists
+## Stage 5 - Sanctions and watchlists
 
 When checking sanctions:
 
@@ -81,7 +81,7 @@ When checking sanctions:
 - record the issuing authority and date;
 - do not treat an aggregator match as final confirmation.
 
-## Stage 6 — Web presence
+## Stage 6 - Web presence
 
 Useful public questions:
 
@@ -91,7 +91,7 @@ Useful public questions:
 - Are subsidiary or brand websites linked from official pages?
 - Do archived pages reveal historical names or business lines?
 
-## Stage 7 — Relationship mapping
+## Stage 7 - Relationship mapping
 
 Map only relationships you can label precisely.
 
@@ -108,7 +108,7 @@ reported commercial partner
 
 Avoid vague graph edges such as “connected to” unless you explain what the connection actually is.
 
-## Stage 8 — Risk-aware reporting
+## Stage 8 - Risk-aware reporting
 
 A company investigation can affect real organizations and people. Use neutral language and cite the underlying source.
 

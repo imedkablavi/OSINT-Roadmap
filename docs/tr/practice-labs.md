@@ -2,7 +2,7 @@
 
 Bu alıştırmalar kamuya açık, izinli veya eğitim için hazırlanmış içerikle yapılmalıdır.
 
-## Lab 1 — Bir iddianın ilk kaynağını bul
+## Lab 1 - Bir iddianın ilk kaynağını bul
 
 **Amaç:** Bir haber veya duyurunun kaynak zincirini geriye doğru izlemek.
 
@@ -13,7 +13,7 @@ Bu alıştırmalar kamuya açık, izinli veya eğitim için hazırlanmış içer
 5. Mümkünse birincil belge veya resmi duyuruya ulaş.
 6. Bir paragrafta hangi kaynağın neden en güçlü olduğunu açıkla.
 
-## Lab 2 — Değişmiş bir web sayfasını yeniden kur
+## Lab 2 - Değişmiş bir web sayfasını yeniden kur
 
 **Amaç:** Web arşivlerini kanıt olarak dikkatli kullanmak.
 
@@ -23,7 +23,7 @@ Bu alıştırmalar kamuya açık, izinli veya eğitim için hazırlanmış içer
 4. Değişiklik zamanını yaklaşık olarak daralt.
 5. Arşivde olmayan dönemleri “bilinmiyor” olarak bırak.
 
-## Lab 3 — Görsel bağlamını doğrula
+## Lab 3 - Görsel bağlamını doğrula
 
 **Amaç:** Görselin iddia edilen olay/tarih/yerle uyumunu test etmek.
 
@@ -33,7 +33,7 @@ Bu alıştırmalar kamuya açık, izinli veya eğitim için hazırlanmış içer
 4. Görseldeki yazı, bina veya arazi ipuçlarını kaydet.
 5. Sonucu “doğrulandı / kısmen destekleniyor / doğrulanamadı” olarak yaz.
 
-## Lab 4 — Pasif domain footprint
+## Lab 4 - Pasif domain footprint
 
 **Amaç:** Aktif tarama yapmadan bir alan adının açık kaynak izini çıkarmak.
 
@@ -48,7 +48,7 @@ Kullan:
 
 Çıktıda her bulgunun kaynağını ve tarihini göster.
 
-## Lab 5 — Username hipotezini test et
+## Lab 5 - Username hipotezini test et
 
 **Amaç:** Aynı kullanıcı adının aynı kişi anlamına gelmediğini uygulamalı görmek.
 
@@ -58,7 +58,7 @@ Kullan:
 4. En az bir false positive örneği ara.
 5. Kesin kimlik iddiası yapma.
 
-## Lab 6 — Timeline oluştur ve boz
+## Lab 6 - Timeline oluştur ve boz
 
 **Amaç:** Olay sırasını kaynaklarla kurmak ve çelişki aramak.
 
@@ -68,7 +68,7 @@ Kullan:
 4. Kaynak türünü belirt.
 5. Zaman çizelgesinde çelişen bir kayıt olup olmadığını ara.
 
-## Lab 7 — Eğitim görselini geolocate et
+## Lab 7 - Eğitim görselini geolocate et
 
 Kendi çektiğin veya eğitim için kullanılmasına izin verilen bir görsel seç.
 
@@ -77,7 +77,7 @@ Kendi çektiğin veya eğitim için kullanılmasına izin verilen bir görsel se
 - Her adayı çürütecek kanıt ara.
 - Son konumu güven düzeyiyle raporla.
 
-## Lab 8 — Tek sayfalık intelligence note
+## Lab 8 - Tek sayfalık intelligence note
 
 Önceki lablardan birini seç ve tek sayfalık rapora dönüştür:
 

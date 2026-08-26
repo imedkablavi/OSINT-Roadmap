@@ -1,4 +1,4 @@
-# 🕵️ OSINT Roadmap
+#  OSINT Roadmap
 
 ## Practical & Ethical Open Source Intelligence
 
@@ -8,11 +8,11 @@
 > **Open Source Intelligence (OSINT)**
 > from **Beginner → Intermediate → Professional**.
 >
-> This roadmap focuses on **analysis, verification, legality, documentation, and ethics** — not random tool collection.
+> This roadmap focuses on **analysis, verification, legality, documentation, and ethics** - not random tool collection.
 
 ---
 
-## 🌐 Languages
+##  Languages
 
 * [English](README.en.md)
 * [العربية](README.ar.md)
@@ -20,7 +20,7 @@
 
 ---
 
-## 📌 Table of Contents
+##  Table of Contents
 
 * [What is OSINT?](#-what-is-osint)
 * [OSINT vs Hacking](#-osint-vs-hacking)
@@ -49,7 +49,7 @@
 
 ---
 
-## 🔍 What is OSINT?
+##  What is OSINT?
 
 **Open Source Intelligence (OSINT)** is the structured process of collecting, verifying, analyzing, and reporting information from publicly available sources.
 
@@ -75,7 +75,7 @@ The value is in proving what can be proven and clearly explaining what remains u
 
 ---
 
-## ⚖️ OSINT vs Hacking
+##  OSINT vs Hacking
 
 ![Legal Boundaries](https://images.unsplash.com/photo-1589829545856-d10d557cf95f)
 
@@ -106,7 +106,7 @@ If access requires deception, intrusion, or bypassing a restriction, it is not e
 
 ---
 
-## 🎯 Who This Roadmap Is For
+##  Who This Roadmap Is For
 
 This roadmap is designed for:
 
@@ -126,7 +126,7 @@ You do need patience, documentation discipline, critical thinking, and respect f
 
 ---
 
-## 🧭 Learning Roadmap Overview
+##  Learning Roadmap Overview
 
 ![Roadmap](https://images.unsplash.com/photo-1508780709619-79562169bc64)
 
@@ -158,7 +158,7 @@ A good OSINT learner should develop five habits:
 
 ---
 
-## 🟢 Phase 1 – Foundations (Beginner)
+##  Phase 1 – Foundations (Beginner)
 
 ![Foundations](https://images.unsplash.com/photo-1526378722484-bd91ca387e72)
 
@@ -201,11 +201,11 @@ Start with simple, legal exercises:
 
 ---
 
-## 🟡 Phase 2 – Core OSINT Skills (Intermediate)
+##  Phase 2 – Core OSINT Skills (Intermediate)
 
 ![Analysis](https://images.unsplash.com/photo-1551288049-bebda4e38f71)
 
-### 🔎 Advanced Search
+###  Advanced Search
 
 Learn how to search with precision.
 
@@ -232,7 +232,7 @@ A good search query should be specific enough to reduce noise, but flexible enou
 
 ---
 
-### 🧠 SOCMINT
+###  SOCMINT
 
 **SOCMINT** means Social Media Intelligence.
 
@@ -264,7 +264,7 @@ It is only an indicator that requires additional evidence.
 
 ---
 
-### 🖼️ Image & Video Verification
+###  Image & Video Verification
 
 Images and videos can provide strong evidence, but they can also mislead.
 
@@ -292,7 +292,7 @@ Are there signs, buildings, roads, or terrain clues?
 
 ---
 
-### 🌍 GEOINT
+###  GEOINT
 
 **GEOINT** means Geospatial Intelligence.
 
@@ -315,7 +315,7 @@ Common use cases:
 
 ---
 
-### 🌐 WEBINT
+###  WEBINT
 
 **WEBINT** focuses on websites and web infrastructure.
 
@@ -338,7 +338,7 @@ Active scanning without authorization may not be.
 
 ---
 
-### 🔗 Relationship Mapping
+###  Relationship Mapping
 
 Relationship mapping helps connect public entities such as:
 
@@ -363,7 +363,7 @@ Avoid turning weak links into strong claims.
 
 ---
 
-## 🔴 Phase 3 – Advanced OSINT (Professional)
+##  Phase 3 – Advanced OSINT (Professional)
 
 ### Focus
 
@@ -398,7 +398,7 @@ This cannot be proven with the available evidence.
 
 ---
 
-## 🔁 OSINT Workflow
+##  OSINT Workflow
 
 ![OSINT Workflow](assets/osint-workflow.svg)
 
@@ -435,7 +435,7 @@ No publication of sensitive personal data.
 
 ---
 
-## 🧩 OSINT Source Types
+##  OSINT Source Types
 
 | Source Type        | Description                                                    |
 | ------------------ | -------------------------------------------------------------- |
@@ -452,11 +452,11 @@ No publication of sensitive personal data.
 
 ---
 
-## 🧰 OSINT Tools & Frameworks
+##  OSINT Tools & Frameworks
 
 > Tools support OSINT. They do not replace thinking, verification, or reporting.
 
-### 🗂️ General OSINT Frameworks
+###  General OSINT Frameworks
 
 * [OSINT Framework](https://osintframework.com/)
 * [Bellingcat Resources](https://www.bellingcat.com/category/resources/)
@@ -465,7 +465,7 @@ No publication of sensitive personal data.
 
 ---
 
-### 🔎 Search & Discovery
+###  Search & Discovery
 
 * [Google Advanced Search](https://www.google.com/advanced_search)
 * [DuckDuckGo](https://duckduckgo.com/)
@@ -485,7 +485,7 @@ before:2024-01-01 after:2023-01-01
 
 ---
 
-### 🗄️ Web Archives & Evidence Capture
+###  Web Archives & Evidence Capture
 
 * [Internet Archive Wayback Machine](https://archive.org/web/)
 * [Archive.today](https://archive.today/)
@@ -497,7 +497,7 @@ Use archives to preserve sources before they change or disappear.
 
 ---
 
-### 🧠 Social Media & Username Intelligence
+###  Social Media & Username Intelligence
 
 * [WhatsMyName](https://whatsmyname.app/)
 * [Namechk](https://namechk.com/)
@@ -509,7 +509,7 @@ A result is an indicator, not proof.
 
 ---
 
-### 🖼️ Image & Video Verification
+###  Image & Video Verification
 
 * [Google Images](https://images.google.com/)
 * [Yandex Images](https://yandex.com/images/)
@@ -521,7 +521,7 @@ A result is an indicator, not proof.
 
 ---
 
-### 🌍 Geolocation & Maps
+###  Geolocation & Maps
 
 * [Google Earth](https://earth.google.com/)
 * [OpenStreetMap](https://www.openstreetmap.org/)
@@ -533,7 +533,7 @@ Good geolocation work depends on patience and comparison, not guessing.
 
 ---
 
-### 🌐 Domains & Infrastructure
+###  Domains & Infrastructure
 
 * [WHOIS](https://who.is/)
 * [SecurityTrails](https://securitytrails.com/)
@@ -550,7 +550,7 @@ Use infrastructure tools only within legal and authorized boundaries.
 
 ---
 
-### 🧾 Public Records, Companies & Sanctions
+###  Public Records, Companies & Sanctions
 
 * [OpenCorporates](https://opencorporates.com/)
 * [OpenSanctions](https://www.opensanctions.org/)
@@ -562,7 +562,7 @@ These sources can help with company, ownership, sanctions, and public-record inv
 
 ---
 
-### 🛠️ Data Processing & Documentation
+###  Data Processing & Documentation
 
 * [CyberChef](https://gchq.github.io/CyberChef/)
 * [Obsidian](https://obsidian.md/)
@@ -575,7 +575,7 @@ Documentation tools help keep investigations clear, reproducible, and reviewable
 
 ---
 
-## ✅ Investigation Checklist
+##  Investigation Checklist
 
 Use this checklist before and during any OSINT investigation:
 
@@ -596,7 +596,7 @@ Use this checklist before and during any OSINT investigation:
 
 ---
 
-## 📍 Case Study Example
+##  Case Study Example
 
 **Scenario:** Verifying the location of a viral video.
 
@@ -626,7 +626,7 @@ Reason: The visual location evidence is strong, but shadow angle and weather dat
 
 ---
 
-## 📝 Reporting & Documentation
+##  Reporting & Documentation
 
 A professional OSINT report should be clear, neutral, and evidence-based.
 
@@ -669,7 +669,7 @@ Evidence, verification, and clear reasoning are the foundation.
 
 ---
 
-## 📊 Confidence Levels
+##  Confidence Levels
 
 | Level     | Meaning                                   |
 | --------- | ----------------------------------------- |
@@ -682,7 +682,7 @@ Use confidence levels to avoid overstating conclusions.
 
 ---
 
-## ❌ Common Mistakes
+##  Common Mistakes
 
 * Starting with tools instead of questions
 * Relying on one source
@@ -699,7 +699,7 @@ Use confidence levels to avoid overstating conclusions.
 
 ---
 
-## 📚 Learning Resources
+##  Learning Resources
 
 ### Free Resources
 
@@ -723,7 +723,7 @@ Week 4: Write a one-page OSINT report.
 
 ---
 
-## 📘 Recommended Books
+##  Recommended Books
 
 ### OSINT & Investigation
 
@@ -761,7 +761,7 @@ Week 4: Write a one-page OSINT report.
 
 ---
 
-## 🎓 Certifications & Career Paths
+##  Certifications & Career Paths
 
 ### Entry-Level / Free or Low-Cost
 
@@ -801,7 +801,7 @@ Supporting skills:
 
 ---
 
-## 🛡️ Researcher OPSEC
+##  Researcher OPSEC
 
 Before starting research:
 
@@ -820,7 +820,7 @@ It is about reducing unnecessary exposure and keeping the investigation clean.
 
 ---
 
-## ⚖️ Ethics & Legal Responsibility
+##  Ethics & Legal Responsibility
 
 ### Allowed
 
@@ -848,7 +848,7 @@ It is about reducing unnecessary exposure and keeping the investigation clean.
 
 ---
 
-## 🧱 Suggested Repository Structure
+##  Suggested Repository Structure
 
 ```text
 /
@@ -867,7 +867,7 @@ It is about reducing unnecessary exposure and keeping the investigation clean.
 
 ---
 
-## 🚧 Repository Development Plan
+##  Repository Development Plan
 
 Planned improvements:
 
@@ -888,7 +888,7 @@ Planned improvements:
 
 ---
 
-## 🗓️ Monthly Learning Plan
+##  Monthly Learning Plan
 
 ### Month 1: Foundations
 
@@ -948,7 +948,7 @@ A full OSINT report with objective, scope, evidence, analysis, confidence level,
 
 ---
 
-## 🤝 Contributing
+##  Contributing
 
 Contributions are welcome.
 
@@ -972,13 +972,13 @@ Fork → Create Branch → Make Changes → Open Pull Request
 
 ---
 
-## 📄 License
+##  License
 
 MIT License © Imed Kablavi
 
 ---
 
-## 🧠 Final Note
+##  Final Note
 
 OSINT is not about knowing everything.
 

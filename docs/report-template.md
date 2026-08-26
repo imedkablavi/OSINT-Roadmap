@@ -48,7 +48,7 @@ Include:
 
 ## 4. Key findings
 
-### Finding 1 — [short title]
+### Finding 1 - [short title]
 
 **Assessment:**  
 
@@ -67,7 +67,7 @@ Include:
 
 ---
 
-### Finding 2 — [short title]
+### Finding 2 - [short title]
 
 Repeat the same structure only if needed.
 

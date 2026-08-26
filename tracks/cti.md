@@ -17,7 +17,7 @@ By the end of this track you should be able to:
 - separate infrastructure overlap from actor attribution;
 - communicate confidence and collection gaps.
 
-## Stage 1 — Intelligence requirements
+## Stage 1 - Intelligence requirements
 
 Before collecting anything, write the question.
 
@@ -42,7 +42,7 @@ Good requirement:
 Identify publicly documented infrastructure and behaviors attributed to the campaign between DATE_A and DATE_B, and assess which relationships are independently corroborated.
 ```
 
-## Stage 2 — Source hierarchy
+## Stage 2 - Source hierarchy
 
 Prefer sources in roughly this order when available:
 
@@ -55,7 +55,7 @@ Prefer sources in roughly this order when available:
 
 The order is not absolute. A primary-looking source can still be wrong, and a secondary source may contain unique, well-supported analysis.
 
-## Stage 3 — Passive indicator enrichment
+## Stage 3 - Passive indicator enrichment
 
 Common public pivots:
 
@@ -68,7 +68,7 @@ Common public pivots:
 | Hash | public malware reports, sandbox behavior, family labels | actor identity |
 | Email | public reporting and registries where lawful | account ownership |
 
-## Stage 4 — Infrastructure relationship analysis
+## Stage 4 - Infrastructure relationship analysis
 
 Use an evidence table instead of drawing a graph first.
 
@@ -80,7 +80,7 @@ Use an evidence table instead of drawing a graph first.
 
 A shared hosting provider, registrar, certificate authority, ASN, or CDN is usually weak evidence. Shared infrastructure is common.
 
-## Stage 5 — Behavior analysis
+## Stage 5 - Behavior analysis
 
 When public reporting describes activity, capture behavior separately from labels.
 
@@ -95,7 +95,7 @@ Confidence: High
 
 Do not map ATT&CK techniques from a campaign name alone.
 
-## Stage 6 — Timeline reconstruction
+## Stage 6 - Timeline reconstruction
 
 Normalize timestamps to UTC and distinguish:
 
@@ -107,7 +107,7 @@ Normalize timestamps to UTC and distinguish:
 
 A report published later does not mean the activity started later.
 
-## Stage 7 — Attribution discipline
+## Stage 7 - Attribution discipline
 
 Attribution is the easiest place to overclaim.
 
@@ -122,7 +122,7 @@ Actor attribution unsupported with available evidence
 
 Never convert “reported by one vendor as X” into “X definitely did it” unless your report explicitly attributes the claim to that source.
 
-## Stage 8 — Reporting
+## Stage 8 - Reporting
 
 A compact CTI assessment should contain:
 
@@ -139,19 +139,19 @@ A compact CTI assessment should contain:
 
 ## Safe practice labs
 
-### Lab 1 — Public advisory comparison
+### Lab 1 - Public advisory comparison
 
 Pick two public advisories describing the same campaign. Compare terminology, indicators, behaviors, dates, and attribution language.
 
-### Lab 2 — Passive domain pivot
+### Lab 2 - Passive domain pivot
 
 Use a domain from a public training report. Build a relationship table using only passive public data.
 
-### Lab 3 — ATT&CK mapping audit
+### Lab 3 - ATT&CK mapping audit
 
 Take a public report and map only behaviors explicitly described in the source. Record which mappings are certain and which are interpretive.
 
-### Lab 4 — Attribution challenge
+### Lab 4 - Attribution challenge
 
 Write the strongest alternative explanation for an apparent infrastructure relationship.
 

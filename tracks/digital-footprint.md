@@ -18,7 +18,7 @@ You should be able to:
 - record conflicting evidence;
 - stop when the evidence no longer justifies the collection.
 
-## Stage 1 — Define the seed
+## Stage 1 - Define the seed
 
 Common public seeds:
 
@@ -32,7 +32,7 @@ Common public seeds:
 
 Avoid beginning with sensitive personal information unless it is necessary, lawful, and directly relevant to the research question.
 
-## Stage 2 — Discovery table
+## Stage 2 - Discovery table
 
 Create a table before deciding whether two results are related.
 
@@ -41,7 +41,7 @@ Create a table before deciding whether two results are related.
 | profile A | platform | same username | different biography | dates | lead |
 | profile B | platform | same avatar | username differs | dates | lead |
 
-## Stage 3 — Stable identifiers
+## Stage 3 - Stable identifiers
 
 Signals vary in strength.
 
@@ -62,7 +62,7 @@ Weak indicators:
 - similar writing style alone;
 - username similarity alone.
 
-## Stage 4 — Archive history
+## Stage 4 - Archive history
 
 Use archived versions to answer:
 
@@ -72,7 +72,7 @@ Use archived versions to answer:
 
 Record the archive timestamp separately from the original content date.
 
-## Stage 5 — Timeline
+## Stage 5 - Timeline
 
 Normalize important events:
 
@@ -82,7 +82,7 @@ DATE/TIME | source | observation | confidence | notes
 
 Look for both supporting and conflicting sequences. A timeline is especially useful when two profiles appear similar but were active in impossible or inconsistent ways.
 
-## Stage 6 — Attribution scorecard
+## Stage 6 - Attribution scorecard
 
 Do not use a single numeric score as proof. Use a structured rationale instead.
 
@@ -101,7 +101,7 @@ Public self-link confirms the two profiles were presented as related at the obse
 Insufficient evidence to attribute both profiles to the same person.
 ```
 
-## Stage 7 — Privacy minimization
+## Stage 7 - Privacy minimization
 
 Collect only what is relevant to the question. Do not turn a research exercise into a personal dossier.
 

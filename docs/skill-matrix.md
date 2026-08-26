@@ -4,11 +4,11 @@ Use this matrix to measure what you can **demonstrate**, not what you have read.
 
 ## Levels
 
-- **L0 — Unfamiliar:** cannot perform the task yet.
-- **L1 — Guided:** can perform it with a checklist/tutorial.
-- **L2 — Independent:** can perform it alone and document the method.
-- **L3 — Defensible:** can explain limitations, challenge the result, and reproduce the work.
-- **L4 — Mentor:** can review another researcher's work and identify methodological problems.
+- **L0 - Unfamiliar:** cannot perform the task yet.
+- **L1 - Guided:** can perform it with a checklist/tutorial.
+- **L2 - Independent:** can perform it alone and document the method.
+- **L3 - Defensible:** can explain limitations, challenge the result, and reproduce the work.
+- **L4 - Mentor:** can review another researcher's work and identify methodological problems.
 
 ## Matrix
 

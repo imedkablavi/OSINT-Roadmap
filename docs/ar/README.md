@@ -22,12 +22,12 @@ GEOINT والتخصصات
 
 ## الأدلة الأساسية
 
-- [منهجيات البحث](research-methods.md) — provenance، البحث الجانبي، الفرضيات البديلة، timelines، stop conditions
-- [قائمة التحقق من المصادر](source-verification-checklist.md) — ماذا تفحص قبل أن تثق بمصدر
-- [مصفوفة الأدوات](tool-matrix.md) — متى تستخدم الأداة وما الذي لا تثبته نتيجتها
-- [المختبرات العملية](practice-labs.md) — تدريب بمخرجات قابلة للتقييم
-- [دليل التحقق الجغرافي](geolocation-field-guide.md) — خطوات عملية للتحقق من المكان
-- [قالب التقرير](report-template.md) — بنية قابلة لإعادة المراجعة
+- [منهجيات البحث](research-methods.md) - provenance، البحث الجانبي، الفرضيات البديلة، timelines، stop conditions
+- [قائمة التحقق من المصادر](source-verification-checklist.md) - ماذا تفحص قبل أن تثق بمصدر
+- [مصفوفة الأدوات](tool-matrix.md) - متى تستخدم الأداة وما الذي لا تثبته نتيجتها
+- [المختبرات العملية](practice-labs.md) - تدريب بمخرجات قابلة للتقييم
+- [دليل التحقق الجغرافي](geolocation-field-guide.md) - خطوات عملية للتحقق من المكان
+- [قالب التقرير](report-template.md) - بنية قابلة لإعادة المراجعة
 
 ## مكتبة أدوات OSINT بالعربية
 
@@ -76,7 +76,7 @@ GEOINT والتخصصات
 
 ## تحديثات الأدوات
 
-- [OSINT Tool Radar — أغسطس 2026](../../updates/2026-08-tool-radar.md)
+- [OSINT Tool Radar - أغسطس 2026](../../updates/2026-08-tool-radar.md)
 - [كل تحديثات المشروع](../../updates/README.md)
 
 الهدف من Tool Radar هو أن يبقى المشروع مرجعاً يتغير مع الأدوات بدل أن يتحول إلى قائمة قديمة بعد عدة أشهر.
