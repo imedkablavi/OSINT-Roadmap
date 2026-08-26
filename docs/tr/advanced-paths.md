@@ -4,7 +4,7 @@ Arama, doğrulama ve raporlama temeli oturduktan sonra amaç daha fazla araç to
 
 Bu sayfa ileri uzmanlık yollarını Türkçe olarak özetler ve her yol için beklenen becerileri açıklar.
 
-## 1. Cyber Threat Intelligence — CTI
+## 1. Cyber Threat Intelligence - CTI
 
 ### Amaç
 

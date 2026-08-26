@@ -1,4 +1,4 @@
-# 🕵️ OSINT Yol Haritası
+#  OSINT Yol Haritası
 
 ## Açık Kaynak İstihbaratı için pratik, etik ve kanıta dayalı öğrenme yolu
 
@@ -8,7 +8,7 @@
 ![Seviye](https://img.shields.io/badge/seviye-başlangıçtan%20ileri%20seviyeye-blue)
 ![Odak](https://img.shields.io/badge/odak-etik%20OSINT-lightgrey)
 
-## 🌐 Diller
+##  Diller
 
 - [English](README.en.md)
 - [العربية](README.ar.md)
@@ -44,7 +44,7 @@ Araçları öğrenmek faydalıdır; fakat iyi bir araştırma, aracın çıktıs
 
 ---
 
-## 🔍 OSINT nedir?
+##  OSINT nedir?
 
 **OSINT (Open Source Intelligence)**; kamuya açık kaynaklardan bilgi toplama, doğrulama, analiz etme ve belirli bir soruyu yanıtlayacak şekilde raporlama sürecidir.
 
@@ -68,7 +68,7 @@ Açık kaynaklara örnekler:
 - akademik yayınlar,
 - açık veri setleri.
 
-## ⚖️ OSINT ve izinsiz erişim arasındaki sınır
+##  OSINT ve izinsiz erişim arasındaki sınır
 
 OSINT, erişim kontrolünü aşmayı gerektirmez.
 
@@ -101,9 +101,9 @@ Bir sonraki adım özel erişim, aldatma veya güvenlik kontrolünü aşmayı ge
 
 ---
 
-# 🧭 Öğrenme yol haritası
+#  Öğrenme yol haritası
 
-## 1 — Temeller
+## 1 - Temeller
 
 Önce araştırma disiplinini geliştir.
 
@@ -130,7 +130,7 @@ Hangi bulgular yalnızca gösterge, hangileri kanıt?
 Mevcut verilerle neyi söyleyemem?
 ```
 
-## 2 — Arama ve keşif
+## 2 - Arama ve keşif
 
 Arama motorlarını yalnızca anahtar kelime kutusu olarak görme.
 
@@ -156,7 +156,7 @@ intitle:"incident report" company
 
 Arama operatörleri tek başına yöntem değildir. Amaç, hipotezi test edecek kaynaklara ulaşmaktır.
 
-## 3 — Kaynak doğrulama
+## 3 - Kaynak doğrulama
 
 Bir sonucu bulmak ile bir iddiayı doğrulamak aynı şey değildir.
 
@@ -172,7 +172,7 @@ Kontrol et:
 
 Detaylı kontrol listesi: [Kaynak Doğrulama](docs/tr/source-verification-checklist.md)
 
-## 4 — Görsel ve video doğrulama
+## 4 - Görsel ve video doğrulama
 
 Ana teknikler:
 
@@ -189,7 +189,7 @@ Ana teknikler:
 
 Metadata'nın olmaması sahtecilik kanıtı değildir. Sosyal platformlar metadata'yı sıklıkla kaldırır.
 
-## 5 — GEOINT / Coğrafi doğrulama
+## 5 - GEOINT / Coğrafi doğrulama
 
 Amaç, bir fotoğraf veya videonun iddia edilen konumla uyumlu olup olmadığını açık kaynaklarla değerlendirmektir.
 
@@ -208,7 +208,7 @@ Amaç, bir fotoğraf veya videonun iddia edilen konumla uyumlu olup olmadığın
 
 Adım adım rehber: [Geolocation Field Guide](docs/tr/geolocation-field-guide.md)
 
-## 6 — SOCMINT
+## 6 - SOCMINT
 
 SOCMINT, kamuya açık sosyal medya faaliyetinin sistematik analizidir.
 
@@ -230,7 +230,7 @@ Aynı kullanıcı adı = aynı kişi değildir.
 
 Atıf için birden fazla bağımsız gösterge gerekir.
 
-## 7 — WEBINT ve altyapı araştırması
+## 7 - WEBINT ve altyapı araştırması
 
 Pasif web araştırmasında kullanılabilecek kaynaklar:
 
@@ -245,7 +245,7 @@ Pasif web araştırmasında kullanılabilecek kaynaklar:
 
 Amaç bir sistemi zorlamak değil, zaten kamuya açık olan kayıtları yorumlamaktır.
 
-## 8 — Zaman çizelgesi analizi
+## 8 - Zaman çizelgesi analizi
 
 Zaman çizelgesi özellikle olay doğrulamada güçlüdür.
 
@@ -262,7 +262,7 @@ Her kayıtta tut:
 
 Saat dilimlerini normalize et. “Dün”, “bu sabah” gibi göreli ifadeleri mutlak zamana çevirmeden karşılaştırma yapma.
 
-## 9 — Analiz ve hipotez testi
+## 9 - Analiz ve hipotez testi
 
 İyi OSINT yalnızca destekleyici kanıt aramaz.
 
@@ -276,7 +276,7 @@ En az iki alternatif açıklama yaz:
 
 Bu yöntem confirmation bias riskini azaltır.
 
-## 10 — Raporlama
+## 10 - Raporlama
 
 Bir başkasının sonucu nasıl elde ettiğini anlayabilmesi gerekir.
 
@@ -299,7 +299,7 @@ Kullanıma hazır şablon: [Türkçe OSINT Rapor Şablonu](docs/tr/report-templa
 
 ---
 
-# 🧰 Araçlar
+#  Araçlar
 
 Araç seçerken “hangi araç popüler?” yerine “hangi soruyu cevaplamam gerekiyor?” diye sor.
 
@@ -347,7 +347,7 @@ Her aracın hangi durumda işe yaradığını ve neyi **kanıtlamadığını** g
 
 ---
 
-# 🧪 Pratik
+#  Pratik
 
 Pasif okumak yerine küçük dosyalar üret.
 
@@ -366,7 +366,7 @@ Detaylar ve puanlama: [Pratik Laboratuvarları](docs/tr/practice-labs.md)
 
 ---
 
-# 🤖 AI destekli OSINT
+#  AI destekli OSINT
 
 Yapay zekâ şu işlerde yardımcı olabilir:
 
@@ -388,7 +388,7 @@ Cevabı kanıtlayan şey doğrulanabilir kaynaktır.
 
 ---
 
-# 🎓 Uzmanlaşma yolları
+#  Uzmanlaşma yolları
 
 Temel iş akışı oturduktan sonra şunlardan birine odaklanabilirsin:
 
@@ -405,7 +405,7 @@ Uzmanlık değişir; kanıt standardı değişmez.
 
 ---
 
-# ✅ İyi bir araştırmacının kontrol listesi
+#  İyi bir araştırmacının kontrol listesi
 
 - [ ] Araştırma sorusu tek cümlede açık mı?
 - [ ] Kapsam ve sınırlar yazılı mı?
@@ -420,7 +420,7 @@ Uzmanlık değişir; kanıt standardı değişmez.
 
 ---
 
-# 🤝 Katkıda bulunma
+#  Katkıda bulunma
 
 Katkılar özellikle şu alanlarda değerlidir:
 

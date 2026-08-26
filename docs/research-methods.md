@@ -120,7 +120,7 @@ Confidence: High
 write:
 
 ```text
-Confidence: High — the claim is supported by two independent primary records and a contemporaneous archive capture.
+Confidence: High - the claim is supported by two independent primary records and a contemporaneous archive capture.
 ```
 
 Confidence should reflect source quality, independence, consistency, and unresolved contradictions.

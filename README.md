@@ -1,4 +1,4 @@
-# 🕵️ OSINT Roadmap
+#  OSINT Roadmap
 
 > A practical, multilingual roadmap for learning Open Source Intelligence through research, verification, analysis, documentation, and hands-on practice.
 
@@ -15,7 +15,7 @@ A roadmap should tell you more than which tools exist. It should tell you **what
 
 This repository is built around that idea.
 
-## ⚡ Try the interactive project
+##  Try the interactive project
 
 **[Launch the OSINT Tool Finder →](https://imedkablavi.github.io/OSINT-Roadmap/tool-finder.html)**  
 Filter 110+ curated tools and primary-source resources by the clue you already have: domain, username, email, phone, image, IP, company, location, document, aircraft, vessel, crypto address, academic identifier, cost and skill level.
@@ -29,9 +29,9 @@ Search guides, playbooks, labs, glossaries, case studies and multilingual docume
 **[Browse the verified open-source tool subset →](tools/open-source-tools.md)**  
 See selected open-source tools with upstream source, license, practical role, limitations, and safe-use notes in English, Arabic, and Turkish.
 
-## 🌐 Choose your language
+##  Choose your language
 
-### 🇬🇧 English
+###  English
 
 **[Open the English Roadmap →](README.en.md)**
 
@@ -46,7 +46,7 @@ Core material:
 - [Report template](docs/report-template.md)
 - [English glossary](glossary/README.en.md)
 
-### 🇸🇦 العربية
+###  العربية
 
 **[افتح خارطة الطريق العربية →](README.ar.md)**
 
@@ -57,7 +57,7 @@ Core material:
 - [المسارات الاحترافية بالعربية](docs/ar/advanced-paths.md)
 - [قاموس OSINT بالعربية](glossary/README.ar.md)
 
-### 🇹🇷 Türkçe
+###  Türkçe
 
 **[Türkçe OSINT Yol Haritasını Aç →](README.tr.md)**
 
@@ -70,7 +70,7 @@ Core material:
 
 ---
 
-## 🔎 OSINT Tool Library & Tool Finder
+##  OSINT Tool Library & Tool Finder
 
 The project now maintains a **curated library of 110+ tools and primary-source research resources** instead of an unreviewed link dump.
 
@@ -102,7 +102,7 @@ Every category records the **input, cost, skill level, best use and main limitat
 
 The Tool Finder lets you filter tools by inputs such as `Domain`, `Username`, `Email`, `Phone`, `Image`, `IP`, `Organization`, `Location`, `Document`, `Aircraft`, `Vessel`, `Crypto Address`, `DOI` or `ORCID`, as well as cost and skill level. Verified open-source entries also expose their license and upstream source metadata.
 
-## 🧰 Browser extensions & web tools
+##  Browser extensions & web tools
 
 ![OSINT Browser Extensions & Web Tools](assets/osint-browser-tools.svg)
 
@@ -114,17 +114,17 @@ The repository includes a separate browser-tool guide for extensions and web hel
 
 The guide covers web capture and archiving, image/video verification, threat-intelligence lookups, data extraction, screenshots, download helpers and blockchain research. It also explains extension permissions, privacy risks, research-browser separation, and what each category **does not prove**.
 
-## 📡 Tool Radar & project updates
+##  Tool Radar & project updates
 
 Tools change ownership, pricing, permissions and interfaces. A useful OSINT project needs a maintenance loop, not a one-time list.
 
-- [OSINT Tool Radar — August 2026](updates/2026-08-tool-radar.md)
+- [OSINT Tool Radar - August 2026](updates/2026-08-tool-radar.md)
 - [Updates archive](updates/README.md)
 - RSS feed: `https://imedkablavi.github.io/OSINT-Roadmap/feed.xml`
 
 Tool Radar notes document what changed, why it matters and what researchers should do differently. A separate weekly **Tool Freshness** workflow checks review age even when a URL still works, so stale catalogue entries are detected independently of broken-link checks.
 
-## 🗺️ Visual roadmap
+##  Visual roadmap
 
 **[Open the interactive GitHub-rendered roadmap →](docs/visual-roadmap.md)**
 
@@ -146,7 +146,7 @@ Portfolio + Review
 
 The roadmap is method-first because tools change much faster than good investigation practice.
 
-## 🎯 Professional specialization tracks
+##  Professional specialization tracks
 
 Once the core workflow is comfortable, move into a track instead of collecting random advanced tools.
 
@@ -162,7 +162,7 @@ Arabic and Turkish learners also have localized specialization hubs:
 - [المسارات الاحترافية بالعربية](docs/ar/advanced-paths.md)
 - [Türkçe profesyonel uzmanlaşma yolları](docs/tr/advanced-paths.md)
 
-## 🧭 Investigation playbooks
+##  Investigation playbooks
 
 Sometimes you do not need another chapter. You need to know what to do with the clue already in front of you.
 
@@ -182,7 +182,7 @@ Playbooks cover:
 
 Every playbook includes verification questions and stop conditions.
 
-## 🧪 Practice that produces evidence of skill
+##  Practice that produces evidence of skill
 
 The repository uses an artifact-based learning model:
 
@@ -196,9 +196,9 @@ Mark it complete when you can produce and defend the work.
 - [Skill Matrix & Progress Tracker](docs/skill-matrix.md)
 - [Real-world case-study lessons](case-studies/README.md)
 
-The skill matrix ranges from **L0 — Unfamiliar** to **L4 — Mentor** and requires a practical artifact for progression.
+The skill matrix ranges from **L0 - Unfamiliar** to **L4 - Mentor** and requires a practical artifact for progression.
 
-## ⚡ Field reference
+##  Field reference
 
 Need a fast reminder while working?
 
@@ -206,7 +206,7 @@ Need a fast reminder while working?
 
 It covers search patterns, source verification, image/video checks, username attribution, passive domain research, company research, timelines, confidence language, evidence tables, reporting, and stop rules.
 
-## 📖 OSINT glossary in three languages
+##  OSINT glossary in three languages
 
 - [English](glossary/README.en.md)
 - [العربية](glossary/README.ar.md)
@@ -214,7 +214,7 @@ It covers search patterns, source verification, image/video checks, username att
 
 The glossary covers methodology terms as well as technical concepts such as provenance, corroboration, attribution, chronolocation, passive DNS, Certificate Transparency, entity resolution, source dependency, and stop conditions.
 
-## 🔬 What makes this roadmap different?
+##  What makes this roadmap different?
 
 The project is deliberately not a directory of thousands of links.
 
@@ -236,7 +236,7 @@ Finding information is discovery.
 Proving what it means is investigation.
 ```
 
-## 🤖 AI-assisted OSINT
+##  AI-assisted OSINT
 
 AI can be useful for:
 
@@ -256,7 +256,7 @@ A verifiable source must support the answer.
 
 Names, dates, quotations, relationships, URLs, and conclusions still need verification against underlying sources.
 
-## 🛡️ Scope and ethics
+##  Scope and ethics
 
 This project focuses on lawful public-source research.
 
@@ -278,7 +278,7 @@ If the next step requires intrusion, deception, private access,
 or bypassing a security restriction, stop.
 ```
 
-## 🔧 Repository quality
+##  Repository quality
 
 The project is tested automatically with GitHub Actions:
 
@@ -293,7 +293,7 @@ The project is tested automatically with GitHub Actions:
 
 Most checks run on relevant pull requests and after changes land on `main`; link/freshness maintenance also runs on schedules.
 
-## 🤝 Contributing
+##  Contributing
 
 Corrections and contributions are welcome, especially:
 

@@ -1,4 +1,4 @@
-# OSINT Sözlüğü — Türkçe
+# OSINT Sözlüğü - Türkçe
 
 Projede kullanılan temel terimler için kısa başvuru kaynağı.
 

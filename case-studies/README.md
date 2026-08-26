@@ -4,7 +4,7 @@ This section is not a collection of sensational stories. It extracts reusable me
 
 The cases below should be studied from the original publishers and supporting sources. Do not copy conclusions blindly; focus on the workflow and evidence discipline.
 
-## 1 — MH17 open-source investigation
+## 1 - MH17 open-source investigation
 
 Public investigations into the downing of Malaysia Airlines Flight 17 became a major example of combining social media, imagery, geolocation, vehicle identification, timelines, and public records.
 
@@ -20,7 +20,7 @@ Public investigations into the downing of Malaysia Airlines Flight 17 became a m
 
 Do **not** redo the entire investigation. Pick one published geolocation example and reconstruct only the verification steps from cited public material.
 
-## 2 — Verification of reused or miscaptioned conflict imagery
+## 2 - Verification of reused or miscaptioned conflict imagery
 
 Newsrooms and verification teams repeatedly encounter authentic images or videos presented with the wrong date, location, or event description.
 
@@ -39,7 +39,7 @@ Choose a debunked public example from a reputable fact-checking organization. Bu
 | Claim | What the original evidence actually supports |
 | --- | --- |
 
-## 3 — Corporate ownership investigations
+## 3 - Corporate ownership investigations
 
 Investigative journalism projects frequently combine official company registries, leaked/public datasets, regulatory filings, addresses, directors, and historical company records.
 
@@ -56,7 +56,7 @@ Investigative journalism projects frequently combine official company registries
 
 Select a public company that has subsidiaries in multiple countries. Build a relationship map using only official company disclosures and government/regulatory records.
 
-## 4 — Capitol / public-event visual verification workflows
+## 4 - Capitol / public-event visual verification workflows
 
 Large public events generate huge volumes of publicly posted images and videos. Verification teams often reconstruct sequences using landmarks, timestamps, camera angles, and cross-source corroboration.
 
@@ -72,7 +72,7 @@ Large public events generate huge volumes of publicly posted images and videos. 
 
 Use a non-sensitive public event such as a parade, launch, sporting celebration, or press event. Build a five-event timeline from independent public sources.
 
-## 5 — Satellite imagery and change detection
+## 5 - Satellite imagery and change detection
 
 Human-rights researchers, journalists, disaster analysts, and investigators use public/commercial satellite imagery to compare locations before and after reported events.
 
@@ -89,7 +89,7 @@ Human-rights researchers, journalists, disaster analysts, and investigators use 
 
 Use a public, non-sensitive example such as construction, wildfire damage, flood extent, or infrastructure development. Document what change is visible and what cannot be inferred from imagery alone.
 
-## 6 — Public web infrastructure investigations
+## 6 - Public web infrastructure investigations
 
 Threat researchers often connect domains, certificates, passive DNS, hosting, URLs, and malware reports to understand campaigns.
 

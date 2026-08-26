@@ -4,7 +4,7 @@ These labs are designed to build investigation habits without targeting private 
 
 Use fictional, historical, institutional, or clearly public-interest subjects. Document uncertainty and stop when a task would require deception, bypassing access controls, or collecting sensitive personal data.
 
-## Lab 1 — Trace the first public source
+## Lab 1 - Trace the first public source
 
 **Level:** Beginner  
 **Time:** 20–30 minutes
@@ -25,7 +25,7 @@ Your task:
 
 ---
 
-## Lab 2 — Rebuild a changed webpage
+## Lab 2 - Rebuild a changed webpage
 
 **Level:** Beginner
 
@@ -43,7 +43,7 @@ Your task:
 
 ---
 
-## Lab 3 — Verify a public image
+## Lab 3 - Verify a public image
 
 **Level:** Beginner / Intermediate
 
@@ -65,7 +65,7 @@ A useful conclusion sounds like:
 
 ---
 
-## Lab 4 — Map a public web footprint
+## Lab 4 - Map a public web footprint
 
 **Level:** Intermediate
 
@@ -86,7 +86,7 @@ Your task:
 
 ---
 
-## Lab 5 — Test a username attribution hypothesis
+## Lab 5 - Test a username attribution hypothesis
 
 **Level:** Intermediate
 
@@ -116,7 +116,7 @@ Then score the evidence:
 
 ---
 
-## Lab 6 — Build and challenge a timeline
+## Lab 6 - Build and challenge a timeline
 
 **Level:** Intermediate
 
@@ -136,7 +136,7 @@ Ask:
 
 ---
 
-## Lab 7 — Geolocation from non-sensitive public material
+## Lab 7 - Geolocation from non-sensitive public material
 
 **Level:** Intermediate / Advanced
 
@@ -157,7 +157,7 @@ Record every clue and one alternative explanation for it. Do not geolocate priva
 
 ---
 
-## Lab 8 — Write a one-page intelligence note
+## Lab 8 - Write a one-page intelligence note
 
 **Level:** Any
 

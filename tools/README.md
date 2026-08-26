@@ -10,13 +10,13 @@ This directory contains the roadmap's maintained tool references.
 
 The main library is organized by **research question and input**, not by popularity. Each category explains cost, skill level, best use and the main limitation of the output.
 
-## Investigator stack — start from the clue you have
+## Investigator stack - start from the clue you have
 
 The expanded investigator stack maps common starting clues to a small, defensible set of tools instead of encouraging users to run everything:
 
-- [English — OSINT Investigator Tool Stack](investigator-stack.md)
-- [العربية — حزمة أدوات الباحث في OSINT](investigator-stack.ar.md)
-- [Türkçe — OSINT Araştırmacı Araç Seti](investigator-stack.tr.md)
+- [English - OSINT Investigator Tool Stack](investigator-stack.md)
+- [العربية - حزمة أدوات الباحث في OSINT](investigator-stack.ar.md)
+- [Türkçe - OSINT Araştırmacı Araç Seti](investigator-stack.tr.md)
 
 It covers usernames, email, phone, domains, IP/ASN, images, video/audio, GEOINT, companies, court records, CTI, transport, crypto, documents, datasets, timelines, academic research and evidence preservation.
 
@@ -24,9 +24,9 @@ It covers usernames, email, phone, domains, IP/ASN, images, video/audio, GEOINT,
 
 A focused list of open-source tools with verified upstream repositories, licenses, use cases and limitations is maintained in all three project languages:
 
-- [English — Verified Open-Source OSINT Tools](open-source-tools.md)
-- [العربية — أدوات OSINT مفتوحة المصدر الموثقة](open-source-tools.ar.md)
-- [Türkçe — Doğrulanmış Açık Kaynak OSINT Araçları](open-source-tools.tr.md)
+- [English - Verified Open-Source OSINT Tools](open-source-tools.md)
+- [العربية - أدوات OSINT مفتوحة المصدر الموثقة](open-source-tools.ar.md)
+- [Türkçe - Doğrulanmış Açık Kaynak OSINT Araçları](open-source-tools.tr.md)
 
 Open source does not remove authorization, privacy or provider-terms requirements. Public source code without a clear license is **not** labelled open source in the structured catalogue.
 
@@ -59,7 +59,7 @@ The browser guide focuses on extension permissions, privacy and research-profile
 
 ## Tool updates
 
-- [OSINT Tool Radar — August 2026](../updates/2026-08-tool-radar.md)
+- [OSINT Tool Radar - August 2026](../updates/2026-08-tool-radar.md)
 - [All project updates](../updates/README.md)
 
 ## Selection rule
@@ -78,4 +78,4 @@ Independent verification
 Document confidence + limits
 ```
 
-A tool stays in this project because it remains useful, explainable and maintainable — not because it appears in an old OSINT list.
+A tool stays in this project because it remains useful, explainable and maintainable - not because it appears in an old OSINT list.

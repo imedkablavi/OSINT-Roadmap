@@ -13,7 +13,7 @@ For each challenge, submit:
 5. confidence level;
 6. what would change your conclusion.
 
-## Level 1 — Country narrowing
+## Level 1 - Country narrowing
 
 Goal: identify the most likely country from non-unique clues.
 
@@ -29,7 +29,7 @@ Look at:
 
 Do not conclude from one clue.
 
-## Level 2 — City discrimination
+## Level 2 - City discrimination
 
 You are given three plausible cities in the same country.
 
@@ -39,7 +39,7 @@ Task:
 - compare terrain, architecture, road layout, transit, signage, and skyline;
 - explain why the other two candidates are weaker.
 
-## Level 3 — Landmark-free geolocation
+## Level 3 - Landmark-free geolocation
 
 No famous landmark is visible.
 
@@ -54,7 +54,7 @@ Use combinations of:
 - shop categories;
 - municipal objects.
 
-## Level 4 — Shadow and sun consistency
+## Level 4 - Shadow and sun consistency
 
 Given a claimed location and approximate date/time:
 
@@ -65,7 +65,7 @@ Given a claimed location and approximate date/time:
 
 Shadow analysis rarely proves an exact location by itself.
 
-## Level 5 — Weather corroboration
+## Level 5 - Weather corroboration
 
 Compare the visible conditions with historical public weather records.
 
@@ -79,7 +79,7 @@ Check:
 
 Weather is usually corroborative, not uniquely identifying.
 
-## Level 6 — Terrain profile matching
+## Level 6 - Terrain profile matching
 
 Use ridge lines, coastlines, valleys, or horizon geometry.
 
@@ -93,7 +93,7 @@ extract prominent shapes
 → verify with independent clues
 ```
 
-## Level 7 — Chronolocation
+## Level 7 - Chronolocation
 
 Determine whether imagery plausibly belongs to a claimed period.
 
@@ -108,7 +108,7 @@ Possible clues:
 - archived street imagery;
 - historical satellite imagery.
 
-## Level 8 — Multi-image correlation
+## Level 8 - Multi-image correlation
 
 Given several images that may or may not be from the same area:
 
@@ -117,7 +117,7 @@ Given several images that may or may not be from the same area:
 - build a rough spatial model;
 - document contradictions.
 
-## Level 9 — Route reconstruction
+## Level 9 - Route reconstruction
 
 Using only purpose-built training imagery or public event material, reconstruct an approximate route.
 
@@ -125,7 +125,7 @@ Require at least three independent anchor points.
 
 Never apply this exercise to track a private person's routine or current location.
 
-## Level 10 — Adversarial challenge
+## Level 10 - Adversarial challenge
 
 You receive an image with one deliberately misleading clue.
 

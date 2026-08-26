@@ -56,9 +56,9 @@ Automated username tools can save time, but a matching handle alone is weak evid
 
 Useful public tools include:
 
-- WhatsMyName — checks a username across many services.
-- Sherlock — command-line username checks across supported sites.
-- Maigret — broader username enumeration with reporting features.
+- WhatsMyName - checks a username across many services.
+- Sherlock - command-line username checks across supported sites.
+- Maigret - broader username enumeration with reporting features.
 
 Treat every hit as a **lead** until another independent signal supports the connection.
 

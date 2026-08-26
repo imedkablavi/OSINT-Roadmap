@@ -1,4 +1,4 @@
-# OSINT Tool Radar — August 2026
+# OSINT Tool Radar - August 2026
 
 > A short maintenance note for tools and resources reviewed while expanding the OSINT Roadmap library.
 
@@ -96,4 +96,4 @@ The library now points learners to method-focused resources including:
 
 ---
 
-A tool stays in this project because it remains useful and explainable — not because it was popular on an old OSINT list.
+A tool stays in this project because it remains useful and explainable - not because it was popular on an old OSINT list.

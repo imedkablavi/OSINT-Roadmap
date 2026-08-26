@@ -6,11 +6,11 @@ The goal is not to publish filler on a schedule. An update is worth publishing w
 
 ## Update types
 
-- **Tool Radar** — new, changed, replaced, deprecated or newly reviewed tools.
-- **Method Update** — a workflow or verification method changed.
-- **New Lab** — a practice exercise was added or substantially revised.
-- **Dataset Update** — a useful public dataset changed or expanded.
-- **Language Update** — Arabic or Turkish material reached parity with an English section.
+- **Tool Radar** - new, changed, replaced, deprecated or newly reviewed tools.
+- **Method Update** - a workflow or verification method changed.
+- **New Lab** - a practice exercise was added or substantially revised.
+- **Dataset Update** - a useful public dataset changed or expanded.
+- **Language Update** - Arabic or Turkish material reached parity with an English section.
 
 ## Current updates
 
