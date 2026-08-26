@@ -314,4 +314,4 @@ MIT License © Imed Kablavi
 
 ---
 
-If the project is useful, a ⭐ helps more students, researchers, journalists, and security learners discover it.
+If the project is useful, a  helps more students, researchers, journalists, and security learners discover it.
