@@ -518,6 +518,7 @@ A result is an indicator, not proof.
 * [FotoForensics](https://fotoforensics.com/)
 * [ExifTool](https://exiftool.org/)
 * [Metadata2Go](https://www.metadata2go.com/)
+* [Metadata Viewer](https://metadataremover.ai/metadata-viewer) — free browser-local EXIF/IPTC/XMP inspection for images; treat fields as leads and corroborate forensic findings with ExifTool or another independent parser.
 
 ---
 
