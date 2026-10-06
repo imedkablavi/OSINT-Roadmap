@@ -115,17 +115,17 @@ Start with the clue you already have:
 
 | You have… | Start with… |
 | --- | --- |
-| 🌐 A domain | [Domain investigation playbook](playbooks/domain.md) |
-| 👤 A username | [Username investigation playbook](playbooks/username.md) |
-| 📧 An email | [Email / public identity research](playbooks/email.md) |
-| 📞 A phone number | [Phone investigation](playbooks/phone.md) |
-| 🖼️ An image | [Image investigation](playbooks/image.md) |
-| 🎥 A video | [Video investigation](playbooks/video.md) |
-| 🏢 A company name | [Company investigation](playbooks/company.md) |
-| 🌍 A location claim | [Location investigation](playbooks/location.md) |
-| 📰 A news claim | [News claim verification](playbooks/news-claim.md) |
-| 📄 A public document | [Document investigation](playbooks/document.md) |
-| 🌐 An IP address | [IP / infrastructure investigation](playbooks/ip.md) |
+| 🌐 A domain | [Domain investigation playbook](playbooks/README.md#i-have-a-domain) |
+| 👤 A username | [Username investigation playbook](playbooks/README.md#i-have-a-username) |
+| 📧 An email | [Email / public identity research](playbooks/README.md#i-have-a-username) |
+| 📞 A phone number | [Phone investigation](playbooks/README.md#i-have-a-username) |
+| 🖼️ An image | [Image investigation](playbooks/README.md#i-have-an-image) |
+| 🎥 A video | [Video investigation](playbooks/README.md#i-have-a-video) |
+| 🏢 A company name | [Company investigation](playbooks/README.md#i-have-a-company-name) |
+| 🌍 A location claim | [Location investigation](playbooks/README.md#i-have-a-location-claim) |
+| 📰 A news claim | [News claim verification](playbooks/README.md#i-have-a-news-claim) |
+| 📄 A public document | [Document investigation](playbooks/README.md#i-have-a-public-document) |
+| 🌐 An IP address | [IP / infrastructure investigation](playbooks/README.md#i-have-an-ip-address) |
 
 > [!TIP]
 > Start from the **question and clue**, then choose the smallest defensible toolchain. Running every available tool usually creates noise faster than it creates insight.
