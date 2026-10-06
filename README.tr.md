@@ -1,444 +1,404 @@
-#  OSINT Yol Haritası
+# OSINT Yol Haritası
 
-## Açık Kaynak İstihbaratı için pratik, etik ve kanıta dayalı öğrenme yolu
+## Açık Kaynak İstihbaratı için pratik ve kanıta dayalı öğrenme yolu
 
-> Bu depo, OSINT'i araç ezberleyerek değil; doğru soruyu kurarak, açık kaynakları araştırarak, bulguları doğrulayarak ve sonucu savunulabilir biçimde raporlayarak öğrenmek isteyenler için hazırlanmıştır.
+[![GitHub Repo stars](https://img.shields.io/github/stars/imedkablavi/OSINT-Roadmap?style=plastic)](https://github.com/imedkablavi/OSINT-Roadmap/stargazers)
+[![GitHub forks](https://img.shields.io/github/forks/imedkablavi/OSINT-Roadmap?style=plastic)](https://github.com/imedkablavi/OSINT-Roadmap/network/members)
+[![GitHub contributors](https://img.shields.io/github/contributors/imedkablavi/OSINT-Roadmap?style=plastic)](https://github.com/imedkablavi/OSINT-Roadmap/graphs/contributors)
+[![Latest release](https://img.shields.io/github/v/release/imedkablavi/OSINT-Roadmap?style=plastic&label=latest)](https://github.com/imedkablavi/OSINT-Roadmap/releases/latest)
+[![License](https://img.shields.io/badge/license-MIT-green.svg?style=plastic)](LICENSE)
+[![Link Health](https://github.com/imedkablavi/OSINT-Roadmap/actions/workflows/link-check.yml/badge.svg)](https://github.com/imedkablavi/OSINT-Roadmap/actions/workflows/link-check.yml)
+[![Tool Freshness](https://github.com/imedkablavi/OSINT-Roadmap/actions/workflows/tool-freshness.yml/badge.svg)](https://github.com/imedkablavi/OSINT-Roadmap/actions/workflows/tool-freshness.yml)
 
-[![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
-![Seviye](https://img.shields.io/badge/seviye-başlangıçtan%20ileri%20seviyeye-blue)
-![Odak](https://img.shields.io/badge/odak-etik%20OSINT-lightgrey)
+> Bu depo bir araç listesi değildir. Amaç; doğru soruyu kurmayı, açık kaynakları bulmayı, önemli bulguları doğrulamayı ve sonucu sınırlarıyla birlikte raporlamayı öğretmektir.
 
-##  Diller
+---
 
-- [English](README.en.md)
-- [العربية](README.ar.md)
-- [Türkçe](README.tr.md)
+## Yol Haritası
 
-## Hızlı başlangıç
+![OSINT Roadmap — Research to Intelligence](assets/osint-roadmap.svg)
 
-OSINT'e yeni başlıyorsan şu sırayı kullan:
+Sıralama özellikle böyledir. Araçlar değişebilir; araştırma disiplini daha uzun süre kullanılabilir.
 
-```text
-1. Araştırma sorusunu tanımla
-2. Kapsamı ve sınırları belirle
-3. Açık kaynaklardan aday bulguları topla
-4. Önemli iddiaları bağımsız kaynaklarla doğrula
-5. Kaynak, tarih ve bağlamı kaydet
-6. Alternatif açıklamaları test et
-7. Sonucu güven düzeyi ve sınırlamalarla raporla
-```
+~~~text
+Soruyu tanımla
+      ↓
+Kapsamı belirle
+      ↓
+Kaynakları keşfet
+      ↓
+Önemli iddiaları doğrula
+      ↓
+Bulguları ve zaman çizelgelerini ilişkilendir
+      ↓
+Güveni ve alternatifleri değerlendir
+      ↓
+Sonucu raporla
+      ↓
+Bir uzmanlık alanı seç
+~~~
 
-Araçları öğrenmek faydalıdır; fakat iyi bir araştırma, aracın çıktısını doğrudan gerçek kabul etmez.
+### Yol haritasını nasıl kullanmalı?
 
-## Bu depoda ne var?
+Araştırma boyunca şu ayrımı koru:
 
-| Bölüm | İçerik |
+| Katman | Soru |
 | --- | --- |
-| [Türkçe öğrenme merkezi](docs/tr/README.md) | Türkçe tüm pratik rehberler |
-| [Araştırma yöntemleri](docs/tr/research-methods.md) | Tekrarlanabilir araştırma yöntemleri |
-| [Araç matrisi](docs/tr/tool-matrix.md) | Araç, kullanım amacı, zorluk ve sınırlamalar |
-| [Pratik laboratuvarları](docs/tr/practice-labs.md) | Güvenli ve uygulanabilir OSINT alıştırmaları |
-| [Kaynak doğrulama kontrol listesi](docs/tr/source-verification-checklist.md) | Bir kaynağa güvenmeden önce sorulacak sorular |
-| [Coğrafi doğrulama saha rehberi](docs/tr/geolocation-field-guide.md) | Görsel konum doğrulama iş akışı |
-| [Rapor şablonu](docs/tr/report-template.md) | Bulguları düzenli raporlama yapısı |
+| Soru | Tam olarak neyi öğrenmeye çalışıyorum? |
+| Kanıt | Bu soruya cevap verebilecek hangi kamuya açık kaynaklar var? |
+| Analiz | Kaynakları birlikte değerlendirdiğimde ne anlama geliyorlar? |
+| Değerlendirme | Neyi savunabilirim, neyin belirsiz kaldığını açıkça söyleyebilir miyim? |
+
+Bir arama sonucu yararlı olabilir ama tek başına kanıt değildir. Bir araç sonucu da doğrulanmadan gerçek kabul edilmemelidir.
+
+> [!IMPORTANT]
+> **Bir bulgu kanıtla aynı şey değildir. Aynı iddianın birçok yerde tekrar edilmesi de bağımsız doğrulama anlamına gelmez.**
 
 ---
 
-##  OSINT nedir?
+## OSINT nedir?
 
-**OSINT (Open Source Intelligence)**; kamuya açık kaynaklardan bilgi toplama, doğrulama, analiz etme ve belirli bir soruyu yanıtlayacak şekilde raporlama sürecidir.
+OSINT, kamuya açık kaynaklardan bilgi toplama, doğrulama, ilişkilendirme, analiz etme ve belirli bir soruyu cevaplayacak şekilde raporlama sürecidir.
 
-OSINT yalnızca internette arama yapmak değildir. Bir araştırmanın istihbarat değerine sahip olması için:
+Buradaki önemli nokta yöntemdir. Araştırma sorusu olmadan yapılan arama gürültü üretir. Doğrulanmadan toplanan bilgi ise yanlış güven duygusu oluşturabilir.
 
-- sorunun açık olması,
-- kullanılan kaynakların izlenebilir olması,
-- önemli iddiaların doğrulanması,
-- varsayımların olgulardan ayrılması,
-- belirsizliğin açıkça yazılması gerekir.
+Açık kaynaklara web siteleri, arşivler, haberler, kamu kayıtları, şirket sicilleri, haritalar, uydu görüntüleri, görseller, videolar, alan adı ve DNS kayıtları, akademik yayınlar ve açık veri setleri örnek verilebilir.
 
-Açık kaynaklara örnekler:
-
-- web siteleri ve arşivlenmiş sayfalar,
-- haberler ve basın açıklamaları,
-- kamuya açık sosyal medya içerikleri,
-- resmi kayıtlar ve şirket sicilleri,
-- haritalar ve uydu görüntüleri,
-- fotoğraf ve videolar,
-- alan adı, DNS ve sertifika kayıtları,
-- akademik yayınlar,
-- açık veri setleri.
-
-##  OSINT ve izinsiz erişim arasındaki sınır
-
-OSINT, erişim kontrolünü aşmayı gerektirmez.
-
-Bu yol haritasının kapsamı:
-
-- açık web araştırması,
-- kamuya açık kayıtların incelenmesi,
-- arşiv ve kaynak karşılaştırması,
-- görsel doğrulama,
-- pasif altyapı araştırması,
-- açık sosyal medya içeriğinin analizi,
-- kanıt ve raporlama yöntemleri.
-
-Kapsam dışı olanlar:
-
-- parola tahmini,
-- hesap ele geçirme,
-- yetkisiz erişim,
-- erişim kontrollerini aşma,
-- aldatıcı sosyal mühendislik,
-- kimliğe bürünme,
-- taciz veya doxxing,
-- izinsiz aktif tarama.
-
-Basit kural:
-
-```text
-Bir sonraki adım özel erişim, aldatma veya güvenlik kontrolünü aşmayı gerektiriyorsa dur.
-```
+OSINT, yetkisiz erişim değildir. Bu yol haritası yasal ve gerçekten kamuya açık bilgiyle yapılan araştırmaya odaklanır.
 
 ---
 
-#  Öğrenme yol haritası
+## Nereden başlamalı?
 
-## 1 - Temeller
+Elindeki ipucunu seç ve küçük bir araştırmayı baştan sona tamamla.
 
-Önce araştırma disiplinini geliştir.
-
-Öğrenilecekler:
-
-- bilgi ile istihbarat arasındaki fark,
-- açık ve özel veri farkı,
-- araştırma sorusu yazma,
-- kapsam belirleme,
-- kaynak güvenilirliği,
-- bilişsel önyargılar,
-- temel araştırmacı OPSEC'i,
-- not alma ve kanıt düzeni.
-
-### İlk alışkanlıklar
-
-Her araştırmada şu beş soruyu yaz:
-
-```text
-Ne doğrulamaya çalışıyorum?
-Hangi kaynaklar bu soruyu cevaplayabilir?
-Hangi kaynaklar birbirinden gerçekten bağımsız?
-Hangi bulgular yalnızca gösterge, hangileri kanıt?
-Mevcut verilerle neyi söyleyemem?
-```
-
-## 2 - Arama ve keşif
-
-Arama motorlarını yalnızca anahtar kelime kutusu olarak görme.
-
-Çalışılacak konular:
-
-- Boolean arama,
-- tırnak içinde tam ifade araması,
-- `site:` ve `filetype:` kullanımı,
-- tarih filtreleme,
-- farklı arama motorlarının sonuç farkları,
-- web arşivleri,
-- çok dilli arama ve transliterasyon,
-- kullanıcı adı ve profil keşfi,
-- şirket ve kamu kayıtları.
-
-Örnekler:
-
-```text
-site:example.com filetype:pdf "annual report"
-"exact phrase" -facebook -pinterest
-intitle:"incident report" company
-```
-
-Arama operatörleri tek başına yöntem değildir. Amaç, hipotezi test edecek kaynaklara ulaşmaktır.
-
-## 3 - Kaynak doğrulama
-
-Bir sonucu bulmak ile bir iddiayı doğrulamak aynı şey değildir.
-
-Kontrol et:
-
-- Kaynağı kim yayımladı?
-- İçerik ilk nerede yayımlandı?
-- Yayın tarihi ile olay tarihi aynı mı?
-- Kaynak başka bir kaynağı kopyalıyor olabilir mi?
-- İddia bağımsız bir kaynakta doğrulanıyor mu?
-- İçerik sonradan düzenlenmiş olabilir mi?
-- Kaynak iddiayı gerçekten söylüyor mu, yoksa yalnızca benzer bir şeyi mi?
-
-Detaylı kontrol listesi: [Kaynak Doğrulama](docs/tr/source-verification-checklist.md)
-
-## 4 - Görsel ve video doğrulama
-
-Ana teknikler:
-
-- tersine görsel arama,
-- videodan kare çıkarma,
-- ilk yayın tarihini bulma,
-- tabela ve yazıları inceleme,
-- yol çizgileri ve trafik yönü,
-- mimari ve arazi karşılaştırması,
-- hava durumu ve ışık koşulları,
-- gölge yönü,
-- harita ve uydu görüntüsü karşılaştırması,
-- metadata'yı dikkatli yorumlama.
-
-Metadata'nın olmaması sahtecilik kanıtı değildir. Sosyal platformlar metadata'yı sıklıkla kaldırır.
-
-## 5 - GEOINT / Coğrafi doğrulama
-
-Amaç, bir fotoğraf veya videonun iddia edilen konumla uyumlu olup olmadığını açık kaynaklarla değerlendirmektir.
-
-İyi ipuçları:
-
-- yol geometrisi,
-- bina cepheleri,
-- dağ ve kıyı şekilleri,
-- elektrik direkleri,
-- yol işaretleri,
-- toplu taşıma unsurları,
-- işletme tabelaları,
-- güneş ve gölge,
-- bitki örtüsü,
-- hava ve mevsim koşulları.
-
-Adım adım rehber: [Geolocation Field Guide](docs/tr/geolocation-field-guide.md)
-
-## 6 - SOCMINT
-
-SOCMINT, kamuya açık sosyal medya faaliyetinin sistematik analizidir.
-
-Kullanılabilecek sinyaller:
-
-- kullanıcı adı,
-- biyografi değişiklikleri,
-- açık gönderiler,
-- zaman çizelgesi,
-- halka açık görsel ve videolar,
-- açık bağlantılar,
-- tekrar eden kamuya açık davranış örüntüleri.
-
-Önemli:
-
-```text
-Aynı kullanıcı adı = aynı kişi değildir.
-```
-
-Atıf için birden fazla bağımsız gösterge gerekir.
-
-## 7 - WEBINT ve altyapı araştırması
-
-Pasif web araştırmasında kullanılabilecek kaynaklar:
-
-- WHOIS/RDAP,
-- DNS kayıtları,
-- Certificate Transparency,
-- web arşivleri,
-- teknoloji tespiti,
-- halka açık alt alan adı kayıtları,
-- URL ve sayfa metadata'sı,
-- üçüncü taraf pasif tarama veri tabanları.
-
-Amaç bir sistemi zorlamak değil, zaten kamuya açık olan kayıtları yorumlamaktır.
-
-## 8 - Zaman çizelgesi analizi
-
-Zaman çizelgesi özellikle olay doğrulamada güçlüdür.
-
-Her kayıtta tut:
-
-| Alan | Örnek |
+| Başlangıç ipucu | İlk adım |
 | --- | --- |
-| Zaman | 2026-08-21 12:30 UTC |
-| Olay | İlk basın açıklaması |
-| Kaynak | Resmi URL |
-| Kaynak türü | Birincil |
-| Güven | Yüksek |
-| Not | Sayfa daha sonra güncellendi |
+| Alan adı | [Alan adı playbook'u](playbooks/README.md#i-have-a-domain) |
+| Kullanıcı adı | [Kullanıcı adı playbook'u](playbooks/README.md#i-have-a-username) |
+| E-posta veya telefon | [Kimlik ve atıf çalışma akışı](playbooks/README.md#i-have-a-username) |
+| Görsel | [Görsel playbook'u](playbooks/README.md#i-have-an-image) |
+| Video | [Video playbook'u](playbooks/README.md#i-have-a-video) |
+| Şirket | [Şirket playbook'u](playbooks/README.md#i-have-a-company-name) |
+| IP adresi | [IP playbook'u](playbooks/README.md#i-have-an-ip-address) |
+| Kamuya açık belge | [Belge playbook'u](playbooks/README.md#i-have-a-public-document) |
+| Haber iddiası | [Haber doğrulama playbook'u](playbooks/README.md#i-have-a-news-claim) |
+| Konum iddiası | [Konum doğrulama playbook'u](playbooks/README.md#i-have-a-location-claim) |
 
-Saat dilimlerini normalize et. “Dün”, “bu sabah” gibi göreli ifadeleri mutlak zamana çevirmeden karşılaştırma yapma.
-
-## 9 - Analiz ve hipotez testi
-
-İyi OSINT yalnızca destekleyici kanıt aramaz.
-
-En az iki alternatif açıklama yaz:
-
-| Hipotez | Destekleyen kanıt | Çelişen kanıt | Eksik bilgi |
-| --- | --- | --- | --- |
-| H1 | ... | ... | ... |
-| H2 | ... | ... | ... |
-| H3 | ... | ... | ... |
-
-Bu yöntem confirmation bias riskini azaltır.
-
-## 10 - Raporlama
-
-Bir başkasının sonucu nasıl elde ettiğini anlayabilmesi gerekir.
-
-Minimum rapor yapısı:
-
-```text
-1. Araştırma sorusu
-2. Kapsam
-3. Yönetici özeti
-4. Bulgular
-5. Kanıtlar ve kaynaklar
-6. Analiz
-7. Alternatif açıklamalar
-8. Güven düzeyi
-9. Sınırlamalar
-10. Kaynak günlüğü
-```
-
-Kullanıma hazır şablon: [Türkçe OSINT Rapor Şablonu](docs/tr/report-template.md)
+Araç isimlerini ezberlemekten önce bir araştırmayı soru, kaynak, doğrulama ve rapor aşamalarından geçirebilmek daha önemlidir.
 
 ---
 
-#  Araçlar
+## Temeller
 
-Araç seçerken “hangi araç popüler?” yerine “hangi soruyu cevaplamam gerekiyor?” diye sor.
+Önce şu alışkanlıkları edin:
 
-Başlangıç kategorileri:
+- araştırma sorusu yazma;
+- kapsam ve durma koşulu belirleme;
+- kaynak kökenini ve bağımlılığını değerlendirme;
+- bağımsız doğrulama yapma;
+- tarih ve saat dilimlerini doğru ele alma;
+- varlıkları ve ilişkileri çözümleme;
+- güven ve belirsizliği ifade etme;
+- notları ve kanıtları düzenleme;
+- araştırmacı OPSEC'ini koruma.
+
+[Research Methods](docs/tr/research-methods.md)  
+[Skill Matrix](docs/skill-matrix.md)  
+[OSINT Quick Reference](cheatsheets/osint-quick-reference.md)
+
+---
+
+## Keşif
 
 ### Arama ve arşiv
 
-- Google / Bing / Brave / DuckDuckGo
-- Internet Archive
-- Archive.today
+Şunları öğren:
 
-### Görsel doğrulama
+- Boolean ve tam ifade araması;
+- site, filetype, başlık ve tarih filtreleri;
+- web arşivlerinden eski sayfaları yeniden oluşturma;
+- çok dilli arama ve transliterasyon;
+- bir iddiayı mümkün olduğunca erken kaynağa kadar takip etme.
 
-- Google Lens / Google Images
-- Yandex Images
-- TinEye
-- InVID
-- ExifTool
+### Kimlik ve dijital ayak izi
 
-### Harita ve coğrafi araştırma
+Kamuya açık sinyallerle çalış:
 
-- Google Earth
-- OpenStreetMap
-- SunCalc
-- Mapillary / mevcut olduğu yerlerde sokak görüntüleri
+- kullanıcı adları;
+- e-posta adresleri;
+- kamuya açık telefon numaraları;
+- sabit tanımlayıcılar;
+- hesapların kendi verdiği bağlantılar;
+- arşivlenmiş profil geçmişi.
 
-### Alan adı ve web altyapısı
+Aynı kullanıcı adının bulunması tek başına aynı kişiyi göstermez.
 
-- RDAP / WHOIS
-- crt.sh
-- Censys
-- Shodan'ın pasif verileri
-- urlscan.io
-- BuiltWith / Wappalyzer
+### Şirketler ve kamu kayıtları
 
-### Şirket ve kamu kayıtları
+Önce varlığı doğru çözümle:
 
-- OpenCorporates
-- OpenSanctions
-- OCCRP Aleph
-- GLEIF
-- SEC EDGAR
+- tüzel kişi kaydı;
+- resmi dosyalar;
+- sahiplik ve ilişkiler;
+- kamu ihaleleri ve düzenleyici kayıtlar;
+- şirket zaman çizelgesi.
 
-Her aracın hangi durumda işe yaradığını ve neyi **kanıtlamadığını** görmek için [Araç Matrisi](docs/tr/tool-matrix.md) dosyasına bak.
+Yanlış şirketi araştırıyorsan, sonraki analiz ne kadar ayrıntılı olursa olsun sonuç yanlış kalır.
 
 ---
 
-#  Pratik
+## Doğrulama
 
-Pasif okumak yerine küçük dosyalar üret.
+### Görsel ve video
 
-Önerilen başlangıç görevleri:
+Çalış:
 
-1. Bir haber iddiasının en eski açık kaynağını bul.
-2. Değişmiş bir web sayfasını arşivlerden yeniden oluştur.
-3. Kamuya açık bir görselin iddia edilen bağlamını doğrula.
-4. Yalnızca pasif kaynaklarla bir alan adının açık web ayak izini çıkar.
-5. Bir kullanıcı adı eşleşmesinin gerçekten aynı kişiye ait olup olmadığını test et.
-6. Bir olay için saat dilimi normalize edilmiş zaman çizelgesi oluştur.
-7. Eğitim amaçlı bir görseli coğrafi ipuçlarıyla doğrula.
-8. Bulguları tek sayfalık istihbarat notuna dönüştür.
+- tersine görsel arama;
+- en erken kamuya açık görünüm;
+- yeniden paylaşım ve kaynak zinciri;
+- videodan kare çıkarma;
+- tabela, yazı ve mimari ayrıntılar;
+- yol, arazi ve çevre karşılaştırması;
+- hava ve zaman tutarlılığı;
+- metadata'yı dikkatli yorumlama.
 
-Detaylar ve puanlama: [Pratik Laboratuvarları](docs/tr/practice-labs.md)
+[Tarayıcı Eklentileri ve Web Araçları](tools/browser-extensions.tr.md)
 
----
+### Haber ve iddia doğrulama
 
-#  AI destekli OSINT
+Bir iddiayı yalnızca aynı cümleyi arayarak doğrulamaya çalışma.
 
-Yapay zekâ şu işlerde yardımcı olabilir:
+Mümkün olduğunca:
 
-- arama sorgusu varyasyonları üretme,
-- yabancı dil terimleri ve transliterasyon seçenekleri önerme,
-- kendi topladığın notları sınıflandırma,
-- uzun belgelerde aday kişi/kurum/tarih isimlerini çıkarma,
-- alternatif hipotezler önermede,
-- tablo veya metin verisini düzenlemede.
+1. ilk kaynağı bul;
+2. birincil belge veya doğrudan açıklama ara;
+3. bağımsız haberleri karşılaştır;
+4. düzeltme ve güncellemeleri kontrol et;
+5. gerekli olduğunda arşivlenmiş sürümleri incele.
 
-Ama model çıktısı kaynak değildir.
+### GEOINT
 
-```text
-AI bir sonraki soruyu önerebilir.
-Cevabı kanıtlayan şey doğrulanabilir kaynaktır.
-```
+Konum araştırmasında genişten dara ilerle:
 
-İsim, tarih, alıntı, URL, ilişki ve sonuçları her zaman asıl kaynakla doğrula.
+~~~text
+Ülke veya bölge
+      ↓
+Şehir veya alan
+      ↓
+Yol, yapı, arazi veya belirgin işaret
+      ↓
+Kesin nokta, yalnızca kanıt izin veriyorsa
+~~~
 
----
-
-#  Uzmanlaşma yolları
-
-Temel iş akışı oturduktan sonra şunlardan birine odaklanabilirsin:
-
-- Cyber Threat Intelligence (CTI)
-- görsel araştırma ve geolocation
-- şirket ve risk araştırması
-- kamuya açık sosyal ağ analizi
-- gazetecilik ve fact-checking
-- fraud ve brand protection
-- web altyapısı araştırması
-- olay doğrulama ve incident support
-
-Uzmanlık değişir; kanıt standardı değişmez.
+[İleri GEOINT Challenges](challenges/advanced-geoint.md)
 
 ---
 
-#  İyi bir araştırmacının kontrol listesi
+## Analiz
 
-- [ ] Araştırma sorusu tek cümlede açık mı?
-- [ ] Kapsam ve sınırlar yazılı mı?
-- [ ] Kaynakların URL ve zaman bilgisi kaydedildi mi?
-- [ ] Birincil kaynak arandı mı?
-- [ ] Kritik bulgular bağımsız kaynaklarla doğrulandı mı?
-- [ ] Kaynakların birbirini kopyalayıp kopyalamadığı kontrol edildi mi?
-- [ ] Alternatif açıklamalar test edildi mi?
-- [ ] Varsayımlar olgulardan ayrıldı mı?
-- [ ] Güven düzeyi gerekçelendirildi mi?
-- [ ] Sınırlamalar açıkça yazıldı mı?
+Önemli bulgular doğrulandıktan sonra onları birbiriyle ilişkilendir.
+
+Çalışılacak konular:
+
+- varlık çözümleme;
+- ilişki haritalama;
+- zaman çizelgesi analizi;
+- coğrafi korelasyon;
+- alternatif hipotezler;
+- güven düzeyi belirleme;
+- eksik veri analizi.
+
+Amaç mümkün olan en büyük grafiği üretmek değil, mevcut kanıtın taşıyabildiği en sade açıklamayı kurmaktır.
 
 ---
 
-#  Katkıda bulunma
+## Raporlama
 
-Katkılar özellikle şu alanlarda değerlidir:
+Başka bir araştırmacı sonuca nasıl ulaştığını anlayabilmeli.
 
-- güncel ve güvenilir kaynaklar,
-- bozuk bağlantı düzeltmeleri,
-- yeni güvenli pratik laboratuvarları,
-- bölgesel kamu kayıtları rehberleri,
-- daha iyi çeviriler,
-- görsel doğrulama yöntemleri,
-- raporlama örnekleri,
-- araçların sınırlamalarının belgelenmesi.
+~~~text
+Araştırma sorusu
+Kapsam
+Yöntem
+Kaynaklar
+Bulgular
+Analiz
+Güven düzeyi
+Sınırlamalar
+Sonuç
+~~~
 
-Katkı yapmadan önce [CONTRIBUTING.md](CONTRIBUTING.md) dosyasını incele.
+[Türkçe OSINT Rapor Şablonu](docs/tr/report-template.md)
+
+---
+
+## Uzmanlaşma
+
+Temel iş akışı oturduktan sonra bir uzmanlık alanı seç:
+
+| Alan | Odak |
+| --- | --- |
+| [Cyber Threat Intelligence](tracks/cti.md) | PIR, kamuya açık göstergeler, altyapı ilişkileri, ATT&CK, zaman çizelgeleri, atıf |
+| [Digital Footprint Investigation](tracks/digital-footprint.md) | kamuya açık izler, tanımlayıcılar, atıf, arşiv, veri minimizasyonu |
+| [Company Investigation](tracks/company-investigation.md) | tüzel kişi, kayıtlar, sahiplik, şirket zaman çizelgesi |
+| [Advanced GEOINT](challenges/advanced-geoint.md) | geolocation, chronolocation, görüntü ve aday eleme |
+| Gazetecilik ve fact-checking | kaynak takibi, medya kökeni, iddia doğrulama |
+| Public Web Infrastructure | domain, DNS, sertifikalar ve pasif altyapı araştırması |
+
+Alan değişir; kanıt standardı değişmez.
+
+---
+
+## Araç Kütüphanesi
+
+Depo, internetteki bütün araçları listelemeye çalışmak yerine seçilmiş bir OSINT araç ve kaynak kütüphanesi tutar.
+
+Kapsanan alanlar:
+
+- arama ve arşiv;
+- kullanıcı adı, e-posta ve telefon;
+- görsel ve video doğrulama;
+- GEOINT ve harita araştırması;
+- domain, IP ve internet altyapısı;
+- CTI ve kamuya açık IOC zenginleştirme;
+- şirketler ve kamu kayıtları;
+- havacılık, denizcilik ve demiryolu araştırması;
+- belge işleme;
+- ilişki ve zaman çizelgesi analizi;
+- blockchain araştırması;
+- akademik metadata.
+
+Her araç için şu sorulara cevap arayın:
+
+~~~text
+Hangi girdiyi kullanıyor?
+Nerede işe yarıyor?
+Maliyeti nedir?
+Neyi kanıtlamıyor?
+~~~
+
+[Türkçe Araç Kütüphanesi](tools/tool-library.tr.md)  
+[Araştırmacı Araç Seti](tools/investigator-stack.tr.md)  
+[Doğrulanmış Açık Kaynak Araçlar](tools/open-source-tools.tr.md)
+
+---
+
+## Uygulama
+
+Bir videoyu izlemek veya bir aracı bir kez çalıştırmak beceriyi tamamlamaz.
+
+~~~text
+Öğren
+  ↓
+Pratik yap
+  ↓
+Üret
+  ↓
+Açıkla
+  ↓
+Savun
+  ↓
+Gözden geçir
+~~~
+
+Faydalı çıktılar arasında kaynak değerlendirmesi, zaman çizelgesi, görsel doğrulama raporu, GEOINT çalışması, atıf değerlendirmesi ve kısa istihbarat notu bulunabilir.
+
+[Pratik Laboratuvarları](docs/tr/practice-labs.md)  
+[Skill Matrix](docs/skill-matrix.md)  
+[Case Studies](case-studies/README.md)
+
+---
+
+## Yapay Zekâ Destekli OSINT
+
+Yapay zekâ şu tür yardımcı işlerde faydalı olabilir:
+
+- arama sorgusu varyasyonları üretmek;
+- çeviri ve transliterasyon seçenekleri önermek;
+- kendi notlarından aday varlıkları çıkarmak;
+- topladığın materyali düzenlemek;
+- alternatif hipotezler önermek;
+- yapılandırılmış veriyi temizlemek.
+
+Fakat model çıktısı kaynak değildir.
+
+~~~text
+Yapay zekâ bir yol önerir
+        ↓
+Kaynağı sen incelersin
+        ↓
+İddiayı sen doğrularsın
+        ↓
+Sonucu sen belgelersin
+~~~
+
+Önemli isim, tarih, alıntı, URL, ilişki ve sonuçları mutlaka asıl kamuya açık kaynakla kontrol et.
+
+---
+
+## Kapsam, Etik ve Güvenli Kullanım
+
+Bu yol haritası yasal ve gerçekten kamuya açık bilgilerle yapılan araştırmayla sınırlıdır.
+
+Şunları kapsamaz:
+
+- yetkisiz erişim;
+- parola veya kimlik bilgisi saldırıları;
+- hesap ele geçirme;
+- erişim kontrollerini aşma;
+- aldatıcı sosyal mühendislik;
+- taciz veya doxxing;
+- izinsiz aktif tarama;
+- özel hesap veya özel içeriğe erişim.
+
+Pratik durma kuralı:
+
+~~~text
+Bir sonraki adım saldırı,
+aldatma, özel erişim
+veya güvenlik kontrolünü
+aşmayı gerektiriyorsa:
+dur.
+~~~
+
+İyi OSINT ayrıca araştırma sorusuyla ilgisi olmayan kişisel bilgileri toplamamayı gerektirir.
+
+---
+
+## Bakım ve Güncellik
+
+OSINT ekosistemi hızlı değişir.
+
+Bir aracın sahibi, fiyatı, izinleri, arayüzü, kapsamı veya kullanım şartları değişebilir. Bu nedenle çalışan bir URL, katalog bilgisinin doğru veya güncel olduğunu tek başına göstermez.
+
+[OSINT Tool Radar](updates/2026-08-tool-radar.md)  
+[Güncellemeler Arşivi](updates/README.md)
+
+Depo bağlantı sağlığı ile içerik güncelliğini ayrı ayrı kontrol eder.
+
+---
+
+## Katkıda bulunma
+
+İyi katkılar genellikle küçük, açık ve doğrulanabilir olur.
+
+Şunlarda yardımcı olabilirsin:
+
+- kaynak veya bağlantı düzeltmek;
+- eski bir kaynağı güncellemek;
+- çeviriyi iyileştirmek;
+- güvenli bir pratik laboratuvarı eklemek;
+- daha iyi bir doğrulama yöntemi belgelemek;
+- yeni bir playbook eklemek;
+- bir aracın sınırlarını daha doğru açıklamak.
+
+[Katkı Rehberi](CONTRIBUTING.md)
+
+Tek bir doğru kaynak eklemek veya metodoloji hatasını düzeltmek bile sonraki araştırmacı için gerçek bir fark yaratabilir.
+
+---
 
 ## Lisans
 
 MIT License © Imed Kablavi
-
----
-
-Bu yol haritası işine yaradıysa projeye yıldız vermen, depoyu diğer öğrencilerin ve araştırmacıların bulmasını kolaylaştırır.
