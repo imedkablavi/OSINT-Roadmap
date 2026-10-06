@@ -1,989 +1,336 @@
-#  OSINT Roadmap
+# OSINT Roadmap
 
-## Practical & Ethical Open Source Intelligence
+## Practical and Ethical Open Source Intelligence
 
-![OSINT Banner](https://images.unsplash.com/photo-1600267165477-6d4cc741b379)
+[![GitHub Repo stars](https://img.shields.io/github/stars/imedkablavi/OSINT-Roadmap?style=plastic)](https://github.com/imedkablavi/OSINT-Roadmap/stargazers)
+[![GitHub forks](https://img.shields.io/github/forks/imedkablavi/OSINT-Roadmap?style=plastic)](https://github.com/imedkablavi/OSINT-Roadmap/network/members)
+[![GitHub contributors](https://img.shields.io/github/contributors/imedkablavi/OSINT-Roadmap?style=plastic)](https://github.com/imedkablavi/OSINT-Roadmap/graphs/contributors)
+[![Latest release](https://img.shields.io/github/v/release/imedkablavi/OSINT-Roadmap?style=plastic&label=latest)](https://github.com/imedkablavi/OSINT-Roadmap/releases/latest)
+[![License](https://img.shields.io/badge/license-MIT-green.svg?style=plastic)](LICENSE)
+[![Link Health](https://github.com/imedkablavi/OSINT-Roadmap/actions/workflows/link-check.yml/badge.svg)](https://github.com/imedkablavi/OSINT-Roadmap/actions/workflows/link-check.yml)
+[![Tool Freshness](https://github.com/imedkablavi/OSINT-Roadmap/actions/workflows/tool-freshness.yml/badge.svg)](https://github.com/imedkablavi/OSINT-Roadmap/actions/workflows/tool-freshness.yml)
 
-> A professional, methodology-driven roadmap for learning
-> **Open Source Intelligence (OSINT)**
-> from **Beginner → Intermediate → Professional**.
->
-> This roadmap focuses on **analysis, verification, legality, documentation, and ethics** - not random tool collection.
-
----
-
-##  Languages
-
-* [English](README.en.md)
-* [العربية](README.ar.md)
-* [Türkçe](README.tr.md)
+> A roadmap for learning OSINT by doing careful research, checking sources, and writing conclusions that can survive scrutiny.
 
 ---
 
-##  Table of Contents
+## The Roadmap
 
-* [What is OSINT?](#-what-is-osint)
-* [OSINT vs Hacking](#-osint-vs-hacking)
-* [Who This Roadmap Is For](#-who-this-roadmap-is-for)
-* [Learning Roadmap Overview](#-learning-roadmap-overview)
-* [Phase 1 – Foundations](#-phase-1--foundations-beginner)
-* [Phase 2 – Core OSINT Skills](#-phase-2--core-osint-skills-intermediate)
-* [Phase 3 – Advanced OSINT](#-phase-3--advanced-osint-professional)
-* [OSINT Workflow](#-osint-workflow)
-* [OSINT Source Types](#-osint-source-types)
-* [OSINT Tools & Frameworks](#-osint-tools--frameworks)
-* [Investigation Checklist](#-investigation-checklist)
-* [Case Study Example](#-case-study-example)
-* [Reporting & Documentation](#-reporting--documentation)
-* [Confidence Levels](#-confidence-levels)
-* [Common Mistakes](#-common-mistakes)
-* [Learning Resources](#-learning-resources)
-* [Recommended Books](#-recommended-books)
-* [Certifications & Career Paths](#-certifications--career-paths)
-* [Researcher OPSEC](#-researcher-opsec)
-* [Ethics & Legal Responsibility](#-ethics--legal-responsibility)
-* [Suggested Repository Structure](#-suggested-repository-structure)
-* [Repository Development Plan](#-repository-development-plan)
-* [Contributing](#-contributing)
-* [License](#-license)
+![OSINT Roadmap — Research to Intelligence](assets/osint-roadmap.svg)
 
----
+The roadmap follows the investigation process rather than a list of favorite tools.
 
-##  What is OSINT?
-
-**Open Source Intelligence (OSINT)** is the structured process of collecting, verifying, analyzing, and reporting information from publicly available sources.
-
-OSINT is not just “searching the internet.”
-A proper OSINT process starts with a clear question, defines a legal scope, collects public information, verifies it through independent sources, and presents the result in a documented report.
-
-Public sources may include:
-
-* Websites and blogs
-* News articles
-* Public social media content
-* Public records
-* Images and videos
-* Maps and satellite imagery
-* Domain and DNS records
-* Company registries
-* Academic papers
-* Public datasets
-* Archived web pages
-
-The value of OSINT is not in collecting the most information.
-The value is in proving what can be proven and clearly explaining what remains uncertain.
-
----
-
-##  OSINT vs Hacking
-
-![Legal Boundaries](https://images.unsplash.com/photo-1589829545856-d10d557cf95f)
-
-> **OSINT is observation and analysis, not intrusion.**
-
-| OSINT                                                          | Hacking                                             |
-| -------------------------------------------------------------- | --------------------------------------------------- |
-| Uses publicly available information                            | Targets private systems or accounts                 |
-| Passive collection                                             | Active exploitation                                 |
-| No bypassing access controls                                   | Bypassing login, access control, or security layers |
-| Focuses on documentation and verification                      | Focuses on unauthorized access or manipulation      |
-| Can support research, journalism, security, and investigations | Can create criminal and civil liability             |
-
-OSINT does **not** include:
-
-* Login bypass
-* Password guessing
-* Credential use without permission
-* Exploiting vulnerabilities
-* Social engineering
-* Impersonation
-* Doxxing
-* Harassment
-* Private account access
-* Active scanning without authorization
-
-If access requires deception, intrusion, or bypassing a restriction, it is not ethical OSINT.
-
----
-
-##  Who This Roadmap Is For
-
-This roadmap is designed for:
-
-* Beginners starting from zero
-* Cybersecurity students
-* Digital forensics learners
-* Threat intelligence beginners
-* SOC analysts
-* Journalists and fact-checkers
-* Researchers and investigators
-* Fraud analysts
-* Brand protection analysts
-* Anyone interested in ethical public-source research
-
-You do not need advanced technical knowledge to start.
-You do need patience, documentation discipline, critical thinking, and respect for legal boundaries.
-
----
-
-##  Learning Roadmap Overview
-
-![Roadmap](https://images.unsplash.com/photo-1508780709619-79562169bc64)
-
-```text
-Beginner
+~~~text
+Question
   ↓
-Search basics
+Scope
   ↓
-Source verification
+Discovery
   ↓
-Documentation habits
+Verification
   ↓
-SOCMINT / GEOINT / WEBINT
+Correlation
   ↓
-Evidence-based analysis
+Assessment
   ↓
-Professional reporting
+Reporting
   ↓
-Threat intelligence, digital forensics, journalism, or investigation work
-```
+Specialization
+~~~
 
-A good OSINT learner should develop five habits:
+The order matters. Learn how to think about evidence first. Expand the toolset as your questions become more specific.
 
-1. Ask a clear question.
-2. Define the scope before collecting.
-3. Verify before concluding.
-4. Separate evidence from assumptions.
-5. Document everything.
+### A useful standard
 
----
+A completed investigation should make four things clear:
 
-##  Phase 1 – Foundations (Beginner)
+| Question | What a good answer looks like |
+| --- | --- |
+| What were you trying to find out? | A focused research question |
+| Where did the information come from? | Traceable public sources |
+| How did you test it? | Independent corroboration and context checks |
+| What can you conclude? | A confidence-calibrated assessment |
 
-![Foundations](https://images.unsplash.com/photo-1526378722484-bd91ca387e72)
-
-### Goal
-
-Build the legal, ethical, and analytical foundation needed before using advanced tools.
-
-### Topics
-
-* What OSINT means
-* Information vs intelligence
-* Public data vs private data
-* Legal and ethical limits
-* Search engine basics
-* Source evaluation
-* Confirmation bias
-* Basic OPSEC
-* Note-taking and evidence organization
-* Basic report writing
-
-### Core Skills
-
-| Skill             | Why It Matters                                           |
-| ----------------- | -------------------------------------------------------- |
-| Search discipline | Helps you find relevant information without wasting time |
-| Source evaluation | Prevents weak or misleading conclusions                  |
-| Documentation     | Makes your work reviewable and defensible                |
-| Legal awareness   | Keeps the investigation inside safe boundaries           |
-| Critical thinking | Reduces false attribution and unsupported claims         |
-
-### Beginner Practice
-
-Start with simple, legal exercises:
-
-* Verify a public news claim.
-* Compare two public sources about the same event.
-* Find the original source of a public image.
-* Build a timeline from public articles.
-* Write a short one-page report.
+> [!IMPORTANT]
+> A tool can give you a lead. It cannot remove the need to verify the source behind the lead.
 
 ---
 
-##  Phase 2 – Core OSINT Skills (Intermediate)
+## What is OSINT?
 
-![Analysis](https://images.unsplash.com/photo-1551288049-bebda4e38f71)
+Open Source Intelligence is the structured collection, verification, analysis, and reporting of information available from public sources.
 
-###  Advanced Search
+The structure matters. Searching without a question creates noise. Collecting without verification creates false confidence.
 
-Learn how to search with precision.
+Public sources can include websites, archives, public records, public social media content, maps, imagery, company records, academic publications, public datasets, and domain or certificate information.
 
-Topics:
-
-* Boolean logic
-* Quotation searches
-* Filetype searches
-* Site-specific searches
-* Date filtering
-* Cached and archived pages
-* Search engine differences
-
-Examples:
-
-```text
-site:example.com filetype:pdf
-"exact phrase" "company name"
-intitle:"report" "incident"
-"username" -pinterest -facebook
-```
-
-A good search query should be specific enough to reduce noise, but flexible enough to avoid missing relevant results.
+OSINT is not a form of unauthorized access. This project stays within lawful public-source research.
 
 ---
 
-###  SOCMINT
+## Where to Start
 
-**SOCMINT** means Social Media Intelligence.
+Choose one clue and work through it from the first search to the final report.
 
-It focuses on public activity from social platforms, such as:
+| Starting clue | First step |
+| --- | --- |
+| Domain | [Domain playbook](playbooks/README.md#i-have-a-domain) |
+| Username | [Username playbook](playbooks/README.md#i-have-a-username) |
+| Email or phone | [Identity and attribution workflow](playbooks/README.md#i-have-a-username) |
+| Image | [Image playbook](playbooks/README.md#i-have-an-image) |
+| Video | [Video playbook](playbooks/README.md#i-have-a-video) |
+| Company | [Company playbook](playbooks/README.md#i-have-a-company-name) |
+| IP address | [IP playbook](playbooks/README.md#i-have-an-ip-address) |
+| Public document | [Document playbook](playbooks/README.md#i-have-a-public-document) |
+| News claim | [News-claim playbook](playbooks/README.md#i-have-a-news-claim) |
+| Location claim | [Location playbook](playbooks/README.md#i-have-a-location-claim) |
 
-* Public posts
-* Public profile information
-* Public usernames
-* Public images and videos
-* Public interactions
-* Public timestamps
-* Visible behavioral patterns
-
-Skills:
-
-* Username correlation
-* Timeline reconstruction
-* Behavioral pattern analysis
-* Public profile comparison
-* Cross-platform verification
-* Avoiding false attribution
-
-Important note:
-
-```text
-A matching username alone is not proof of identity.
-It is only an indicator that requires additional evidence.
-```
+Do not try to memorize the whole OSINT ecosystem before you can complete a small investigation well.
 
 ---
 
-###  Image & Video Verification
+## Foundations
 
-Images and videos can provide strong evidence, but they can also mislead.
+Start with the habits that prevent weak conclusions:
 
-Core techniques:
+- research-question design;
+- scope and stopping conditions;
+- provenance and source dependency;
+- independent corroboration;
+- timeline handling;
+- entity resolution;
+- confidence and uncertainty;
+- evidence tables and source logs;
+- researcher OPSEC.
 
-* Reverse image search
-* Frame extraction from videos
-* Landmark identification
-* Shadow and sun position analysis
-* Weather comparison
-* Metadata review
-* Archive checking
-* First appearance search
-* Visual comparison with maps
-
-Useful questions:
-
-```text
-Where was this image first published?
-Does the location match the claim?
-Do shadows match the claimed time?
-Do weather conditions match the date?
-Are there signs, buildings, roads, or terrain clues?
-```
+[Research methods](docs/research-methods.md)  
+[Skill Matrix](docs/skill-matrix.md)  
+[Quick Reference](cheatsheets/osint-quick-reference.md)
 
 ---
 
-###  GEOINT
+## Discovery
 
-**GEOINT** means Geospatial Intelligence.
+### Search and Archives
 
-In OSINT, it usually includes:
+Learn deliberate search rather than random searching:
 
-* Map analysis
-* Satellite imagery review
-* Street-level imagery
-* Terrain comparison
-* Shadow analysis
-* Road and landmark matching
-* Weather and environmental context
+- exact phrases and Boolean operators;
+- site, file type, title, and date filters;
+- archive reconstruction;
+- multilingual search and transliteration;
+- tracing claims towards their earliest public source.
 
-Common use cases:
+### Identity and Digital Footprints
 
-* Verifying the location of a photo or video
-* Checking whether a claimed event location is plausible
-* Comparing public images with maps
-* Understanding movement or route claims
+Work with public clues such as usernames, aliases, public email addresses, public phone numbers, stable identifiers, self-declared links, and archived profile history.
 
----
+A username match alone is weak attribution evidence.
 
-###  WEBINT
+### Organizations and Public Records
 
-**WEBINT** focuses on websites and web infrastructure.
+Practice:
 
-Skills:
+- legal-entity resolution;
+- public registries and filings;
+- ownership and relationship research;
+- procurement and regulatory records;
+- corporate timelines.
 
-* WHOIS review
-* DNS record analysis
-* Subdomain discovery from public sources
-* Certificate transparency review
-* Web technology identification
-* Website archive analysis
-* Public metadata review
-
-Important boundary:
-
-```text
-Passive research is OSINT.
-Active scanning without authorization may not be.
-```
+Resolve the entity before making claims about it.
 
 ---
 
-###  Relationship Mapping
+## Verification
 
-Relationship mapping helps connect public entities such as:
+### Image and Video
 
-* Usernames
-* Emails
-* Domains
-* Companies
-* Public profiles
-* Websites
-* Documents
-* Images
-* Events
+Study reverse image search, earliest public appearance, provenance and repost chains, frame extraction, visual clues, temporal consistency, and cautious metadata interpretation.
 
-Good relationship mapping should show:
+[Browser Extensions and Web Tools](tools/browser-extensions.md)
 
-* What is confirmed
-* What is likely
-* What is only a weak indicator
-* What remains unknown
+### News and Claims
 
-Avoid turning weak links into strong claims.
+A useful workflow is:
 
----
+1. find the earliest source you can identify;
+2. locate primary documents or first-hand statements;
+3. compare genuinely independent reporting;
+4. check corrections and later updates;
+5. use archives when they add useful context.
 
-##  Phase 3 – Advanced OSINT (Professional)
+### GEOINT
 
-### Focus
+Start broad and narrow the candidate set with evidence.
 
-At the professional level, the goal is not to use more tools.
-The goal is to produce reliable, documented, and defensible intelligence.
+~~~text
+Country or region
+      ↓
+City or area
+      ↓
+Road, landmark, or terrain
+      ↓
+Specific location, only when justified
+~~~
 
-### Topics
-
-* Priority Intelligence Requirements (PIR)
-* Hypothesis testing
-* Confidence assessment
-* Bias mitigation
-* Evidence handling
-* Link analysis
-* Large dataset triage
-* Threat intelligence support
-* Business intelligence
-* Dark web awareness without illegal access
-* Report writing for technical and non-technical readers
-
-### Professional Mindset
-
-A professional OSINT analyst should be able to say:
-
-```text
-This is confirmed.
-This is likely.
-This is possible.
-This is unknown.
-This cannot be proven with the available evidence.
-```
+[Advanced GEOINT Challenges](challenges/advanced-geoint.md)
 
 ---
 
-##  OSINT Workflow
+## Analysis
 
-![OSINT Workflow](assets/osint-workflow.svg)
+After important observations are verified, connect them carefully.
 
-```text
-1. Define the intelligence question
-2. Define the scope and legal boundaries
-3. Select public sources
-4. Collect information
-5. Preserve evidence
-6. Verify and triangulate
-7. Analyze findings
-8. Assess confidence
-9. Write the report
-10. Review limitations
-```
+Learn:
 
-### Example Intelligence Question
+- entity resolution;
+- relationship mapping;
+- timeline analysis;
+- geographic correlation;
+- competing hypotheses;
+- confidence calibration;
+- missing-data analysis.
 
-```text
-Can the public claim about this website, profile, image, or event be verified from independent open sources?
-```
-
-### Example Scope
-
-```text
-Only public sources.
-No login bypass.
-No impersonation.
-No private accounts.
-No active probing.
-No harassment.
-No publication of sensitive personal data.
-```
+The goal is not the largest graph. It is the strongest explanation the evidence can support.
 
 ---
 
-##  OSINT Source Types
+## Reporting
 
-| Source Type        | Description                                                    |
-| ------------------ | -------------------------------------------------------------- |
-| WEBINT             | Websites, blogs, public pages, archives                        |
-| SOCMINT            | Public social media activity                                   |
-| GEOINT             | Maps, satellite imagery, geolocation data                      |
-| IMINT              | Images, videos, visual evidence                                |
-| TECHINT            | Domains, DNS, certificates, infrastructure                     |
-| FININT             | Public financial or company records                            |
-| Academic OSINT     | Papers, research databases, citations                          |
-| Public Records     | Government, legal, corporate, and registry records             |
-| News OSINT         | News reports, media archives, press releases                   |
-| Dark Web Awareness | Legal awareness of dark web references, without illegal access |
+A professional note should make the research reproducible.
 
----
+~~~text
+Question
+Scope
+Method
+Sources
+Findings
+Analysis
+Confidence
+Limitations
+Conclusion
+~~~
 
-##  OSINT Tools & Frameworks
-
-> Tools support OSINT. They do not replace thinking, verification, or reporting.
-
-###  General OSINT Frameworks
-
-* [OSINT Framework](https://osintframework.com/)
-* [Bellingcat Resources](https://www.bellingcat.com/category/resources/)
-* [Awesome OSINT](https://github.com/jivoi/awesome-osint)
-* [Start.me OSINT Collections](https://start.me/)
+[OSINT Report Template](docs/report-template.md)
 
 ---
 
-###  Search & Discovery
+## Specialization
 
-* [Google Advanced Search](https://www.google.com/advanced_search)
-* [DuckDuckGo](https://duckduckgo.com/)
-* [Bing](https://www.bing.com/)
-* [Yandex](https://yandex.com/)
-* [Brave Search](https://search.brave.com/)
+Choose a track when the core workflow is comfortable.
 
-Useful search patterns:
-
-```text
-site:domain.com keyword
-filetype:pdf keyword
-"exact phrase"
-intitle:"keyword"
-before:2024-01-01 after:2023-01-01
-```
+| Track | Focus |
+| --- | --- |
+| [Cyber Threat Intelligence](tracks/cti.md) | PIRs, public indicators, infrastructure relationships, ATT&CK, timelines, attribution |
+| [Digital Footprint Investigation](tracks/digital-footprint.md) | public traces, attribution, archives, privacy-aware research |
+| [Company Investigation](tracks/company-investigation.md) | entity resolution, filings, ownership, corporate timelines |
+| [Advanced GEOINT](challenges/advanced-geoint.md) | geolocation, chronolocation, imagery, candidate rejection |
+| Journalism and Fact Checking | source tracing, media provenance, claim verification |
+| Public Web Infrastructure | domains, DNS, certificates, passive infrastructure research |
 
 ---
 
-###  Web Archives & Evidence Capture
+## Tool Library
 
-* [Internet Archive Wayback Machine](https://archive.org/web/)
-* [Archive.today](https://archive.today/)
-* [Perma.cc](https://perma.cc/)
-* [Webrecorder](https://webrecorder.net/)
-* [ArchiveBox](https://archivebox.io/)
+The repository keeps a curated collection of tools and public-source resources rather than trying to list everything.
 
-Use archives to preserve sources before they change or disappear.
+Each entry is intended to make four things clear:
 
----
+~~~text
+What input does it need?
+What is it useful for?
+What are its limits?
+How should the result be verified?
+~~~
 
-###  Social Media & Username Intelligence
-
-* [WhatsMyName](https://whatsmyname.app/)
-* [Namechk](https://namechk.com/)
-* [Sherlock](https://github.com/sherlock-project/sherlock)
-* [Maigret](https://github.com/soxoj/maigret)
-
-Use these tools carefully.
-A result is an indicator, not proof.
+[Tool Library](tools/tool-library.md)  
+[Investigator Tool Stack](tools/investigator-stack.md)  
+[Verified Open-Source Tools](tools/open-source-tools.md)
 
 ---
 
-###  Image & Video Verification
+## Practice
 
-* [Google Images](https://images.google.com/)
-* [Yandex Images](https://yandex.com/images/)
-* [TinEye](https://tineye.com/)
-* [InVID Verification Plugin](https://www.invid-project.eu/tools-and-services/invid-verification-plugin/)
-* [FotoForensics](https://fotoforensics.com/)
-* [ExifTool](https://exiftool.org/)
-* [Metadata2Go](https://www.metadata2go.com/)
+The project uses an artifact-based learning model.
 
----
+~~~text
+Learn
+  ↓
+Practice
+  ↓
+Produce
+  ↓
+Defend
+  ↓
+Review
+~~~
 
-###  Geolocation & Maps
+A useful artifact can be a timeline, source assessment, claim-verification report, geolocation exercise, attribution assessment, or short intelligence note.
 
-* [Google Earth](https://earth.google.com/)
-* [OpenStreetMap](https://www.openstreetmap.org/)
-* [SunCalc](https://www.suncalc.org/)
-* [GeoHack](https://geohack.toolforge.org/)
-* [Wikimapia](https://wikimapia.org/)
-
-Good geolocation work depends on patience and comparison, not guessing.
-
----
-
-###  Domains & Infrastructure
-
-* [WHOIS](https://who.is/)
-* [SecurityTrails](https://securitytrails.com/)
-* [Shodan](https://www.shodan.io/)
-* [Censys](https://search.censys.io/)
-* [crt.sh](https://crt.sh/)
-* [DNSDumpster](https://dnsdumpster.com/)
-* [BuiltWith](https://builtwith.com/)
-* [Wappalyzer](https://www.wappalyzer.com/)
-* [urlscan.io](https://urlscan.io/)
-* [VirusTotal](https://www.virustotal.com/)
-
-Use infrastructure tools only within legal and authorized boundaries.
+[Practice Labs](docs/practice-labs.md)  
+[Skill Matrix](docs/skill-matrix.md)  
+[Case Studies](case-studies/README.md)
 
 ---
 
-###  Public Records, Companies & Sanctions
+## AI-Assisted OSINT
 
-* [OpenCorporates](https://opencorporates.com/)
-* [OpenSanctions](https://www.opensanctions.org/)
-* [OCCRP Aleph](https://aleph.occrp.org/)
-* [GLEIF](https://www.gleif.org/)
-* [SEC EDGAR](https://www.sec.gov/edgar/search/)
+AI can help with search-query variants, language support, organization, entity extraction, and alternative hypotheses.
 
-These sources can help with company, ownership, sanctions, and public-record investigations.
+It should not be treated as a substitute for sources.
 
----
-
-###  Data Processing & Documentation
-
-* [CyberChef](https://gchq.github.io/CyberChef/)
-* [Obsidian](https://obsidian.md/)
-* [Zotero](https://www.zotero.org/)
-* [Maltego](https://www.maltego.com/)
-* [Draw.io](https://app.diagrams.net/)
-* [Joplin](https://joplinapp.org/)
-
-Documentation tools help keep investigations clear, reproducible, and reviewable.
+~~~text
+AI suggests
+    ↓
+You inspect
+    ↓
+You verify
+    ↓
+You document
+~~~
 
 ---
 
-##  Investigation Checklist
+## Scope, Ethics and Safe Use
 
-Use this checklist before and during any OSINT investigation:
+This project is limited to lawful public-source research.
 
-```text
-[ ] What question am I trying to answer?
-[ ] What is the legal scope?
-[ ] Are all sources public?
-[ ] Did I avoid private access or deception?
-[ ] Did I collect more than one source?
-[ ] Did I save links and access dates?
-[ ] Did I separate facts from assumptions?
-[ ] Did I check for contradictory evidence?
-[ ] Did I evaluate source reliability?
-[ ] Did I assess confidence level?
-[ ] Did I document limitations?
-[ ] Did I avoid exposing sensitive personal data?
-```
+It does not cover unauthorized access, credential attacks, account takeover, access-control bypass, deceptive social engineering, stalking, harassment, doxxing, or intrusive scanning without authorization.
+
+Practical rule:
+
+~~~text
+If the next step requires intrusion,
+deception, private access,
+or bypassing a security control,
+stop.
+~~~
 
 ---
 
-##  Case Study Example
+## Maintenance
 
-**Scenario:** Verifying the location of a viral video.
+OSINT resources change. Ownership, pricing, permissions, coverage, interfaces, and terms can all change.
 
-### Objective
+A working URL does not prove that a resource description is still current.
 
-Determine whether the video was recorded in the claimed location.
+[OSINT Tool Radar](updates/2026-08-tool-radar.md)  
+[Updates Archive](updates/README.md)
 
-### Method
-
-1. Extract clear frames from the video.
-2. Identify visible landmarks, road signs, buildings, terrain, or shadows.
-3. Run reverse image search.
-4. Compare the visual clues with satellite imagery.
-5. Use maps and street-level imagery when available.
-6. Check weather and sunlight conditions.
-7. Look for independent sources.
-8. Archive evidence.
-9. Write a conclusion with confidence level.
-
-### Example Conclusion
-
-```text
-Location: Verified with high confidence.
-Timeline: Not fully verified.
-Reason: The visual location evidence is strong, but shadow angle and weather data do not fully confirm the claimed time.
-```
+The repository separates link health from content freshness and runs automated checks for both.
 
 ---
 
-##  Reporting & Documentation
+## Contributing
 
-A professional OSINT report should be clear, neutral, and evidence-based.
+Good contributions are specific and verifiable.
 
-### Basic Report Structure
+Examples include correcting a source, replacing an outdated resource, improving a translation, adding a safe practice lab, documenting a better verification method, or explaining a tool limitation more accurately.
 
-```text
-1. Title
-2. Objective
-3. Scope
-4. Methodology
-5. Sources
-6. Evidence
-7. Findings
-8. Analysis
-9. Confidence Level
-10. Limitations
-11. Conclusion
-```
-
-### Example Finding Format
-
-```text
-Finding:
-Two public accounts appear to share similar identifiers.
-
-Evidence:
-- Source 1: URL + access date
-- Source 2: URL + access date
-- Source 3: screenshot or archived copy
-
-Confidence:
-Medium
-
-Limitations:
-The accounts share public identifiers, but there is no direct proof that they belong to the same person.
-```
-
-Opinion is not intelligence.
-Evidence, verification, and clear reasoning are the foundation.
+[Contributing Guide](CONTRIBUTING.md)
 
 ---
 
-##  Confidence Levels
-
-| Level     | Meaning                                   |
-| --------- | ----------------------------------------- |
-| Low       | One weak source or unclear evidence       |
-| Medium    | Multiple indicators, but still incomplete |
-| High      | Strong evidence from independent sources  |
-| Confirmed | Direct evidence with strong verification  |
-
-Use confidence levels to avoid overstating conclusions.
-
----
-
-##  Common Mistakes
-
-* Starting with tools instead of questions
-* Relying on one source
-* Treating raw data as a conclusion
-* Ignoring contradictory evidence
-* Confusing similarity with proof
-* Poor OPSEC
-* Weak documentation
-* Missing access dates
-* Overstating confidence
-* Ignoring legal boundaries
-* Publishing sensitive personal information
-* Using OSINT as an excuse for harassment
-
----
-
-##  Learning Resources
-
-### Free Resources
-
-* [OSINT Framework](https://osintframework.com/)
-* [Bellingcat Resources](https://www.bellingcat.com/category/resources/)
-* [Verification Handbook](https://verificationhandbook.com/)
-* [GIJN Resource Center](https://gijn.org/resource/)
-* [OSINTCurious](https://osintcurio.us/)
-* [FreeOSINT](https://freeosint.github.io/)
-* [Google Search Help](https://support.google.com/websearch/)
-* [Google Advanced Search](https://www.google.com/advanced_search)
-
-### Practice Ideas
-
-```text
-Week 1: Verify a public claim.
-Week 2: Analyze a public website footprint.
-Week 3: Geolocate a public image.
-Week 4: Write a one-page OSINT report.
-```
-
----
-
-##  Recommended Books
-
-### OSINT & Investigation
-
-* **Open Source Intelligence Techniques**
-  Michael Bazzell
-  A practical reference for OSINT workflows, tools, privacy, and investigation setup.
-
-* **Open Source Intelligence Methods and Tools**
-  Nihad A. Hassan & Rami Hijazi
-  A practical guide covering online intelligence, search techniques, social media intelligence, maps, public records, and technical footprinting.
-
-* **We Are Bellingcat**
-  Eliot Higgins
-  A strong introduction to open-source investigations, verification, and public-interest intelligence work.
-
-### Verification & Digital Evidence
-
-* **Verification Handbook**
-  European Journalism Centre
-  A practical guide for verifying digital content, especially images, videos, and user-generated content.
-
-* **Digital Witness**
-  Sam Dubberley, Alexa Koenig, Daragh Murray
-  Useful for understanding digital evidence, documentation, human rights investigations, and verification.
-
-### Intelligence & Analysis
-
-* **Psychology of Intelligence Analysis**
-  Richards J. Heuer Jr.
-  Useful for understanding bias, assumptions, and analytical thinking.
-
-* **Structured Analytic Techniques for Intelligence Analysis**
-  Richards J. Heuer Jr. & Randolph H. Pherson
-  Useful for hypothesis testing, confidence assessment, and structured reasoning.
-
----
-
-##  Certifications & Career Paths
-
-### Entry-Level / Free or Low-Cost
-
-* [Basel Institute LEARN](https://learn.baselgovernance.org/)
-* [Security Blue Team](https://securityblue.team/)
-
-### Professional
-
-* [GIAC GOSI](https://www.giac.org/certifications/open-source-intelligence-gosi/)
-* [SANS SEC497 Practical OSINT](https://www.sans.org/cyber-security-courses/practical-open-source-intelligence/)
-
-### Career Paths
-
-OSINT can support several professional paths:
-
-* Cyber Threat Intelligence Analyst
-* SOC Analyst
-* Digital Forensics Investigator
-* Fraud Analyst
-* Brand Protection Analyst
-* Investigative Journalist
-* Security Researcher
-* Corporate Risk Analyst
-* Lawful Investigation Support
-* Human Rights Investigator
-
-Supporting skills:
-
-* Networking basics
-* Web technologies
-* Cybersecurity fundamentals
-* Report writing
-* Critical thinking
-* Data organization
-* Legal awareness
-* Privacy awareness
-
----
-
-##  Researcher OPSEC
-
-Before starting research:
-
-* Use a dedicated browser profile.
-* Keep personal accounts separate from research.
-* Avoid logging in with personal accounts.
-* Do not click suspicious links without isolation.
-* Keep investigation notes organized.
-* Avoid exposing private data.
-* Do not contact subjects without a lawful reason.
-* Archive public sources when needed.
-* Keep evidence files named and dated clearly.
-
-OPSEC is not only about hiding.
-It is about reducing unnecessary exposure and keeping the investigation clean.
-
----
-
-##  Ethics & Legal Responsibility
-
-### Allowed
-
-* Public data collection
-* Lawful archiving
-* Public website review
-* Public social media analysis
-* Source verification
-* Privacy-respecting reporting
-* Fact-checking public claims
-
-### Forbidden
-
-* Social engineering
-* Doxxing
-* Impersonation
-* Active probing without permission
-* Bypassing security
-* Publishing sensitive personal data
-* Harassment
-* Unauthorized access
-* Credential use without consent
-
-> Credibility in OSINT is built on restraint, not reach.
-
----
-
-##  Suggested Repository Structure
-
-```text
-/
-├─ README.md          # Short or general overview
-├─ README.en.md       # English version
-├─ README.ar.md       # Arabic version
-├─ README.tr.md       # Turkish version
-├─ assets/            # Images, diagrams, banners, and roadmap visuals
-├─ docs/              # Extended guides and learning materials
-│  ├─ checklists/     # Investigation and OPSEC checklists
-│  ├─ case-studies/   # Practical examples and walkthroughs
-│  ├─ report-templates/ # Report templates for different OSINT cases
-│  └─ tools/          # Tool notes, safe usage guidance, and references
-└─ LICENSE
-```
-
----
-
-##  Repository Development Plan
-
-Planned improvements:
-
-* Add a custom visual roadmap instead of generic images.
-* Add printable OSINT checklists.
-* Add report templates.
-* Add practical case studies.
-* Add a glossary of OSINT terms.
-* Add an improved Turkish version.
-* Add more free training links.
-* Add reliable Arabic learning resources.
-* Add a monthly learning plan.
-* Add short example reports.
-* Add tool usage notes with ethical boundaries.
-* Add a source reliability scoring guide.
-* Add OPSEC starter checklist.
-* Add beginner-friendly practice labs.
-
----
-
-##  Monthly Learning Plan
-
-### Month 1: Foundations
-
-* Learn what OSINT is.
-* Study legal and ethical boundaries.
-* Practice advanced search.
-* Learn source evaluation.
-* Write short notes for every finding.
-
-Deliverable:
-
-```text
-A one-page report verifying a public claim.
-```
-
-### Month 2: Core Skills
-
-* Practice username research.
-* Learn web archives.
-* Practice reverse image search.
-* Learn basic geolocation.
-* Start using structured report templates.
-
-Deliverable:
-
-```text
-A short case study verifying an image or video location.
-```
-
-### Month 3: Technical OSINT
-
-* Learn WHOIS and DNS basics.
-* Review certificate transparency.
-* Learn website technology identification.
-* Practice passive infrastructure research.
-* Document findings clearly.
-
-Deliverable:
-
-```text
-A passive public footprint report for a website or organization.
-```
-
-### Month 4: Professional Reporting
-
-* Learn confidence levels.
-* Practice hypothesis testing.
-* Review bias and limitations.
-* Build final reports.
-* Create a portfolio with safe, public examples.
-
-Deliverable:
-
-```text
-A full OSINT report with objective, scope, evidence, analysis, confidence level, and limitations.
-```
-
----
-
-##  Contributing
-
-Contributions are welcome.
-
-You can help by:
-
-* Fixing outdated links
-* Adding legal learning resources
-* Improving translations
-* Adding report templates
-* Adding ethical practice cases
-* Improving the visual roadmap
-* Expanding beginner-friendly explanations
-* Adding tool notes and limitations
-* Adding Arabic, English, or Turkish learning materials
-
-Suggested workflow:
-
-```text
-Fork → Create Branch → Make Changes → Open Pull Request
-```
-
----
-
-##  License
+## License
 
 MIT License © Imed Kablavi
-
----
-
-##  Final Note
-
-OSINT is not about knowing everything.
-
-It is about asking the right question, using legal public sources, verifying carefully, documenting evidence, and reporting responsibly.
-
-Know what can be proven.
-Know what cannot be proven.
-Be clear about the difference.
