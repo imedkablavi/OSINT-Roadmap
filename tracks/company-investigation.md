@@ -45,6 +45,17 @@ Prefer:
 
 Aggregators are useful for discovery, but important facts should be checked against the underlying record when available.
 
+## China example - preserve the legal identity
+
+For a China-based company, keep the English trading name as an alias until it is tied to a registered entity.
+
+1. Obtain the exact Chinese legal name and 18-character Unified Social Credit Code from the business licence. Keep the document date and source.
+2. Compare those identifiers with a dated record from the [National Enterprise Credit Information Publicity System (GSXT)](https://www.gsxt.gov.cn/). Follow its normal access process; do not bypass interactive checks.
+3. Record the legal name, code, source URL and query date separately from the contract seller, invoice issuer and payment recipient. A similar English name does not establish that these parties are the same.
+4. If access or a match remains unresolved, record the gap rather than inferring that the company is unregistered or fraudulent. Registration alone does not establish manufacturing capacity or payment safety.
+
+Further reading: [Currawong's English-language GSXT workflow](https://currawongweb.com/verify/china-company-registration-check/) explains the identifiers, comparison fields and access limits. It is a free guide from a commercial research provider, not an official registry or substitute for the underlying record.
+
 ## Stage 3 - Ownership and control
 
 Record each relationship separately.
